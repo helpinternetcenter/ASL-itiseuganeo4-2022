@@ -1,9 +1,16 @@
 import React from 'react'
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Login from '../components/login'
 
+
+
+export const LoginScreen = {
+    id: 'LOGIN'
+  }
 
 const LoginNavigationStack = createNativeStackNavigator()
+
 
 const LoginRoot = () => (
   <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
