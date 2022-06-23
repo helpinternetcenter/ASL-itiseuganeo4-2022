@@ -13,10 +13,15 @@ function ScroolImage(){
     function ChangeImage(index){
       setSelectedIndex(index);
     }
+
+    function shouldLoadComponent (index){
+        return (index === selectedIndex);
+    }
   
     return (
       <ViewPager
         selectedIndex={selectedIndex}
+        shouldLoadComponent = {shouldLoadComponent}
         onSelect={ChangeImage}>
         <Layout
           style={styles.imageContiner}

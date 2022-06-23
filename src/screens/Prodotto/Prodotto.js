@@ -1,16 +1,21 @@
 import * as React from 'react';
-import { Layout} from '@ui-kitten/components';
+import { IconRegistry, Layout} from '@ui-kitten/components';
 import TitleProdotto from '../../components/TitleProdotto/TitleProdotto';
 import ScroolImage from '../../components/ScroolView/ScroolView';
-import Description from '../../components/Description/description';
+import Description from '../../components/Description/Description';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
 
 function Prodotto() {
     return (
-      <Layout>
-        <TitleProdotto name = 'Title'></TitleProdotto>
-        <ScroolImage></ScroolImage>
+      <>
+        <IconRegistry icons = {EvaIconsPack}></IconRegistry>
+        <Layout>
+          <TitleProdotto name = 'Title'></TitleProdotto>
+          <ScroolImage></ScroolImage>
+          <Description></Description>
       </Layout>
+      </>
     );
   }
 
