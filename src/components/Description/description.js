@@ -1,17 +1,29 @@
 import React from "react";
 import { Text , Layout, Card} from "@ui-kitten/components";
+import { View } from "react-native";
 
-
+function Header (props) {
+  return (
+    <View style = {{paddingLeft : 15 ,}}>
+      <Text category = 'h5'>Description</Text>
+    </View>
+  );
+}
 function Description() {
     return(
       <>
         <Layout style = {{
             paddingLeft: 20,
-            paddingTop: 10,
-            paddingBottom : 500,}} 
+            paddingTop: 10,}} 
             
             level = '3'>
-          <Card status = 'info' style = {{margin : 10 , marginRight : 30}}> 
+          <Card 
+              header={Header}
+              status = 'info' 
+              style = {{
+                margin : 10 , 
+                marginRight : 30
+                }}>
             <Text category = 'label'>Colore:   <Text category= 'c1'>marrone</Text></Text>
             <Text category = 'label'>Materiale:   <Text category= 'c1'>legno</Text></Text>
             <Text category = 'label'>Dimensione Articolo:   <Text category= 'c1'>57 x 48 x 89 cm</Text></Text>
