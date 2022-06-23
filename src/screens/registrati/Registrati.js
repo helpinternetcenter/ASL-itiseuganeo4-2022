@@ -13,3 +13,5 @@ function Registrati(){
         </View>
     )
 }
+
+export default Registrati

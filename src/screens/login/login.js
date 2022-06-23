@@ -48,7 +48,7 @@ function Login({navigation}) {
 
      
 
-      <Button onPress={() => navigation.push('REGISTRATI')} style={ styles.button} appearance='ghost'>
+      <Button onPress={() => navigation.push('SCREEN')} style={ styles.button} appearance='ghost'>
             ISCRIVITI
       </Button>
 
