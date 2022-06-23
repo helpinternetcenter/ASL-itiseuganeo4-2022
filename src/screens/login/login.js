@@ -12,7 +12,11 @@ function Login({navigation}) {
 
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text category='h1'>Login Screen</Text>
+      <Text category='h1'>Log In </Text>
+      <View style={styles.row}>
+          <Text style={styles.text} category='c1'>Usrname</Text>
+      </View>
+       
       <Input
         placeholder='Nome'
         value={value}
@@ -26,5 +30,15 @@ function Login({navigation}) {
     </Layout>
   );
 }
+
+const styles = StyleSheet.create({
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  text: {
+    margin: 2,
+  },
+});
 
 export default Login;
