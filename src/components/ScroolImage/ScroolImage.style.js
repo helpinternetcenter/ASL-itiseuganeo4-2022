@@ -13,6 +13,12 @@ const styles = StyleSheet.create({
       width : 240,
       height : 400,
     },
+
+    RadioGroup : {
+      flexDirection : 'row',
+      alignItems : 'center',
+      justifyContent: 'center',
+  }
        
   });
   
