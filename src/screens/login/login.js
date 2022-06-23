@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ApplicationProvider, Layout, Text, Input, Button,Icon } from '@ui-kitten/components';
+import { ApplicationProvider, Layout, Text, Input, Button,Icon,IconRegistry} from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { TextInput } from 'react-native-web';
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,6 +11,8 @@ const AlertIcon = (props) => (
 <Icon {...props} name='alert-circle-outline'/>
 
 )
+
+
 
 function Login({navigation}) {
   const [username, setUsername] = React.useState('');
@@ -24,6 +26,7 @@ function Login({navigation}) {
   const renderIcon = (props) =>(
 
     <TouchableWithoutFeedback onPress={toggleSecureEntry}>
+        <IconRegistry icons={EvaIconsPack} />
         <Icon {...props} name={secureTextEntry ? 'eye-off' : 'eye'}/>
     </TouchableWithoutFeedback>
   );
@@ -51,7 +54,8 @@ function Login({navigation}) {
         placeholder='Username'
         value={username}
         onChangeText={nextValue => setUsername(nextValue)}
-        style={{marginLeft:'20%' , marginRight:'20%', marginBottom:'10%',marginTop:'5%'}}
+        style={{marginLeft:'5%' , marginRight:'5%', marginBottom:'10%',marginTop:'5%'}}
+        
       />
 
          <Text category='p2'>Password </Text>
@@ -63,6 +67,7 @@ function Login({navigation}) {
             accessoryRight={renderIcon}
             secureTextEntry={secureTextEntry}
             onChangeText={nextValue => setPassword(nextValue)}
+            style={styles.inputPassword}
            />
 
       
@@ -120,7 +125,13 @@ const styles = StyleSheet.create({
     fontWeight:"400",
     fontFamily:"opensans-regular",
     color:"#8F9BB3",
-  }
+  },
+
+  inputPassword:{
+      marginLeft:'5%',
+      marginRight:'5%',
+
+  },
 
   
 
