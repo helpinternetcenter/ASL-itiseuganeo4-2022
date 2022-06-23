@@ -41,13 +41,20 @@ function Login({navigation}) {
 
   }
 
+  
+
+  credenziali = new Array( username, password );
+
+  
+
 
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text category='h1'>Log In </Text>
       
         <View style={styles.row}>
-            <Text style={styles.text} category='p2'>Username</Text>
+            <Text style={styles.text} category='p2'>USERNAME</Text>
+            
           </View>
        
       <Input
@@ -58,7 +65,8 @@ function Login({navigation}) {
         
       />
 
-         <Text category='p2'>Password </Text>
+         <Text category='p2'>PASSWORD </Text>
+          
 
           <Input
             value={password}
@@ -86,10 +94,9 @@ function Login({navigation}) {
             REGISTRATI
       </Button>
 
-  
-
-
-
+      
+      
+     
       
     </Layout>
   );
@@ -102,7 +109,7 @@ const styles = StyleSheet.create({
     marginTop:'10%',
   },
   text: {
-    margin: 2,
+    margin: 1,
     marginTop:'10%'
   },
   captionContainer:{

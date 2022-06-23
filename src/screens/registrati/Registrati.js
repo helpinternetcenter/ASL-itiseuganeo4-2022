@@ -14,6 +14,8 @@ function Registrati({navigation}){
 
         <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 
+            <Text category='h1'>REGISTRAZIONE</Text>
+
             <View style={styles.row}>
 
                 <Text style={styles.text} caregory='p2'>NOME</Text>
@@ -67,7 +69,7 @@ function Registrati({navigation}){
                 style={styles.inputPassword}
             />
 
-            <Button onPress={() => navigation.push('GOLOGIN')}>
+            <Button onPress={() => navigation.push('GOLOGIN')} style={{backgroundColor:'#6bc1d6'}}>
                     REGISTRATI
             </Button>
 
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
     row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop:'5%',
+    marginTop:'7%',
   },
   text: {
     margin: 1,
@@ -117,7 +119,7 @@ const styles = StyleSheet.create({
   inputPassword:{
     marginLeft:'5%',
     marginRight:'5%',
-
+    marginBottom:'5%',
   },
   
   
