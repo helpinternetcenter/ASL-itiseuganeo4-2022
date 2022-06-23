@@ -4,24 +4,10 @@ import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
 
 function Login() {
     return (
-    <View style={styles.row}>
-       <Text style={styles.text} category='h1'>Pagina Login</Text>
-     </View> 
-
-
-
-
+<Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Text category='h1'>Login </Text>
+  </Layout>
     );
   }
-
-  const styles = StyleSheet.create({
-    row: {
-      flexDirection: 'row',
-      alignItems: 'right',
-    },
-    text: {
-      margin: 2,
-    },
-  });
 
 export default Login;
