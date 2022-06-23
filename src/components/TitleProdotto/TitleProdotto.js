@@ -1,5 +1,5 @@
 import React from "react";
-import {  Text , Button , Icon} from "@ui-kitten/components";
+import {  Text , Button , Icon , TopNavigation , TopNavigationAction} from "@ui-kitten/components";
 import { TouchableWithoutFeedback } from "react-native";
 import styles from "./TitleProdotto.style";
 
@@ -23,19 +23,56 @@ function ArrowIcon(props){
   );
 }
 
-function BackIcon () {
-  <Icon {...props}></Icon>
-}
-
-function renderBackAction (props){
-  <TopNavigationAction icon={BackIcon}/>
-}
 
 function TitleProdotto(props){
+
+  const shakeIconRef = React.useRef();
+
+
+  function BackIcon (props) {
     return(
-        <View style={styles.titleContainer}>   
-          <TopNavigation alignment = 'center' title = 'Eva Application' acessoryLeft = ></TopNavigation>
-        </View>
+      <Icon {...props} name = 'arrow-back'></Icon>
+    );
+  }
+
+  
+  function CarIcon (props) {
+    return (
+      <Icon {...props} 
+        name = 'car'
+        animation = 'shake'
+        ref = {shakeIconRef}
+        >
+        </Icon>
+    )
+  }
+  
+
+    function renderBackAction (){
+      return (
+        <TopNavigationAction icon={BackIcon}/>
+      );
+    }
+
+    function renderGoShopAction () {
+
+      function StartAnimation(){
+          shakeIconRef.current.startAnimation()
+      }
+
+      return (
+        <TopNavigationAction icon = {CarIcon} onPress = {StartAnimation}/>
+      );
+    }
+
+    return(
+          <TopNavigation 
+            alignment = 'center' 
+            style = {styles.title}
+            title = {props.name}
+            accessoryLeft = {renderBackAction} 
+            accessoryRight = {renderGoShopAction}>
+          </TopNavigation>
     );
 };
 

@@ -11,7 +11,7 @@ function Prodotto() {
       <>
         <IconRegistry icons = {EvaIconsPack}></IconRegistry>
         <Layout>
-          <TitleProdotto name = 'Title'></TitleProdotto>
+          <TitleProdotto name = 'MyProdotto'></TitleProdotto>
           <ScroolImage></ScroolImage>
           <Description></Description>
       </Layout>

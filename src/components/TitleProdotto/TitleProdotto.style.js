@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     
+    /*
     titleContainer : {
         height: 100,
         width: '100%',
@@ -15,6 +16,12 @@ const styles = StyleSheet.create({
         flexWrap : 'wrap',
         flexDirection : 'row',
 
+    },
+    */
+
+    title : {
+        backgroundColor: '#6bc1d6',
+        marginTop : 50,
     },
 
     testoTitolo: {
