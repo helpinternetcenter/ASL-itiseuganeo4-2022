@@ -67,7 +67,7 @@ function Registrati(){
                 style={styles.inputPassword}
             />
 
-            <Button onPress={() => navigation.push('RETURNHOME')}>
+            <Button onPress={() => navigation.push('GOLOGIN')}>
                     REGISTRATI
             </Button>
 

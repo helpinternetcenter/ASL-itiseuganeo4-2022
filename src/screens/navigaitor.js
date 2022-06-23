@@ -5,6 +5,7 @@ import Login from './login/login';
 import Home from './home/home';
 import Registrati from './registrati/Registrati';
 
+
   
   const LoginNavigationStack = createNativeStackNavigator()
 
@@ -20,16 +21,18 @@ import Registrati from './registrati/Registrati';
     id: 'SCREEN'
   }
 
-  export const ReturnHomeScreen = {
-    id: 'RETURNHOME'
+  export const GOLOGINScreen ={
+    id:'GOLOGIN'
   }
+
+  
 
   
   const LoginRoot = () => (
     <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
       <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
       <LoginNavigationStack.Screen name={RegisterScreen.id} component={Registrati} />
-      <LoginNavigationStack.Screen name={ReturnHomeScreen.id} component={Registrati} />
+      <LoginNavigationStack.Screen name={GOLOGINScreen.id} component={Registrati} />
       <LoginNavigationStack.Screen name={HomeScreen.id} component={Home} />
     </LoginNavigationStack.Navigator>
   )
