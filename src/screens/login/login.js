@@ -1,15 +1,42 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ApplicationProvider, Layout, Text, Input, Button } from '@ui-kitten/components';
+import { ApplicationProvider, Layout, Text, Input, Button,Icon } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { TextInput } from 'react-native-web';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport';
 
+const AlertIcon = (props) => (
+<Icon {...props} name='alert-circle-outline'/>
 
+)
 
 function Login({navigation}) {
   const [username, setUsername] = React.useState('');
   const [password,setPassword] = React.useState('');
+  const [secureTextEntry, setSecureTextEntry] = React.useState(true)
+
+  const toggleSecureEntry = () => {
+    setSecureTextEntry(!secureTextEntry);
+  }
+
+  const renderIcon = (props) =>(
+
+    <TouchableWithoutFeedback onPress={toggleSecureEntry}>
+        <Icon {...props} name={secureTextEntry ? 'eye-off' : 'eye'}/>
+    </TouchableWithoutFeedback>
+  );
+
+  const renderCaption = () =>{
+      return(
+        <View style={styles.captionContainer}>
+          {AlertIcon(styles.captionIcon)}
+          <Text style={styles.captionText}> Should contain at least 8 symbols </Text>
+        </View>
+      )
+
+  }
 
 
   return (
@@ -30,11 +57,13 @@ function Login({navigation}) {
          <Text category='p2'>Password </Text>
 
           <Input
-            placeholder='Password'
             value={password}
+            placeholder='Enter Password'
+            caption={renderCaption}
+            accessoryRight={renderIcon}
+            secureTextEntry={secureTextEntry}
             onChangeText={nextValue => setPassword(nextValue)}
-            style={{marginLeft:'20%', marginRight:'20%', marginBottom:'10%',marginTop:'5%'}}
-          />
+           />
 
       
       
@@ -49,7 +78,7 @@ function Login({navigation}) {
      
 
       <Button onPress={() => navigation.push('SCREEN')} style={ styles.button} appearance='ghost'>
-            ISCRIVITI
+            REGISTRATI
       </Button>
 
   
@@ -71,7 +100,27 @@ const styles = StyleSheet.create({
     margin: 2,
     marginTop:'10%'
   },
+  captionContainer:{
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
 
+  },
+
+  captionIcon:{
+    width:10,
+    height:10,
+    marginRight:5
+
+  },
+
+  captionText:{
+
+    fontSize:12,
+    fontWeight:"400",
+    fontFamily:"opensans-regular",
+    color:"#8F9BB3",
+  }
 
   
 
