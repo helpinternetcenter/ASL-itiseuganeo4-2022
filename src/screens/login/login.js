@@ -38,7 +38,7 @@ function Login({navigation}) {
 
       
       
-      <Button onPress={() => navigation.push('HOME')}>
+      <Button onPress={() => navigation.push('HOME')} style={{backgroundColor:'#6bc1d6'}}>
         Log In
       </Button>
 
@@ -48,7 +48,7 @@ function Login({navigation}) {
 
      
 
-      <Button onPress={() => navigation.push('REGISTRATI')}>
+      <Button onPress={() => navigation.push('REGISTRATI')} style={ styles.button} appearance='ghost'>
             ISCRIVITI
       </Button>
 
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     margin: 2,
     marginTop:'10%'
   },
+
 
   
 
