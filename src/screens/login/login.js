@@ -42,6 +42,19 @@ function Login({navigation}) {
         Log In
       </Button>
 
+      <View style={styles.row}>
+            <Text style={styles.text} category='p2'>Se non sei registrato, Registrati</Text>
+          </View>
+
+     
+
+      <Button onPress={() => navigation.push('REGISTRATI')}>
+            ISCRIVITI
+      </Button>
+
+  
+
+
 
       
     </Layout>
@@ -58,6 +71,8 @@ const styles = StyleSheet.create({
     margin: 2,
     marginTop:'10%'
   },
+
+  
 
 
 });
