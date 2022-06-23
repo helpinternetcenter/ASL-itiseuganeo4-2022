@@ -1,18 +1,45 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
+import { ApplicationProvider, Layout, Text,Input } from '@ui-kitten/components';
 
 
 function Login() {
 
+    const [nome,setUsername] = React.useState('');
   
     return (
 
-      <View style={styles.row}>
+      <Layout style={styles.container} level='1'>
+
+
         <Text style={styles.text} category='h1'>LOGIN</Text>
 
-        
-      </View>
+          <View style={styles.alternativeText}>
+              
+              <Text style={styles.text}>
+                    Username
+
+              </Text>
+
+          </View>
+
+          
+          
+            <Input
+              style={styles.inputText}
+              value={nome}
+              placeholder='Enter Username'
+              onChangeText={nextValue => setUsername(nextValue)}
+
+
+            />
+
+          
+       
+
+          
+      </Layout>
+      
 
     
 
@@ -22,22 +49,31 @@ function Login() {
   }
 
   const styles = StyleSheet.create({
-    row: {
+
+    container:{
       flexDirection: 'row',
-      alignItems: 'center',
       justifyContent: 'center',
+      marginTop:'15%',
+      marginLeft:'10%',
       flex: 1
+
     },
-    text: {
-      margin: 2,
+
+
+    alternativeText:{
+          marginTop:'25%',
+          marginRight:'50%',
+          
     },
-    alternativeContainer: {
-      
-      borderRadius: 4,
-      marginVertical: 2,
-      backgroundColor: '#3366FF',
-      alignItems:'center'
-    },
+
+    inputText:{
+          marginTop:'40%',
+    }
+
+  
+
+    
+  
   });
 
 export default Login;
