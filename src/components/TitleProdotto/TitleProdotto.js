@@ -23,12 +23,18 @@ function ArrowIcon(props){
   );
 }
 
+function BackIcon () {
+  <Icon {...props}></Icon>
+}
+
+function renderBackAction (props){
+  <TopNavigationAction icon={BackIcon}/>
+}
 
 function TitleProdotto(props){
     return(
-        <View style={styles.titleContainer}>  
-          <Button accessoryLeft = {ArrowIcon} disabled = {true} style = {styles.button} appearance='ghost'></Button>    
-          <Text category='h1' style={styles.testoTitolo}>{props.name}</Text>
+        <View style={styles.titleContainer}>   
+          <TopNavigation alignment = 'center' title = 'Eva Application' acessoryLeft = ></TopNavigation>
         </View>
     );
 };
