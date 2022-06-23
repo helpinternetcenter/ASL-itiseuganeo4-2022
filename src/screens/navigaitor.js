@@ -10,18 +10,9 @@ import Prodotto from './Prodotto/Prodotto'
   }
   
   const ProdottoRoot = () => (
-    <LoginNavigationStack.Navigator screenOptions={{
-        headerStyle: {
-          backgroundColor: '#6BC1D6',
-          
-        },
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-
-        headerTintColor: '#fff',
-      }}>
-      <LoginNavigationStack.Screen name= {ProdottoScreen.idProdotto} component={Prodotto} option = {{title : 'Prodotto' , headerTransparent : false, }}/>
+    <LoginNavigationStack.Navigator
+        screenOptions={{ headerShown: false }}>
+      <LoginNavigationStack.Screen name= {ProdottoScreen.idProdotto} component={Prodotto}/>
     </LoginNavigationStack.Navigator>
   )
   
