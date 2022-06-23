@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
-import { StyleSheet, View, Button } from 'react-native';
+import { Text } from '@ui-kitten/components';
+import { StyleSheet, View} from 'react-native';
+
 
 function Titolo (props){
+  // const { itemId } = route?.params
     return(
-        <View style={styles.viewTitolo}>
-        <Text category='h1' style={styles.testoTitolo}>Ciao {props.nome} !</Text>
+      <View style={styles.viewTitolo}>
+        <Text category='h1' style={styles.testoTitolo}>Ciao {props.valore} !</Text>
         <Text category='h6' style={styles.testoSottotitolo}>Tutti i prodotti a portata di un click</Text>
       </View>
     )

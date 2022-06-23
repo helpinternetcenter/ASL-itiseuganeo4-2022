@@ -4,11 +4,12 @@ import { StyleSheet, View, Button } from 'react-native';
 import Titolo from '../../components/compHome/titoloHome';
 
 
-function Home() {
+function Home({navigation, route}) {
+  const { itemId } = route.params;
 
   return (
     <View style={styles.container}>
-      <Titolo></Titolo>
+      <Titolo valore={itemId}/>
       <View style={styles.viewProdotti}>
 
         

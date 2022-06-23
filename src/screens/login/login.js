@@ -3,10 +3,11 @@ import { ApplicationProvider, Layout, Text, Input, Button } from '@ui-kitten/com
 import { TextInput } from 'react-native-web';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { HomeScreen } from '../navigaitor';
 
 
 
-function Login({navigation}) {
+function Login({ navigation }) {
   const [value, setValue] = React.useState('');
 
 
@@ -17,10 +18,13 @@ function Login({navigation}) {
         placeholder='Nome'
         value={value}
         onChangeText={nextValue => setValue(nextValue)}
-        style={{marginLeft:'20%' , marginRight:'20%', marginBottom:'10%',marginTop:'10%'}}
+        style={{ marginLeft: '20%', marginRight: '20%', marginBottom: '10%', marginTop: '10%' }}
       />
 
-      <Button onPress={() => navigation.push('HOME')}>
+
+      <Button onPress={() => navigation.navigate(HomeScreen.id, {
+        itemId: value,
+      })}>
         Avanti
       </Button>
     </Layout>
