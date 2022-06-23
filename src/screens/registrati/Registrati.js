@@ -7,6 +7,7 @@ function Registrati(){
 
         <View style={styles.container}>
 
+        <Text category='p2'>Helo </Text>
 
 
         </View>
