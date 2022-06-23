@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
-import { StyleSheet, View, Button } from 'react-native';
+import { ApplicationProvider, Layout, Text, Divider } from '@ui-kitten/components';
+import { StyleSheet, View, Button, ScrollView } from 'react-native';
 import Titolo from '../../components/compHome/titoloHome';
+import SceltaProdotto from '../../components/compHome/prodottoHome';
+import { ProdottoScreen } from '../navigaitor';
 
 
 function Home({navigation, route}) {
@@ -10,12 +12,15 @@ function Home({navigation, route}) {
   return (
     <View style={styles.container}>
       <Titolo valore={itemId}/>
-      <View style={styles.viewProdotti}>
+      <ScrollView>
+      <SceltaProdotto cambioScheda={() => navigation.navigate(ProdottoScreen.id)}/>
+      <SceltaProdotto />
+      <SceltaProdotto />
+      <SceltaProdotto />
 
-        
-      </View>
 
 
+      </ScrollView>
     </View>
   );
 }
@@ -24,14 +29,13 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#e3e3e3',
     alignItems: 'center'
   },
 
   viewTitolo: {
     height: '20%',
     width: '100%',
-    backgroundColor: '#6bc1d6',
+
     borderWidth: 0,
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
@@ -39,6 +43,7 @@ const styles = StyleSheet.create({
   },
 
   viewProdotti: {
+   backgroundColor:'red',
 
   },
 

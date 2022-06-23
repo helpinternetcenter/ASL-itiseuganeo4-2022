@@ -4,7 +4,6 @@ import { StyleSheet, View} from 'react-native';
 
 
 function Titolo (props){
-  // const { itemId } = route?.params
     return(
       <View style={styles.viewTitolo}>
         <Text category='h1' style={styles.testoTitolo}>Ciao {props.valore} !</Text>
