@@ -19,9 +19,10 @@ import Registrati from './registrati/Registrati';
 
   export const RegisterScreen = {
     id: 'SCREEN'
+    
   }
 
-  export const GOLOGINScreen ={
+  export const GOLOGINScreen = {
     id:'GOLOGIN'
   }
 
@@ -32,7 +33,7 @@ import Registrati from './registrati/Registrati';
     <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
       <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
       <LoginNavigationStack.Screen name={RegisterScreen.id} component={Registrati} />
-      <LoginNavigationStack.Screen name={GOLOGINScreen.id} component={Registrati} />
+      <LoginNavigationStack.Screen name={GOLOGINScreen.id} component={Login} />
       <LoginNavigationStack.Screen name={HomeScreen.id} component={Home} />
     </LoginNavigationStack.Navigator>
   )

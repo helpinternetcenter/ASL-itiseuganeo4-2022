@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Layout, Text, Input, Button } from '@ui-kitten/components';
 import { StyleSheet, View } from 'react-native';
 
-function Registrati(){
+function Registrati({navigation}){
 
     const [nome,setNome] = React.useState('');
     const [cognome,setCognome] = React.useState('');

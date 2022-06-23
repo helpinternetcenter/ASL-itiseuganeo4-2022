@@ -124,13 +124,13 @@ const styles = StyleSheet.create({
     fontSize:12,
     fontWeight:"400",
     fontFamily:"opensans-regular",
-    color:"#8F9BB3",
+   
   },
 
   inputPassword:{
       marginLeft:'5%',
       marginRight:'5%',
-
+      color:"#8F9BB3",
   },
 
   
