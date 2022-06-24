@@ -22,7 +22,8 @@ function Description() {
               status = 'info' 
               style = {{
                 margin : 10 , 
-                marginRight : 30
+                marginRight : 30,
+                borderRadius : 10,
                 }}>
             <Text category = 'label'>Colore:   <Text category= 'c1'>marrone</Text></Text>
             <Text category = 'label'>Materiale:   <Text category= 'c1'>legno</Text></Text>

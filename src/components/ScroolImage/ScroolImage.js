@@ -33,7 +33,7 @@ function ScroolImage(){
   
     return (
       <>
-        <Card style = {{margin : 26}} status = 'primary' footer = {BottomRadioGroup} disabled = {true}>
+        <Card style = {{margin : 26 , borderRadius : 10}} status = 'primary' footer = {BottomRadioGroup} disabled = {true}>
         <ViewPager
         selectedIndex={selectedIndex}
         shouldLoadComponent = {shouldLoadComponent}
