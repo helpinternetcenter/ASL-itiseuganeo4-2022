@@ -27,7 +27,6 @@ import Check from '../Utils/check';
   export const GOLOGINScreen = {
     id:'GOLOGIN'
   }
-
   const LoginRoot = () => (
     <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
       <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
