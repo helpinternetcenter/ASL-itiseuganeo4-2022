@@ -5,6 +5,7 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { TextInput } from 'react-native-web';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+<<<<<<< HEAD
 import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport';
 
 const AlertIcon = (props) => (
@@ -46,7 +47,15 @@ function Login({navigation}) {
   credenziali = new Array( username, password );
 
   
+=======
+import { HomeScreen } from '../navigaitor';
 
+
+
+
+function Login({ navigation }) {
+  const [value, setValue] = React.useState('');
+>>>>>>> c90f300e345912a13b02722529e4bf156f2a324f
 
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -58,6 +67,7 @@ function Login({navigation}) {
           </View>
        
       <Input
+<<<<<<< HEAD
         placeholder='Username'
         value={username}
         onChangeText={nextValue => setUsername(nextValue)}
@@ -82,6 +92,18 @@ function Login({navigation}) {
       
       <Button onPress={() => navigation.navigate('CHECK', {nomeUtente:username, chiaveAccesso:password})} style={{backgroundColor:'#6bc1d6'}}>
         Log In
+=======
+        placeholder='Nome'
+        value={value}
+        onChangeText={nextValue => setValue(nextValue)}
+        style={{ marginLeft: '20%', marginRight: '20%', marginBottom: '10%', marginTop: '10%' }}
+      />
+
+      <Button onPress={() => navigation.navigate(HomeScreen.id, {
+        itemId: value,
+      })}>
+        Avanti
+>>>>>>> c90f300e345912a13b02722529e4bf156f2a324f
       </Button>
 
       <View style={styles.row}>

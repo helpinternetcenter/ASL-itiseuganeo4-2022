@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './login/login';
@@ -8,16 +9,26 @@ import Check from '../Check/check';
 
 
   
+=======
+import { NavigationContainer} from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Prodotto from './Prodotto/prodotto'
+import Login from './login/login'
+import Home from './home/home' 
+>>>>>>> c90f300e345912a13b02722529e4bf156f2a324f
   const LoginNavigationStack = createNativeStackNavigator()
 
   export const LoginScreen = {
     id: 'LOGIN'
   }
-
   export const HomeScreen = {
     id: 'HOME'
   }
+  export const ProdottoScreen = {
+    id: 'PRODOTTO'
+  }
 
+<<<<<<< HEAD
   export const RegisterScreen = {
     id: 'SCREEN'
     
@@ -39,12 +50,15 @@ import Check from '../Check/check';
   
   // <LoginNavigationStack.Screen name={LEAVELOGINScreen.id} component={Login} />
   
+=======
+>>>>>>> c90f300e345912a13b02722529e4bf156f2a324f
   const LoginRoot = () => (
     <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
       <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
       <LoginNavigationStack.Screen name={CheckScreen.id} component={Check} />
       <LoginNavigationStack.Screen name={GOLOGINScreen.id} component={Registrati} />
       <LoginNavigationStack.Screen name={HomeScreen.id} component={Home} />
+      <LoginNavigationStack.Screen name={ProdottoScreen.id} component={Prodotto} />
     </LoginNavigationStack.Navigator>
   )
   
@@ -56,4 +70,8 @@ import Check from '../Check/check';
     )
   }
   
+<<<<<<< HEAD
   export default Navigator
+=======
+  export default Navigator;
+>>>>>>> c90f300e345912a13b02722529e4bf156f2a324f

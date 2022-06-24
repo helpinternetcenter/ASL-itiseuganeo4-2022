@@ -5,9 +5,9 @@ import Navigator from './src/screens/navigaitor';
 
 export default function App() {
   return (
-    <ApplicationProvider {...eva} theme={eva.light}>
+      <ApplicationProvider {...eva} theme={eva.light}>
           <Navigator />
-    </ApplicationProvider>
-
+      </ApplicationProvider>
   );
 }
+
