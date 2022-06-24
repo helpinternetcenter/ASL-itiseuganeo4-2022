@@ -5,8 +5,10 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { TextInput } from 'react-native-web';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen } from '../navigaitor';
+import { HomeScreen, LoginScreen } from '../navigaitor';
 import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport';
+import { ricerca } from '../../Utils/check';
+import Home from '../home/home';
 
 const AlertIcon = (props) => (
 <Icon {...props} name='alert-circle-outline'/>
@@ -19,6 +21,7 @@ function Login({navigation}) {
   const [username, setUsername] = React.useState('');
   const [password,setPassword] = React.useState('');
   const [secureTextEntry, setSecureTextEntry] = React.useState(true)
+  const loggato =  ricerca()
 
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry);
@@ -46,8 +49,9 @@ function Login({navigation}) {
 
   credenziali = new Array( username, password );
 
-  
 
+
+  
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text category='h1'>Log In </Text>
@@ -78,10 +82,8 @@ function Login({navigation}) {
             style={styles.inputPassword}
            />
 
-      
-      
-      <Button onPress={() => navigation.navigate('CHECK', {nomeUtente:username, chiaveAccesso:password})} style={{backgroundColor:'#6bc1d6'}}>
-        Log In
+      <Button onPress={()=>{{ricerca(username, password).ingresso ? navigation.push(HomeScreen.id, { idIdentificativo : ricerca(username, password).id}): console.log("return2")}}}>
+        Log In 
       </Button>
 
       <View style={styles.row}>
@@ -124,10 +126,9 @@ const styles = StyleSheet.create({
   },
 
   captionText:{
-
     fontSize:12,
     fontWeight:"400",
-    fontFamily:"opensans-regular",
+
    
   },
 
@@ -136,9 +137,6 @@ const styles = StyleSheet.create({
       marginRight:'5%',
       color:"#8F9BB3",
   },
-
-  
-
 
 });
 

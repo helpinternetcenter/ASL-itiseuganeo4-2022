@@ -21,15 +21,15 @@ const styles = StyleSheet.create({
 
     title : {
         backgroundColor: '#6bc1d6',
-        marginTop : 50,
+        
     },
-
     testoTitolo: {
         marginTop: '5%',
         marginLeft: '5%',
         textAlign : 'center',
         paddingRight : 100,
-        paddingTop: 20
+        paddingTop: 20,
+
     } ,
 
     button : {

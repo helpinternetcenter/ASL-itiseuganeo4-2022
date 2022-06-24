@@ -5,7 +5,7 @@ import Prodotto from './Prodotto/prodotto'
 import Login from './login/login'
 import Home from './home/home'
 import Registrati from './registrati/Registrati';
-import Check from '../Check/check';
+import Check from '../Utils/check';
 
   const LoginNavigationStack = createNativeStackNavigator()
 
@@ -24,10 +24,6 @@ import Check from '../Check/check';
     
   }
 
-  export const CheckScreen = {
-
-    id: 'CHECK'
-  }
 
   export const GOLOGINScreen = {
     id:'GOLOGIN'
@@ -36,7 +32,6 @@ import Check from '../Check/check';
   const LoginRoot = () => (
     <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
       <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
-      <LoginNavigationStack.Screen name={CheckScreen.id} component={Check} />
       <LoginNavigationStack.Screen name={GOLOGINScreen.id} component={Registrati} />
       <LoginNavigationStack.Screen name={HomeScreen.id} component={Home} />
       <LoginNavigationStack.Screen name={ProdottoScreen.id} component={Prodotto} />
