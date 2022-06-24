@@ -1,0 +1,30 @@
+{
+    "data": [{
+      "nomeCredenziali":"Mattia",
+      "cognomeCredenziali":"Casotto",
+      "usernameCredenziali": "mat",
+      "passwordCredenziali": "mat04"
+
+      },{
+
+      "nomeCredenziali":"Davide",
+      "cognomeCredenziali":"Muratore",
+      "usernameCredenziali":"davide.muratore",
+      "passwordCredenziali":"mura.03"
+
+      },{
+
+        "nomeCredenziali":"Riccardo",
+        "cognomeCredenziali":"Trivellato",
+        "usernameCredenziali":"riccardo.trivellato",
+        "passwordCredenziali":"trive.04"
+
+        
+    
+    }]
+
+    
+
+    
+  }
+  

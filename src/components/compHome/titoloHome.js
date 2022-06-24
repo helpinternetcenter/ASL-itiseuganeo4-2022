@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
       borderBottomLeftRadius: 40,
       borderBottomRightRadius: 40,
       justifyContent: 'center',
+
     },
   
     viewProdotti: {
