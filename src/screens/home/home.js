@@ -8,8 +8,9 @@ function Home() {
 
   return (
     <View style={styles.container}>
-      <Titolo></Titolo>
+      <Titolo>t</Titolo>
       <View style={styles.viewProdotti}>
+      <Titolo>t</Titolo>
 
         
       </View>

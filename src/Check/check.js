@@ -1,32 +1,65 @@
 import * as React from 'react';
 import credenziali from "../dev/credenziali.json"
 import Login from '../screens/login/login';
-import home from '../screens/home/home'
+import Home from '../screens/home/home'
+import { View } from 'react-native-web';
 
 
 
-function Check(route){
 
-  let ArrCredenziali=[data[0].usernameCredenziali,data[0].passwordCredenziali]
-  const {nomeUtente} = route.nomeUtente;
-  const {chiaveAccesso} = route.password;
+function Check({ navigation,route }) {
+    const {nomeUtente , chiaveAccesso} = route.params;
+    
+    
+    function ricerca (){
+
+        var ingresso = false;
+
+        for(let i = 0; i < credenziali.data.length; i++){
+
+            if(nomeUtente == credenziali.data[i].usernameCredenziali & chiaveAccesso == credenziali.data[i].passwordCredenziali){
+                ingresso = true
+                break;
+            }
+        }
+    
+        if(ingresso == true){
+            <Home/>
+        }
+    
+        else if(ingresso == false){
+            <Login/>
+        }
+    
+       
+
+    }
+
+    console.log(credenziali)
+    console.log(nomeUtente)
+    console.log(chiaveAccesso)
+
+    
 
 
-   
-  if( nomeUtente == ArrCredenziali[0] && chiaveAccesso == ArrCredenziali[1]){
-        {home}
-  }
+    
 
-  else{
+return(
+    
+    // {credenziali.data.map((el) => {if(nomeUtente == el.usernameCredenziali && chiaveAccesso == el.passwordCredenziali) {<Home/>} else {<Login}})}
 
-    {Login}
+    // credenziali.data.map(el => ((nomeUtente == el.usernameCredenziali && chiaveAccesso == el.passwordCredenziali) ? ingresso = true : ingresso = false))
 
-  }
+    ricerca()
+    
+
+)
+    
 
 
-}
+};
 
-export default Check
+export default Check;
 
 
 

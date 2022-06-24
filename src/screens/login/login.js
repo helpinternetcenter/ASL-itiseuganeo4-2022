@@ -6,7 +6,6 @@ import { TextInput } from 'react-native-web';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport';
-import Check from '../../Check/check';
 
 const AlertIcon = (props) => (
 <Icon {...props} name='alert-circle-outline'/>
@@ -81,7 +80,7 @@ function Login({navigation}) {
 
       
       
-      <Button onPress={() => navigation.push('HOME')} style={{backgroundColor:'#6bc1d6'}}>
+      <Button onPress={() => navigation.push('CHECK', {nomeUtente:username, chiaveAccesso:password})} style={{backgroundColor:'#6bc1d6'}}>
         Log In
       </Button>
 
@@ -91,12 +90,11 @@ function Login({navigation}) {
 
      
 
-      <Button onPress={() => navigation.navigate('SCREEN', {nomeUtente:username, chiaveAccesso:password})} style={ styles.button} appearance='ghost' >
+      <Button onPress={() => navigation.navigate('GOLOGIN', )} style={ styles.button} appearance='ghost' >
             REGISTRATI
       </Button>
 
-      <Check nomeUtente = {username} chiaveAccesso={password}/>
-
+      
     </Layout>
   );
 }
