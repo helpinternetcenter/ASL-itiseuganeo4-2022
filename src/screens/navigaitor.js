@@ -1,31 +1,33 @@
 import React from 'react'
 import { NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Prodotto from './Prodotto/Prodotto'
-import MyLoginScreen from './MyLogin/MyLoginScreen'
-import MyPurchaseScreen from './MyPurchase Screen/MyPurchaseScreen'
-  
-  const NavigationStack = createNativeStackNavigator()
+import Prodotto from './Prodotto/prodotto'
+import Login from './login/login'
+import Home from './home/home' 
+  const LoginNavigationStack = createNativeStackNavigator()
 
-  export const IdScreens = {
-    idProdotto: 'Prodotto',
-    idLogin : 'Login' ,
-    idPurchaseScreen : 'PurchaseScreen'
+  export const LoginScreen = {
+    id: 'LOGIN'
   }
-  
-  const ProdottoRoot = () => (
-    <NavigationStack.Navigator
-        screenOptions={{ headerShown: false }}>
-      <NavigationStack.Screen name = {IdScreens.idLogin} component = {MyLoginScreen}></NavigationStack.Screen>
-      <NavigationStack.Screen name= {IdScreens.idProdotto} component={Prodotto}/>
-      <NavigationStack.Screen name= {IdScreens.idPurchaseScreen} component={MyPurchaseScreen}/>
-    </NavigationStack.Navigator>
+  export const HomeScreen = {
+    id: 'HOME'
+  }
+  export const ProdottoScreen = {
+    id: 'PRODOTTO'
+  }
+
+  const LoginRoot = () => (
+    <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
+      <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
+      <LoginNavigationStack.Screen name={HomeScreen.id} component={Home} />
+      <LoginNavigationStack.Screen name={ProdottoScreen.id} component={Prodotto} />
+    </LoginNavigationStack.Navigator>
   )
   
   const Navigator = () => {
     return (
       <NavigationContainer>
-        <ProdottoRoot />
+        <LoginRoot />
       </NavigationContainer>
     )
   }
