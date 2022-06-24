@@ -32,9 +32,7 @@ import Check from '../Check/check';
     id:'GOLOGIN'
   }
 
-  export const LEAVELOGINScreen = {
-    id:"LEAVELOGIN"
-  }
+
 
   
   // <LoginNavigationStack.Screen name={LEAVELOGINScreen.id} component={Login} />
