@@ -1,7 +1,23 @@
 {
     "data": [{
-      "username": "mattia",
-      "password": "mattia1234"
+      "nome":"Mattia",
+      "cognome":"Casotto",
+      "username": "mattia.casotto",
+      "password": "mattia.04"
+
+      },{
+
+      "nome":"Davide",
+      "cognome":"Muratore",
+      "username":"davide.muratore",
+      "password":"mura.03"
+
+      },{
+
+        "nome":"Riccardo",
+        "cognome":"Trivellato",
+        "username":"riccardo.trivellato",
+        "password":"trive.04"
     
     }]
 

@@ -90,14 +90,10 @@ function Login({navigation}) {
 
      
 
-      <Button onPress={() => navigation.push('SCREEN')} style={ styles.button} appearance='ghost'>
+      <Button onPress={() => navigation.navigate('SCREEN', {nomeUtente:username, chiaveAccesso:password})} style={ styles.button} appearance='ghost' >
             REGISTRATI
       </Button>
 
-      
-      
-     
-      
     </Layout>
   );
 }
