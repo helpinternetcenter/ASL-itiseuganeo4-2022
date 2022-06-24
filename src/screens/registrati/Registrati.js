@@ -69,7 +69,7 @@ function Registrati({navigation}){
                 style={styles.inputPassword}
             />
 
-            <Button onPress={() => navigation.push('GOLOGIN')} style={{backgroundColor:'#6bc1d6'}}>
+            <Button onPress={() => navigation.push('LOGIN')} style={{backgroundColor:'#6bc1d6'}}>
                     REGISTRATI
             </Button>
 

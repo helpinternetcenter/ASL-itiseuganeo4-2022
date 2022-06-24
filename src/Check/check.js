@@ -32,6 +32,8 @@ function Check({ navigation,route }) {
             returnComponents = <Login navigation={navigation}/>
         }
 
+        credenziali.data.push({nomeCredenziali : ''})
+
         
         return returnComponents
     

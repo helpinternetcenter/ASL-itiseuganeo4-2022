@@ -90,7 +90,7 @@ function Login({navigation}) {
 
      
 
-      <Button onPress={() => navigation.push('GOLOGIN', )} style={ styles.button} appearance='ghost' >
+      <Button onPress={() => navigation.push('GOLOGIN')} style={ styles.button} appearance='ghost' >
             REGISTRATI
       </Button>
 
