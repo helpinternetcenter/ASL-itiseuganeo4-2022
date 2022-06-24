@@ -1,26 +1,36 @@
 import * as React from 'react';
-import { ApplicationProvider, Layout, Text, Input, Button } from '@ui-kitten/components';
-import { TextInput } from 'react-native-web';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { IconRegistry, Layout} from '@ui-kitten/components';
+import TitleProdotto from '../../components/TitleProdotto/TitleProdotto';
+import ScroolImage from '../../components/ScroolImage/ScroolImage';
+import Description from '../../components/Description/description';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import { ScrollView } from 'react-native';
+import PriceDescription from '../../components/PriceDescription/PriceDescription';
 
 
-function Prodotto() {
-  const [value, setValue] = React.useState('');
+function Prodotto({navigation}) {
 
+    function GoBackAction(){
+      navigation.goBack();
+    }
 
-  return (
-    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text category='h1'>Home Prodotto</Text>
-      <Input
-        placeholder='Nome'
-        value={value}
-        onChangeText={nextValue => setValue(nextValue)}
-        style={{ marginLeft: '20%', marginRight: '20%', marginBottom: '10%', marginTop: '10%' }}
-      />
+    function GoToPurchaseScreen(){
+      navigation.navigate('PurchaseScreen')
+    }
 
-    </Layout>
-  );
-}
+    return (
+      <>
+        <IconRegistry icons = {EvaIconsPack}></IconRegistry>
+        <ScrollView>
+          <Layout level = '3'>
+            <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
+            <ScroolImage></ScroolImage>
+            <Description></Description>
+            <PriceDescription prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>
+          </Layout>
+        </ScrollView>
+      </>
+    );
+  }
 
 export default Prodotto;
