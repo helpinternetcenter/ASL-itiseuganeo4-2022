@@ -4,32 +4,33 @@ import { StyleSheet, View, Button, ScrollView } from 'react-native';
 import Titolo from '../../components/compHome/titoloHome';
 import SceltaProdotto from '../../components/compHome/prodottoHome';
 import { ProdottoScreen } from '../navigaitor';
+import prodotti from '../../api/visualizzaProdottiHome.json'
 
 
 function Home({navigation, route}) {
   const { itemId } = route.params;
-
+  console.log(prodotti);
   return (
     <View style={styles.container}>
       <Titolo valore={itemId}/>
-      <ScrollView>
-      <SceltaProdotto cambioScheda={() => navigation.navigate(ProdottoScreen.id)}/>
-      <SceltaProdotto />
-      <SceltaProdotto />
-      <SceltaProdotto />
+      <ScrollView style={{paddingBottom: 200}}>
+        
+        {prodotti.data.map(el=>(<SceltaProdotto nomeMobile ={el.nomeMobile} descrizione = {el.descrizioneMobile} cambioScheda={() => navigation.navigate(ProdottoScreen.id)}/>))}
+
 
 
 
       </ScrollView>
     </View>
   );
+
 }
 
 const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   viewTitolo: {

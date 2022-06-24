@@ -4,6 +4,7 @@ import { StyleSheet, View, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ProdottoScreen } from '../../screens/navigaitor';
+import informazioni from '../../api/visualizzaProdottiHome.json';
 
 
 function SceltaProdotto(props) {
@@ -12,9 +13,9 @@ function SceltaProdotto(props) {
         <View style={styles.viewMain}>
 
             <View style={styles.viewProdotto}>
-                <Text category='h3' style={styles.testoTitolo}>Sedia</Text>
+                <Text category='h3' style={styles.testoTitolo}> {props.nomeMobile} </Text>
                 <View style={styles.viewMargin}></View>
-                <Text category='p' style={styles.testoTitolo}>Sedia con schienale recrinabile, braccioli in pelle, e ruote ad alta efficienza</Text>
+                <Text category='p' style={styles.testoTitolo}>{props.descrizione}</Text>
                 <Button style={styles.button} appearance='ghost' onPress={props.cambioScheda}>
                     COMPRA
                 </Button>
@@ -28,14 +29,16 @@ function SceltaProdotto(props) {
 const styles = StyleSheet.create({
 
     viewMain: {
-       
+       flex: 1,
+       paddingTop: 20,
+       paddingBottom:10,
     },
 
     viewProdotto: {
         width: '98%',
         backgroundColor: '#dedede',
         borderWidth: 0,
-        marginTop: '10%',
+        // marginTop: '10%',
         marginLeft: '1%',
         borderRadius: 20,
     },
