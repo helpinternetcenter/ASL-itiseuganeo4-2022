@@ -14,6 +14,10 @@ function Prodotto({navigation}) {
       navigation.goBack();
     }
 
+    function GoToPurchaseScreen(){
+      navigation.navigate('PurchaseScreen')
+    }
+
     return (
       <>
         <IconRegistry icons = {EvaIconsPack}></IconRegistry>
@@ -22,7 +26,7 @@ function Prodotto({navigation}) {
             <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
             <ScroolImage></ScroolImage>
             <Description></Description>
-            <PriceDescription prezzo = '81,90$'></PriceDescription>
+            <PriceDescription prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>
           </Layout>
         </ScrollView>
       </>

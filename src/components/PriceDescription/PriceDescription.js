@@ -7,7 +7,7 @@ import { View} from "react-native";
 function Header (props) {
     return (
     <View {...props} style = {{paddingLeft : 15 ,}}>
-        <Text category = 'h5'> Price </Text>
+        <Text category = 'h5'> Prezzo </Text>
     </View>
     )
 }
@@ -18,7 +18,7 @@ function PriceDescription (props){
             <Text category = 'h2' style = {{fontWeight : 'normal'}} >
                 {props.prezzo}
             </Text>
-            <Button size = 'small' style = {{}}>
+            <Button size = 'small' style = {{}} onPress = {props.action}>
                 Compra Subito !
             </Button> 
         </Card>

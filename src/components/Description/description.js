@@ -5,10 +5,11 @@ import { View } from "react-native";
 function Header (props) {
   return (
     <View style = {{paddingLeft : 15 ,}}>
-      <Text category = 'h5'>Description</Text>
+      <Text category = 'h5'>Descrizione</Text>
     </View>
   );
 }
+
 function Description() {
     return(
       <>
@@ -28,8 +29,8 @@ function Description() {
             <Text category = 'label'>Colore:   <Text category= 'c1'>marrone</Text></Text>
             <Text category = 'label'>Materiale:   <Text category= 'c1'>legno</Text></Text>
             <Text category = 'label'>Dimensione Articolo:   <Text category= 'c1'>57 x 48 x 89 cm</Text></Text>
-            <Text category = 'label'>Peso massimo racomandato:   <Text category= 'c1' >120 Chilogrammi</Text></Text>
-            <Text category = 'label'>Peso articolo:   <Text category= 'c1'>120 Chilogrammi</Text></Text>
+            <Text category = 'label'>Peso massimo racomandato:   <Text category= 'c1' >120 Kg</Text></Text>
+            <Text category = 'label'>Peso articolo:   <Text category= 'c1'>120 Kg</Text></Text>
           </Card>
         </Layout>
       </>
