@@ -3,17 +3,15 @@ import { ApplicationProvider, Layout, Text, Input, Button } from '@ui-kitten/com
 import { TextInput } from 'react-native-web';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen } from '../navigaitor';
 
 
-
-
-function Login({ navigation }) {
+function Prodotto() {
   const [value, setValue] = React.useState('');
+
 
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text category='h1'>Login Screen</Text>
+      <Text category='h1'>Home Prodotto</Text>
       <Input
         placeholder='Nome'
         value={value}
@@ -21,13 +19,8 @@ function Login({ navigation }) {
         style={{ marginLeft: '20%', marginRight: '20%', marginBottom: '10%', marginTop: '10%' }}
       />
 
-      <Button onPress={() => navigation.navigate(HomeScreen.id, {
-        itemId: value,
-      })}>
-        Avanti
-      </Button>
     </Layout>
   );
 }
 
-export default Login;
+export default Prodotto;
