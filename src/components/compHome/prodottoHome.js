@@ -15,7 +15,7 @@ function SceltaProdotto(props) {
             <View style={styles.viewProdotto}>
                 <Text category='h3' style={styles.testoTitolo}> {props.nomeMobile} </Text>
                 <View style={styles.viewMargin}></View>
-                <Text category='p' style={styles.testoTitolo}>{props.descrizione}</Text>
+                <Text category='p1' style={styles.testoTitolo}>{props.descrizione}</Text>
                 <Button style={styles.button} appearance='ghost' onPress={props.cambioScheda}>
                     COMPRA
                 </Button>
