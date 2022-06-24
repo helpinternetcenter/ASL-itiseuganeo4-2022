@@ -80,7 +80,7 @@ function Login({navigation}) {
 
       
       
-      <Button onPress={() => navigation.push('CHECK', {nomeUtente:username, chiaveAccesso:password})} style={{backgroundColor:'#6bc1d6'}}>
+      <Button onPress={() => navigation.navigate('CHECK', {nomeUtente:username, chiaveAccesso:password})} style={{backgroundColor:'#6bc1d6'}}>
         Log In
       </Button>
 
@@ -90,7 +90,7 @@ function Login({navigation}) {
 
      
 
-      <Button onPress={() => navigation.navigate('GOLOGIN', )} style={ styles.button} appearance='ghost' >
+      <Button onPress={() => navigation.push('GOLOGIN', )} style={ styles.button} appearance='ghost' >
             REGISTRATI
       </Button>
 
