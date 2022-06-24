@@ -7,27 +7,17 @@ import { ProdottoScreen } from '../navigaitor';
 import prodotti from '../../api/visualizzaProdottiHome.json'
 
 
-function Home({navigation, route}) {
+function Home({ navigation, route }) {
   const { itemId } = route.params;
   console.log(prodotti);
   return (
     <View style={styles.container}>
-<<<<<<< HEAD
-      <Titolo>t</Titolo>
       <View style={styles.viewProdotti}>
-      <Titolo>t</Titolo>
-
-=======
-      <Titolo valore={itemId}/>
-      <ScrollView style={{paddingBottom: 200}}>
->>>>>>> c90f300e345912a13b02722529e4bf156f2a324f
-        
-        {prodotti.data.map(el=>(<SceltaProdotto nomeMobile ={el.nomeMobile} descrizione = {el.descrizioneMobile} cambioScheda={() => navigation.navigate(ProdottoScreen.id)}/>))}
-
-
-
-
-      </ScrollView>
+        <Titolo valore={itemId} />
+        <ScrollView style={{ paddingBottom: 200 }}>
+          {prodotti.data.map(el => (<SceltaProdotto nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => navigation.navigate(ProdottoScreen.id)} />))}
+        </ScrollView>
+      </View>
     </View>
   );
 
@@ -51,7 +41,7 @@ const styles = StyleSheet.create({
   },
 
   viewProdotti: {
-   backgroundColor:'red',
+    backgroundColor: 'red',
 
   },
 

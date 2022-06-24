@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IconRegistry, Layout} from '@ui-kitten/components';
 import TitleProdotto from '../../components/TitleProdotto/TitleProdotto';
 import ScroolImage from '../../components/ScroolImage/ScroolImage';
-import Description from '../../components/Description/Description';
+import Description from '../../components/Description/description';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { ScrollView } from 'react-native';
 import PriceDescription from '../../components/PriceDescription/PriceDescription';
