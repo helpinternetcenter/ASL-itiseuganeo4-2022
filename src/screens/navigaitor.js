@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Prodotto from './Prodotto/prodotto'
+import Prodotto from './Prodotto/prodottoScreen'
 import Login from './login/login'
 import Home from './home/home'
 import Registrati from './registrati/Registrati';
@@ -23,7 +23,6 @@ import Check from '../Utils/check';
     id: 'SCREEN'
     
   }
-
 
   export const GOLOGINScreen = {
     id:'GOLOGIN'
