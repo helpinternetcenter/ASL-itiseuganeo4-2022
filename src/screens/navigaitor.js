@@ -1,27 +1,21 @@
 import React from 'react'
 import { NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Prodotto from './Prodotto/prodotto'
 import Login from './login/login'
-import Home from './home/home'
-import Prodotto from './prodotto/prodotto'
-  
+import Home from './home/home' 
   const LoginNavigationStack = createNativeStackNavigator()
 
   export const LoginScreen = {
     id: 'LOGIN'
   }
-
   export const HomeScreen = {
     id: 'HOME'
   }
-
-  
   export const ProdottoScreen = {
     id: 'PRODOTTO'
   }
 
-
-  
   const LoginRoot = () => (
     <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
       <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
@@ -38,4 +32,4 @@ import Prodotto from './prodotto/prodotto'
     )
   }
   
-  export default Navigator
+  export default Navigator;
