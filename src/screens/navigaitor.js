@@ -2,18 +2,22 @@ import React from 'react'
 import { NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Prodotto from './Prodotto/Prodotto'
+import MyLoginScreen from './Login/MyLoginScreen'
   
-  const LoginNavigationStack = createNativeStackNavigator()
+  const NavigationStack = createNativeStackNavigator()
 
-  export const ProdottoScreen = {
+  export const IdScreens = {
     idProdotto: 'Prodotto',
+    idLogin : 'Login' ,
   }
   
   const ProdottoRoot = () => (
-    <LoginNavigationStack.Navigator
+    <NavigationStack.Navigator
         screenOptions={{ headerShown: false }}>
-      <LoginNavigationStack.Screen name= {ProdottoScreen.idProdotto} component={Prodotto}/>
-    </LoginNavigationStack.Navigator>
+      <NavigationStack.Screen name = {IdScreens.idLogin} component = {MyLoginScreen}></NavigationStack.Screen>
+      <NavigationStack.Screen name= {IdScreens.idProdotto} component={Prodotto}/>
+
+    </NavigationStack.Navigator>
   )
   
   const Navigator = () => {

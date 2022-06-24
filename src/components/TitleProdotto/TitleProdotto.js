@@ -46,13 +46,14 @@ function TitleProdotto(props){
         </Icon>
     )
   }
-  
 
-    function renderBackAction (){
-      return (
-        <TopNavigationAction icon={BackIcon}/>
-      );
-    }
+
+
+  function renderBackAction (){
+    return (
+      <TopNavigationAction icon={BackIcon} onPress = {props.action}/>
+    );
+  }
 
     function renderGoShopAction () {
 

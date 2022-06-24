@@ -8,13 +8,18 @@ import { ScrollView } from 'react-native';
 import PriceDescription from '../../components/PriceDescription/PriceDescription';
 
 
-function Prodotto() {
+function Prodotto({navigation}) {
+
+    function GoBackAction(){
+      navigation.goBack();
+    }
+
     return (
       <>
         <IconRegistry icons = {EvaIconsPack}></IconRegistry>
         <ScrollView>
           <Layout level = '3'>
-            <TitleProdotto name = 'MyProdotto'></TitleProdotto>
+            <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
             <ScroolImage></ScroolImage>
             <Description></Description>
             <PriceDescription prezzo = '81,90$'></PriceDescription>
