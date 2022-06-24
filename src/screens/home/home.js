@@ -5,19 +5,24 @@ import Titolo from '../../components/compHome/titoloHome';
 import SceltaProdotto from '../../components/compHome/prodottoHome';
 import { ProdottoScreen } from '../navigaitor';
 import prodotti from '../../api/visualizzaProdottiHome.json'
-import utente from '../../api/credenziali.json'
-
 
 
 function Home({navigation, route}) {
-  const { idIdentificativo } = route.params;
+  const { itemId } = route.params;
   console.log(prodotti);
   return (
     <View style={styles.container}>
-      <Titolo valore={utente.data[idIdentificativo].nomeCredenziali}/>
-      <ScrollView style={{ paddingBottom: 200 }}>
-          {prodotti.data.map(el => (<SceltaProdotto nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => navigation.navigate(ProdottoScreen.id)} />))}
-        </ScrollView>
+      <Titolo valore={itemId}/>
+      <ScrollView style={{paddingBottom: 200}}>
+        
+        {prodotti.data.map(el=>(<SceltaProdotto nomeMobile ={el.nomeMobile} descrizione = {el.descrizioneMobile} cambioScheda={() => navigation.navigate(ProdottoScreen.id)}/>))}
+
+
+        
+
+
+
+      </ScrollView>
     </View>
   );
 
