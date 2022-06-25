@@ -1,4 +1,4 @@
-import { IconRegistry , Button , Text} from "@ui-kitten/components";
+import { IconRegistry , Button , Text, Layout} from "@ui-kitten/components";
 import React from "react";
 import { ScrollView, View } from "react-native";
 import TitleProdotto from "../../components/TitleProdotto/TitleProdotto";
@@ -18,17 +18,15 @@ function MyPurchaseScreen({navigation}) {
     return (
         <>
         <IconRegistry icons = {EvaIconsPack}></IconRegistry>
-        <ScrollView>
-            <TitleProdotto name = 'MyPurchaseScreen' action = {GoBackAction}></TitleProdotto>
-            <View style = {{
+        <TitleProdotto name = 'MyPurchaseScreen' action = {GoBackAction}></TitleProdotto>
+        <Layout style = {{
                 flex : 1 , 
                 alignItems: 'center',
-                justifyContent: 'center',}}>
-
-                <Text>My PurchaseScreen</Text>
-                <Button onPress={GoToLogin}>Go to Login</Button>
-            </View>
-        </ScrollView>
+                justifyContent: 'center',
+                }}>
+            <Text>My PurchaseScreen</Text>
+            <Button onPress={GoToLogin}>Go to Login</Button>
+        </Layout>
         </>
     );
 }
