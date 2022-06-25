@@ -6,6 +6,7 @@ import Description from '../../components/Description/description';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { ScrollView } from 'react-native';
 import PriceDescription from '../../components/PriceDescription/PriceDescription';
+import {PurchaseScreen}from '../navigaitor'
 
 
 function Prodotto({navigation}) {
@@ -15,7 +16,7 @@ function Prodotto({navigation}) {
     }
 
     function GoToPurchaseScreen(){
-      navigation.navigate('PurchaseScreen')
+      navigation.navigate(PurchaseScreen.id)
     }
 
     return (
@@ -24,7 +25,7 @@ function Prodotto({navigation}) {
         <ScrollView>
           <Layout level = '3'>
             <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
-            <ScroolImage></ScroolImage>
+            <ScroolImage uri = {['https://cdn.sklum.com/it/wk/1079151/sedia-in-velluto-glamm.jpg' , 'https://cdn.sklum.com/it/wk/1079163/sedia-in-velluto-glamm.jpg']}></ScroolImage>
             <Description></Description>
             <PriceDescription prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>
           </Layout>

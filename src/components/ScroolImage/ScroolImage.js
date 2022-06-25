@@ -5,7 +5,7 @@ import styles from "./ScroolImage.style";
 
 
 
-function ScroolImage(){
+function ScroolImage(props){
   
   
     const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -43,14 +43,14 @@ function ScroolImage(){
           level='1'>
           <Image 
             style = {styles.image}
-            source = {{uri: 'https://cdn.sklum.com/it/wk/1079151/sedia-in-velluto-glamm.jpg'}}/>
+            source = {{uri: props.uri[0]}}/>
         </Layout>
         <Layout
           style={styles.imageContiner}
           level='1'>
            <Image 
             style = {styles.image}
-            source = {{uri: 'https://cdn.sklum.com/it/wk/1079163/sedia-in-velluto-glamm.jpg'}}/>
+            source = {{uri: props.uri[1]}}/>
         </Layout>
       </ViewPager>
       </Card>
