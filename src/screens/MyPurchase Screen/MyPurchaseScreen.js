@@ -4,7 +4,7 @@ import { IconRegistry, Button, Text, Layout, Card, Input, Select, SelectItem, Ra
 import TitleProdotto from "../../components/TitleProdotto/TitleProdotto";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import styles from './MyPurchaseScreen_style'
-import { HomeScreen } from "../navigaitor";
+import { PurchaseScreen } from "../navigaitor";
 
 
 
@@ -62,6 +62,10 @@ function MyPurchaseScreen({ navigation }) {
         )
     }
 
+    function GoToPurchaseScreen(){
+        navigation.navigate(PurchaseScreen.id)
+    }
+
     function Allerta(){
 
         Alert.alert("Modal Has been closed")
@@ -80,6 +84,7 @@ function MyPurchaseScreen({ navigation }) {
     function GoBack(){
         setPopUp(!popUp)
         navigation.goBack()
+        navigation.goBack()
     }
 
     function BackIcon (props) {
@@ -92,7 +97,7 @@ function MyPurchaseScreen({ navigation }) {
 
     return (
         <>
-            <TitleProdotto name='MyPurchaseScreen' action={GoBackAction}></TitleProdotto>
+            <TitleProdotto name='MyPurchaseScreen' action={GoBackAction} action2 = {GoToPurchaseScreen}></TitleProdotto>
             <ScrollView>
                 <Layout level='3' style={styles.viewMain}>
 
@@ -150,7 +155,7 @@ function MyPurchaseScreen({ navigation }) {
 
                         <Text style = {styles.modalText}>Hai confermato l'acquisto</Text>
                         <CheckIcon></CheckIcon>
-                        <Button style = {styles.button} onPress = {GoBack} accessoryLeft = {BackIcon}></Button>
+                        <Button style = {styles.button} onPress = {GoBack} accessoryLeft = {BackIcon}>Torna alla Home</Button>
                     </View>
                 </View>
             </Modal>

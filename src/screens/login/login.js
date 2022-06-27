@@ -21,7 +21,6 @@ function Login({navigation}) {
   const [username, setUsername] = React.useState('');
   const [password,setPassword] = React.useState('');
   const [secureTextEntry, setSecureTextEntry] = React.useState(true)
-  const loggato =  ricerca()
 
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry);

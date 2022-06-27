@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     },
 
     viewMargin: {
-        height: '1%',
+        height: 3,
         width: '40%',
         backgroundColor: '#6bc1d6',
         borderWidth: 0,
