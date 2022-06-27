@@ -3,22 +3,22 @@
         {
             "nomeMobile": "Sedia",
             "descrizioneMobile": "Sedia con schienale recrinabile, braccioli in pelle, e ruote ad alta efficienza",
-            "disponibile": "si"
+            "link": "0"
         },
         {
             "nomeMobile": "Tavolo",
             "descrizioneMobile": "Tavolo in legno massello con gambe ad alta tenuta",
-            "disponibile": "si"
+            "link": "1"
         },
         {
             "nomeMobile": "Lampada",
             "descrizioneMobile": "Lampada con una luce a basso consumo, circa 700w di potenza",
-            "disponibile": "si"
+            "link": "2"
         },
         {
             "nomeMobile": "Orologio",
             "descrizioneMobile": "Segna fino a 24 ore di tempo in maniera precisissima",
-            "disponibile": "si"
+            "link": "3"
         }
     ]
 }

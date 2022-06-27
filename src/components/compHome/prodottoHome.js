@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ProdottoScreen } from '../../screens/navigaitor';
 import informazioni from '../../api/visualizzaProdottiHome.json';
+import prodottoScreen from '../../screens/Prodotto/prodottoScreen';
 
 
 function SceltaProdotto(props) {
@@ -15,7 +16,7 @@ function SceltaProdotto(props) {
             <View style={styles.viewProdotto}>
                 <Text category='h3' style={styles.testoTitolo}> {props.nomeMobile} </Text>
                 <View style={styles.viewMargin}></View>
-                <Text category='p' style={styles.testoTitolo}>{props.descrizione}</Text>
+                <Text category='p1' style={styles.testoTitolo}>{props.descrizione} </Text>
                 <Button style={styles.button} appearance='ghost' onPress={props.cambioScheda}>
                     COMPRA
                 </Button>

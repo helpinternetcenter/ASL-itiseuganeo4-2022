@@ -6,27 +6,30 @@ import Description from '../../components/Description/description';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { ScrollView } from 'react-native';
 import PriceDescription from '../../components/PriceDescription/PriceDescription';
+import {PurchaseScreen}from '../navigaitor'
 
 
-function Prodotto({navigation}) {
+function Prodotto({route , navigation}) {
+  const { itemId } = route.params;
 
     function GoBackAction(){
       navigation.goBack();
     }
 
     function GoToPurchaseScreen(){
-      navigation.navigate('PurchaseScreen')
+      navigation.navigate(PurchaseScreen.id)
     }
+    console.log(itemId);
 
     return (
       <>
         <IconRegistry icons = {EvaIconsPack}></IconRegistry>
+        <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
         <ScrollView>
           <Layout level = '3'>
-            <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
-            <ScroolImage></ScroolImage>
-            <Description></Description>
-            <PriceDescription prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>
+            <ScroolImage numeroRender={itemId}></ScroolImage>
+            <Description numeroRender={itemId}></Description>
+            <PriceDescription numeroRender={itemId} prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>
           </Layout>
         </ScrollView>
       </>

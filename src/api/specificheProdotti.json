@@ -1,0 +1,92 @@
+{
+    "data":[
+        {
+            "idMobile": "0",
+            "nomeMobile": "Sedia",
+            "descrizioneMobile": "Sedia con schienale recrinabile, braccioli in pelle, e ruote ad alta efficienza",
+            "colore": "marrone",
+            "materiale": "legno",
+            "dimensioni": "57x48x89 cm",
+            "pesoMasimo": "120 kg",
+            "pesoArticolo": "120kg",
+            "prezzo": "81,90€",
+            "linkImmagini": ["http://link1", "http://link2", "http://link3", "http://link4"]
+            
+        },
+        {
+            "idMobile": "1",
+            "nomeMobile": "Tavolo",
+            "descrizioneMobile": "Tavolo in legno massello con gambe ad alta tenuta",
+            "colore": "bianco",
+            "materiale": "PLA",
+            "dimensioni": "100x200x100 cm",
+            "pesoMasimo": "250 kg",
+            "pesoArticolo": "90kg",
+            "prezzo": "61,99€",
+            "linkImmagini": [
+                "https://brtschool.co.uk/wp-content/uploads/test.png",
+                 "https://www.riflessi.it/wp-content/uploads/2018/12/tavolo-living-base-in-legno.jpg",
+                  "https://lubestoremilano.it/wp-content/uploads/2015/07/kusut.jpg",
+                   "https://www.manoarredamenti.it/wp-content/uploads/2013/06/tavolo-kuset-fisso.jpg",
+                    "https://i.pinimg.com/originals/67/8f/18/678f1826f4a64af9ece29d8838bfd0f3.jpg"
+                ]
+
+            
+        },
+        {
+            "idMobile": "2",
+            "nomeMobile": "Lampada",
+            "descrizioneMobile": "Lampada con una luce a basso consumo, circa 700w di potenza",
+            "colore": "Blu/Nera",
+            "materiale": "PETG",
+            "dimensioni": "10x30x10 cm",
+            "pesoMasimo": "-- kg",
+            "pesoArticolo": "2kg",
+            "prezzo": "11,99€",
+            "linkImmagini": ["http://link1", "http://link2", "http://link3", "http://link4", "http://link5" , "http://link6"]
+
+            
+        },
+        {
+            "idMobile": "3",
+            "nomeMobile": "Orologio",
+            "descrizioneMobile": "Segna fino a 24 ore di tempo in maniera precisissima",
+            "colore": "Rosso",
+            "materiale": "Ferro",
+            "dimensioni": "40x40x10 cm",
+            "pesoMasimo": "-- kg",
+            "pesoArticolo": "1kg",
+            "prezzo": "5,99€",
+            "linkImmagini": ["http://link1"]
+            
+        },
+        {
+            "idMobile": "4",
+            "nomeMobile": "Cesto",
+            "descrizioneMobile": "Cesto realizzato in legno, intrecciato a mano e con la possibilità di avere il coperchio di un altro colore",
+            "colore": "Marroncino",
+            "materiale": "Legno",
+            "dimensioni": "100 x 100 x 20 cm",
+            "pesoMasimo": "30 kg",
+            "pesoArticolo": "3kg",
+            "prezzo": "12,99€",
+            "linkImmagini": ["http://link1"]
+            
+        },
+        {
+            "idMobile": "5",
+            "nomeMobile": "Cornice",
+            "descrizioneMobile": "Cornice per quadri moderni e antichi realizzato con materiali di prima qualità",
+            "colore": "Verde",
+            "materiale": "Plastica",
+            "dimensioni": "50x50x5 cm",
+            "pesoMasimo": "-- kg",
+            "pesoArticolo": ">1kg",
+            "prezzo": "2,99€",
+            "linkImmagini": ["http://link1"]
+            
+        }
+
+
+    ]
+}
