@@ -28,11 +28,11 @@ function Description(props) {
                 marginRight : 30,
                 borderRadius : 10,
                 }}>
-            <Text category = 'label'>Colore:   <Text category= 'c1'></Text>{dati.data[props.numeroRender].colore}</Text>
-            <Text category = 'label'>Materiale:   <Text category= 'c1'>{dati.data[props.numeroRender].materiale}</Text></Text>
-            <Text category = 'label'>Dimensione Articolo:   <Text category= 'c1'>{dati.data[props.numeroRender].dimensioni}</Text></Text>
-            <Text category = 'label'>Peso massimo racomandato:   <Text category= 'c1' >{dati.data[props.numeroRender].pesoMasimo}</Text></Text>
-            <Text category = 'label'>Peso articolo:   <Text category= 'c1'>{dati.data[props.numeroRender].pesoArticolo}</Text></Text>
+            <Text category = 'p1'>Colore:   <Text category= 'p1'></Text>{dati.data[props.numeroRender].colore}</Text>
+            <Text category = 'p1'>Materiale:   <Text category= 'p1'>{dati.data[props.numeroRender].materiale}</Text></Text>
+            <Text category = 'p1'>Dimensione Articolo:   <Text category= 'p1'>{dati.data[props.numeroRender].dimensioni}</Text></Text>
+            <Text category = 'p1'>Peso massimo racomandato:   <Text category= 'p1' >{dati.data[props.numeroRender].pesoMasimo}</Text></Text>
+            <Text category = 'p1'>Peso articolo:   <Text category= 'p1'>{dati.data[props.numeroRender].pesoArticolo}</Text></Text>
           </Card>
         </Layout>
       </>

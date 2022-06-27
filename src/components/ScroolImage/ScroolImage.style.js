@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   
     image : {
       width : 240,
-      height : 400,
+      height : 70,
     },
 
     RadioGroup : {
