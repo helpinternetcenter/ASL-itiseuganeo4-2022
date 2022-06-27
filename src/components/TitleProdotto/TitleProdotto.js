@@ -1,30 +1,15 @@
 import React from "react";
 import {  Text , Button , Icon , TopNavigation , TopNavigationAction} from "@ui-kitten/components";
 import { TouchableWithoutFeedback } from "react-native";
+import {PurchaseScreen} from "../../screens/navigaitor";
 import styles from "./TitleProdotto.style";
 
 import { View } from "react-native";
 
 
-function ArrowIcon(props){
-
-  const [secureTextEntry, setSecureTextEntry] = React.useState(false);
-
-  function Change () {
-    return(
-      setSecureTextEntry(!secureTextEntry)
-    );
-  }
-
-  return (
-    <TouchableWithoutFeedback onPress={Change}>
-      <Icon {...props} name= 'arrow-back' fill = {secureTextEntry ? 'black' : '#8F9BB3' }></Icon>
-    </TouchableWithoutFeedback>
-  );
-}
 
 
-function TitleProdotto(props){
+function TitleProdotto(props , ){
 
   const shakeIconRef = React.useRef();
 
@@ -57,12 +42,15 @@ function TitleProdotto(props){
 
     function renderGoShopAction () {
 
-      function StartAnimation(){
+      function  GoOnPurchaseScreen(){
           shakeIconRef.current.startAnimation()
+          props.action2()
+
+
       }
 
       return (
-        <TopNavigationAction icon = {CarIcon} onPress = {StartAnimation}/>
+        <TopNavigationAction icon = {CarIcon} onPress = {GoOnPurchaseScreen}/>
       );
     }
 

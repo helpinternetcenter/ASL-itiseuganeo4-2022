@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import { ScrollView, View,Alert,Modal,StyleSheet,Pressable} from "react-native";
-import { IconRegistry, Button, Text, Layout, Card, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath } from "@ui-kitten/components";
+import { IconRegistry, Button, Text, Layout, Card, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath , Icon } from "@ui-kitten/components";
 import TitleProdotto from "../../components/TitleProdotto/TitleProdotto";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import styles from './MyPurchaseScreen_style'
+import { HomeScreen } from "../navigaitor";
 
 
 
-function CredictCard(props) {
 
+function CheckIcon (props){
     return (
-        <View {...props} style={{ paddingLeft: 15, }}>
-            <Text category='h5'> CARTA CREDITO</Text>
-        </View>
-
+        <Icon {...props} style = {{width : 100 , height : 100}} name = 'checkmark' fill = 'green'></Icon>
     )
 }
 
@@ -70,14 +68,31 @@ function MyPurchaseScreen({ navigation }) {
         setModalVisible(!modalVisible)
     }
 
+    function ControlInputStream() {
+        if(address == '' || province == '' || state == '' || country == '' || payment == null){
+            setPopUp(false)
+        }
+        else {
+            setPopUp(true)
+        }
+    }
+
+    function GoBack(){
+        setPopUp(!popUp)
+        navigation.goBack()
+    }
+
+    function BackIcon (props) {
+        return(
+          <Icon {...props} name = 'arrow-back'></Icon>
+        );
+      }
+
 
 
     return (
         <>
             <TitleProdotto name='MyPurchaseScreen' action={GoBackAction}></TitleProdotto>
-             
-
-            
             <ScrollView>
                 <Layout level='3' style={styles.viewMain}>
 
@@ -121,7 +136,7 @@ function MyPurchaseScreen({ navigation }) {
                     </View>
 
                     <Divider style={{ color: 'black', backgroundColor: '#6bc1d6', marginBottom: 10, }} />
-                    <Button  onPress={() => setPopUp(true)} style={{ appearance:'ghost', marginLeft: '10%', marginRight: '10%' , marginBottom : 50}} >
+                    <Button  onPress={ControlInputStream} style={{ appearance:'ghost', marginLeft: '10%', marginRight: '10%' , marginBottom : 50}} >
                         CONFERMA
                     </Button>
 
@@ -132,8 +147,10 @@ function MyPurchaseScreen({ navigation }) {
             <Modal animationType="slide" transparent={true} visible={popUp} onRequestClose={Alert} >
                 <View style = {styles.centeredView}>
                     <View style={styles.modalView}>
+
                         <Text style = {styles.modalText}>Hai confermato l'acquisto</Text>
-                        <Button style = {styles.button} onPress = {()  => setPopUp(!popUp)}>Ok</Button>
+                        <CheckIcon></CheckIcon>
+                        <Button style = {styles.button} onPress = {GoBack} accessoryLeft = {BackIcon}></Button>
                     </View>
                 </View>
             </Modal>
