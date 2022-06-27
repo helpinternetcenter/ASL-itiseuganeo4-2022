@@ -23,14 +23,14 @@ function ScroolImage(props) {
   }
 
   function BottomRadioGroup(props) {
-    
+
     return (
       <RadioGroup
         {...props}
         style={[props.styles, styles.RadioGroup]}
         selectedIndex={selectedIndex}
         onChange={ChangeImage}>
-          {dati.data[numeroRender].linkImmagini.map(el => <Radio/>)}
+        {dati.data[numeroRender].linkImmagini.map(el => <Radio />)}
       </RadioGroup>
     );
   }
@@ -45,9 +45,9 @@ function ScroolImage(props) {
           <Layout
             style={styles.imageContiner}
             level='1'>
-              {dati.data[numeroRender].linkImmagini.map(el => 
+            {dati.data[numeroRender].linkImmagini.map(el =>
               <Image style={styles.image} source={dati.data[numeroRender].linkImmagini[el]} />
-              )}
+            )}
           </Layout>
         </ViewPager>
       </Card>

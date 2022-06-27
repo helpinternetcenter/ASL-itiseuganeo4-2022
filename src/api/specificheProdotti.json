@@ -1,7 +1,9 @@
 {
     "data":[
         {
-            "nome": "Sedia",
+            "idMobile": "0",
+            "nomeMobile": "Sedia",
+            "descrizioneMobile": "Sedia con schienale recrinabile, braccioli in pelle, e ruote ad alta efficienza",
             "colore": "marrone",
             "materiale": "legno",
             "dimensioni": "57x48x89 cm",
@@ -12,7 +14,9 @@
             
         },
         {
-            "nome": "Tavolo",
+            "idMobile": "1",
+            "nomeMobile": "Tavolo",
+            "descrizioneMobile": "Tavolo in legno massello con gambe ad alta tenuta",
             "colore": "bianco",
             "materiale": "PLA",
             "dimensioni": "100x200x100 cm",
@@ -24,7 +28,9 @@
             
         },
         {
-            "nome": "Lampada",
+            "idMobile": "2",
+            "nomeMobile": "Lampada",
+            "descrizioneMobile": "Lampada con una luce a basso consumo, circa 700w di potenza",
             "colore": "Blu/Nera",
             "materiale": "PETG",
             "dimensioni": "10x30x10 cm",
@@ -36,13 +42,41 @@
             
         },
         {
-            "nome": "Orologio",
+            "idMobile": "3",
+            "nomeMobile": "Orologio",
+            "descrizioneMobile": "Segna fino a 24 ore di tempo in maniera precisissima",
             "colore": "Rosso",
             "materiale": "Ferro",
             "dimensioni": "40x40x10 cm",
             "pesoMasimo": "-- kg",
             "pesoArticolo": "1kg",
             "prezzo": "5,99€",
+            "linkImmagini": ["http://link1"]
+            
+        },
+        {
+            "idMobile": "4",
+            "nomeMobile": "Cesto",
+            "descrizioneMobile": "Cesto realizzato in legno, intrecciato a mano e con la possibilità di avere il coperchio di un altro colore",
+            "colore": "Marroncino",
+            "materiale": "Legno",
+            "dimensioni": "100 x 100 x 20 cm",
+            "pesoMasimo": "30 kg",
+            "pesoArticolo": "3kg",
+            "prezzo": "12,99€",
+            "linkImmagini": ["http://link1"]
+            
+        },
+        {
+            "idMobile": "5",
+            "nomeMobile": "Cornice",
+            "descrizioneMobile": "Cornice per quadri moderni e antichi realizzato con materiali di prima qualità",
+            "colore": "Verde",
+            "materiale": "Plastica",
+            "dimensioni": "50x50x5 cm",
+            "pesoMasimo": "-- kg",
+            "pesoArticolo": ">1kg",
+            "prezzo": "2,99€",
             "linkImmagini": ["http://link1"]
             
         }

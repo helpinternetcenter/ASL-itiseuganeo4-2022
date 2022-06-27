@@ -4,7 +4,7 @@ import { StyleSheet, View, Button, ScrollView } from 'react-native';
 import Titolo from '../../components/compHome/titoloHome';
 import SceltaProdotto from '../../components/compHome/prodottoHome';
 import { ProdottoScreen } from '../navigaitor';
-import prodotti from '../../api/visualizzaProdottiHome.json'
+import prodotti from '../../api/specificheProdotti.json'
 import utente from '../../api/credenziali.json'
 
 
@@ -17,11 +17,10 @@ function Home({navigation, route}) {
       <Titolo valore={utente.data[idIdentificativo].nomeCredenziali}/>
       <ScrollView style={{ paddingBottom: 200 }}>
           {prodotti.data.map(el => (<SceltaProdotto nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => {
-          /* 1. Navigate to the Details route with params */
           navigation.navigate(ProdottoScreen.id, {
-            itemId: el.link,
+            itemId: el.idMobile,
           });
-        }} numeroRender={el.link}/>))}
+        }} numeroRender={el.idMobile}/>))}
         </ScrollView>
     </View>
   );
