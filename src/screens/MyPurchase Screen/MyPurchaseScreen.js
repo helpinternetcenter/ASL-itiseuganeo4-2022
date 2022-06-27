@@ -133,7 +133,7 @@ function MyPurchaseScreen({ navigation }) {
                 <View style = {styles.centeredView}>
                     <View style={styles.modalView}>
                         <Text style = {styles.modalText}>Hai confermato l'acquisto</Text>
-                        <Button onPress = {()  => setPopUp(!popUp)}>Ok</Button>
+                        <Button style = {styles.button} onPress = {()  => setPopUp(!popUp)}>Ok</Button>
                     </View>
                 </View>
             </Modal>
