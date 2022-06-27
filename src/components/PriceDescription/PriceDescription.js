@@ -18,7 +18,7 @@ function PriceDescription (props){
             <Text category = 'h2' style = {{fontWeight : 'normal'}} >
                 {props.prezzo}
             </Text>
-            <Button size = 'small' style = {{}} onPress = {props.action}>
+            <Button size = 'small' onPress = {props.action}>
                 Compra Subito !
             </Button> 
         </Card>
