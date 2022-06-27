@@ -6,6 +6,8 @@ import Login from './login/login'
 import Home from './home/home'
 import Registrati from './registrati/Registrati'
 import Check from '../Utils/check'
+import MyPurchaseScreen from './MyPurchase Screen/MyPurchaseScreen'
+
 
   const LoginNavigationStack = createNativeStackNavigator()
 
@@ -18,12 +20,14 @@ import Check from '../Utils/check'
   export const ProdottoScreen = {
     id: 'PRODOTTO'
   }
-
   export const RegisterScreen = {
     id: 'SCREEN'
     
   }
-
+  export const PurchaseScreen = {
+    id: 'Acquisto'
+    
+  }
   export const GOLOGINScreen = {
     id:'GOLOGIN'
   }
@@ -33,6 +37,7 @@ import Check from '../Utils/check'
       <LoginNavigationStack.Screen name={GOLOGINScreen.id} component={Registrati} />
       <LoginNavigationStack.Screen name={HomeScreen.id} component={Home} />
       <LoginNavigationStack.Screen name={ProdottoScreen.id} component={Prodotto} />
+      <LoginNavigationStack.Screen name={PurchaseScreen.id} component={MyPurchaseScreen} />
     </LoginNavigationStack.Navigator>
   )
   

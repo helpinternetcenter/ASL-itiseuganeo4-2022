@@ -6,6 +6,7 @@ import Description from '../../components/Description/description';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { ScrollView } from 'react-native';
 import PriceDescription from '../../components/PriceDescription/PriceDescription';
+import {PurchaseScreen}from '../navigaitor'
 
 
 function Prodotto({route , navigation}) {
@@ -16,16 +17,16 @@ function Prodotto({route , navigation}) {
     }
 
     function GoToPurchaseScreen(){
-      navigation.navigate('PurchaseScreen')
+      navigation.navigate(PurchaseScreen.id)
     }
     console.log(itemId);
 
     return (
       <>
         <IconRegistry icons = {EvaIconsPack}></IconRegistry>
+        <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
         <ScrollView>
           <Layout level = '3'>
-            <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
             <ScroolImage numeroRender={itemId}></ScroolImage>
             <Description numeroRender={itemId}></Description>
             <PriceDescription numeroRender={itemId} prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>

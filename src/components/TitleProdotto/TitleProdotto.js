@@ -49,11 +49,11 @@ function TitleProdotto(props){
 
 
 
-  function renderBackAction (){
-    return (
-      <TopNavigationAction icon={BackIcon} onPress = {props.action}/>
-    );
-  }
+    function renderBackAction (){
+      return (
+        <TopNavigationAction icon={BackIcon} onPress = {props.action}/>
+      );
+    }
 
     function renderGoShopAction () {
 
@@ -67,6 +67,8 @@ function TitleProdotto(props){
     }
 
     return(
+      <>
+          <View style = {{ backgroundColor: '#6bc1d6', height : '3%' , width : '100%' }}></View>
           <TopNavigation 
             alignment = 'center' 
             style = {styles.title}
@@ -74,6 +76,7 @@ function TitleProdotto(props){
             accessoryLeft = {renderBackAction} 
             accessoryRight = {renderGoShopAction}>
           </TopNavigation>
+      </>
     );
 };
 

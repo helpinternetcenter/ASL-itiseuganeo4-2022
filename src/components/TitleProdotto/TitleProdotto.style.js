@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
 
     title : {
         backgroundColor: '#6bc1d6',
-        
     },
     testoTitolo: {
         marginTop: '5%',
@@ -29,7 +28,6 @@ const styles = StyleSheet.create({
         textAlign : 'center',
         paddingRight : 100,
         paddingTop: 20,
-
     } ,
 
     button : {

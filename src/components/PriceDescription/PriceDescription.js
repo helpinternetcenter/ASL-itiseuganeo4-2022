@@ -20,8 +20,8 @@ function PriceDescription(props) {
             <Text category='h2' style={{ fontWeight: 'normal' }} >
                 {dati.data[props.numeroRender].prezzo}
             </Text>
-            <Button size='small' style={{}} onPress={props.action}>
-                Compra Subito !
+            <Button size='small' onPress={props.action}>
+                Agg. Carrello
             </Button>
         </Card>
     );

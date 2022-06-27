@@ -22,8 +22,14 @@
             "dimensioni": "100x200x100 cm",
             "pesoMasimo": "250 kg",
             "pesoArticolo": "90kg",
-            "prezzo": "69,99€",
-            "linkImmagini": ["https://www.riccicasa.it/wp-content/uploads/2021/06/tavolo-allungabile-twist-scontornato.jpg", "https://www.riflessi.it/wp-content/uploads/2018/12/tavolo-living-base-in-legno.jpg", "https://lubestoremilano.it/wp-content/uploads/2015/07/kusut.jpg", "https://www.manoarredamenti.it/wp-content/uploads/2013/06/tavolo-kuset-fisso.jpg", "https://i.pinimg.com/originals/67/8f/18/678f1826f4a64af9ece29d8838bfd0f3.jpg"]
+            "prezzo": "61,99€",
+            "linkImmagini": [
+                "https://brtschool.co.uk/wp-content/uploads/test.png",
+                 "https://www.riflessi.it/wp-content/uploads/2018/12/tavolo-living-base-in-legno.jpg",
+                  "https://lubestoremilano.it/wp-content/uploads/2015/07/kusut.jpg",
+                   "https://www.manoarredamenti.it/wp-content/uploads/2013/06/tavolo-kuset-fisso.jpg",
+                    "https://i.pinimg.com/originals/67/8f/18/678f1826f4a64af9ece29d8838bfd0f3.jpg"
+                ]
 
             
         },

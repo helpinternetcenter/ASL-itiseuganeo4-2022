@@ -39,7 +39,6 @@ function Login({navigation}) {
       return(
         <View style={styles.captionContainer}>
           {AlertIcon(styles.captionIcon)}
-          <Text style={styles.captionText}> Should contain at least 8 symbols </Text>
         </View>
       )
 

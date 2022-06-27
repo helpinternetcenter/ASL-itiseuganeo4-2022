@@ -5,8 +5,6 @@ import styles from "./ScroolImage.style";
 import dati from "../../api/specificheProdotti.json"
 
 
-
-
 function ScroolImage(props) {
   console.log(props.numeroRender)
   const numeroRender = props.numeroRender
@@ -42,13 +40,18 @@ function ScroolImage(props) {
           selectedIndex={selectedIndex}
           shouldLoadComponent={shouldLoadComponent}
           onSelect={ChangeImage}>
-          <Layout
-            style={styles.imageContiner}
-            level='1'>
-            {dati.data[numeroRender].linkImmagini.map(el =>
-              <Image style={styles.image} source={dati.data[numeroRender].linkImmagini[el]} />
-            )}
-          </Layout>
+          {
+            dati.data[numeroRender].linkImmagini.map(el  => {
+              console.log(el)
+              return (
+              <Layout style={styles.imageContiner} level='1'>
+              <Image style={styles.image} source= {{uri: el }}/>
+            </Layout>)
+            }
+ 
+              )
+          }
+
         </ViewPager>
       </Card>
     </>
