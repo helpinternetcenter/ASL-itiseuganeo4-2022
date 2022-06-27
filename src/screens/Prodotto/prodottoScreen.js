@@ -8,7 +8,8 @@ import { ScrollView } from 'react-native';
 import PriceDescription from '../../components/PriceDescription/PriceDescription';
 
 
-function Prodotto({navigation}) {
+function Prodotto({route , navigation}) {
+  const { itemId } = route.params;
 
     function GoBackAction(){
       navigation.goBack();
@@ -17,6 +18,7 @@ function Prodotto({navigation}) {
     function GoToPurchaseScreen(){
       navigation.navigate('PurchaseScreen')
     }
+    console.log(itemId);
 
     return (
       <>
@@ -24,9 +26,9 @@ function Prodotto({navigation}) {
         <ScrollView>
           <Layout level = '3'>
             <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
-            <ScroolImage></ScroolImage>
-            <Description></Description>
-            <PriceDescription prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>
+            <ScroolImage numeroRender={itemId}></ScroolImage>
+            <Description numeroRender={itemId}></Description>
+            <PriceDescription numeroRender={itemId} prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>
           </Layout>
         </ScrollView>
       </>

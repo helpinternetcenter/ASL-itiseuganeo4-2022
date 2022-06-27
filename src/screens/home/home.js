@@ -16,7 +16,12 @@ function Home({navigation, route}) {
     <View style={styles.container}>
       <Titolo valore={utente.data[idIdentificativo].nomeCredenziali}/>
       <ScrollView style={{ paddingBottom: 200 }}>
-          {prodotti.data.map(el => (<SceltaProdotto nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => navigation.navigate(ProdottoScreen.id)} />))}
+          {prodotti.data.map(el => (<SceltaProdotto nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => {
+          /* 1. Navigate to the Details route with params */
+          navigation.navigate(ProdottoScreen.id, {
+            itemId: el.link,
+          });
+        }} numeroRender={el.link}/>))}
         </ScrollView>
     </View>
   );

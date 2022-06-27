@@ -2,6 +2,7 @@ import React from "react";
 import { Layout , ViewPager , RadioGroup , Radio , Card} from "@ui-kitten/components";
 import { Image } from "react-native";
 import styles from "./ScroolImage.style";
+import dati from "../../api/specificheProdotti.json"
 
 
 
@@ -43,14 +44,14 @@ function ScroolImage(){
           level='1'>
           <Image 
             style = {styles.image}
-            source = {{uri: 'https://cdn.sklum.com/it/wk/1079151/sedia-in-velluto-glamm.jpg'}}/>
+            source = {dati.data[props.numeroRender].linkImmagini}/>
         </Layout>
         <Layout
           style={styles.imageContiner}
           level='1'>
            <Image 
             style = {styles.image}
-            source = {{uri: 'https://cdn.sklum.com/it/wk/1079163/sedia-in-velluto-glamm.jpg'}}/>
+            source = {dati.data[props.numeroRender].linkImmagini2}/>
         </Layout>
       </ViewPager>
       </Card>

@@ -1,0 +1,52 @@
+{
+    "data":[
+        {
+            "nome": "Sedia",
+            "colore": "marrone",
+            "materiale": "legno",
+            "dimensioni": "57x48x89 cm",
+            "pesoMasimo": "120 kg",
+            "pesoArticolo": "120kg",
+            "prezzo": "81,90€",
+            "linkImmagini": ["http://link1", "http://link2", "http://link3", "http://link4"]
+            
+        },
+        {
+            "nome": "Tavolo",
+            "colore": "bianco",
+            "materiale": "PLA",
+            "dimensioni": "100x200x100 cm",
+            "pesoMasimo": "250 kg",
+            "pesoArticolo": "90kg",
+            "prezzo": "69,99€",
+            "linkImmagini": ["http://link1", "http://link2", "http://link3", "http://link4", "http://link5" , "http://link6", "http://link7", "http://link8"]
+
+            
+        },
+        {
+            "nome": "Lampada",
+            "colore": "Blu/Nera",
+            "materiale": "PETG",
+            "dimensioni": "10x30x10 cm",
+            "pesoMasimo": "-- kg",
+            "pesoArticolo": "2kg",
+            "prezzo": "11,99€",
+            "linkImmagini": ["http://link1", "http://link2", "http://link3", "http://link4", "http://link5" , "http://link6"]
+
+            
+        },
+        {
+            "nome": "Orologio",
+            "colore": "Rosso",
+            "materiale": "Ferro",
+            "dimensioni": "40x40x10 cm",
+            "pesoMasimo": "-- kg",
+            "pesoArticolo": "1kg",
+            "prezzo": "5,99€",
+            "linkImmagini": ["http://link1"]
+            
+        }
+
+
+    ]
+}
