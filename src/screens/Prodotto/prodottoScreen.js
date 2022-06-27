@@ -22,9 +22,9 @@ function Prodotto({navigation}) {
     return (
       <>
         <IconRegistry icons = {EvaIconsPack}></IconRegistry>
+        <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
         <ScrollView>
           <Layout level = '3'>
-            <TitleProdotto name = 'MyProdotto' action = {GoBackAction}></TitleProdotto>
             <ScroolImage uri = {[
               'https://cdn.sklum.com/it/wk/1079151/sedia-in-velluto-glamm.jpg' , 
               'https://cdn.sklum.com/it/wk/1079163/sedia-in-velluto-glamm.jpg']}/>

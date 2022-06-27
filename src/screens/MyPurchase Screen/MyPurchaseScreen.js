@@ -1,17 +1,11 @@
-import { IconRegistry, Button, Text, Layout, Card, Input, Select, SelectItem, RadioGroup, Radio } from "@ui-kitten/components";
 import React from "react";
 import { ScrollView, View } from "react-native";
+import { IconRegistry, Button, Text, Layout, Card, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath } from "@ui-kitten/components";
 import TitleProdotto from "../../components/TitleProdotto/TitleProdotto";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
+import styles from './MyPurchaseScreen_style'
 
 
-function Header(props) {
-    return (
-        <View {...props} style={{ paddingLeft: 15, }}>
-            <Text category='h5'> DATI PERSONALI </Text>
-        </View>
-    )
-}
 
 function CredictCard(props) {
 
@@ -26,6 +20,7 @@ function CredictCard(props) {
 function BottomRadioGroup(props) {
     return (
         <RadioGroup
+            style = {props.style}
             selectedIndex={props.value}
             onChange={(index) => (props.action(index))}>
             <Radio>PostePay</Radio>
@@ -53,7 +48,7 @@ function MyPurchaseScreen({ navigation }) {
     const [province, setProvince] = React.useState('')
     const [country, setCountry] = React.useState('')
     const [payment, setPayment] = React.useState(0)
-    const [state, setState] = React.useState(1)
+    const [state, setState] = React.useState(new IndexPath(0))
     const value = elencoTitoli[state - 1]
 
 
@@ -74,52 +69,55 @@ function MyPurchaseScreen({ navigation }) {
     return (
         <>
             <TitleProdotto name='MyPurchaseScreen' action={GoBackAction}></TitleProdotto>
-            <Layout level='3'>
+            <ScrollView>
+                <Layout level='3' style={styles.viewMain}>
 
-                <Card
-                    status='info'
-                    header={Header}
-                    style={{ margin: 26, borderRadius: 10 }}>
-                    <Input
-                        placeholder='Indirizzo'
-                        label='Indirizzo'
-                        value={address}
-                        onChangeText={nextValue => setAddress(nextValue)}
-                    />
+                    <View style={styles.viewProdotto}>
+                        <Text category='h3' style={styles.testoTitolo}> Dati Personali </Text>
+                        <View style={styles.viewMargin}></View>
+                        <Input
+                            placeholder='Indirizzo'
+                            label='Indirizzo'
+                            value={address}
+                            style={styles.testoTitolo}
+                            onChangeText={nextValue => setAddress(nextValue)}
+                        />
 
-                    <Select selectedIndex={state} onSelect={index => setState(index)} label='Stato' value={value}>
-                        {elencoTitoli.map(RenderOption)}
-                    </Select>
+                        <Select selectedIndex={state} onSelect={(index) => setState(index)} label='Stato' value={value} style={styles.testoTitolo}>
+                            {elencoTitoli.map(RenderOption)}
+                        </Select>
 
-                    <Input
-                        placeholder="Paese"
-                        label='Paese'
-                        value={country}
-                        onChangeText={nextValue => setCountry(nextValue)}
+                        <Input
+                            style={styles.testoTitolo}
+                            placeholder="Paese"
+                            label='Paese'
+                            value={country}
+                            onChangeText={nextValue => setCountry(nextValue)}
 
-                    />
+                        />
 
-                    <Input
+                        <Input
+                            placeholder="Provincia"
+                            style={{ ...styles.testoTitolo, paddingBottom: 20 }}
+                            label='Provincia'
+                            value={province}
+                            onChangeText={nextValue => setProvince(nextValue)}
+                        />
+                    </View>
 
-                        placeholder="Provincia"
-                        label='Provincia'
-                        value={province}
-                        onChangeText={nextValue => setProvince(nextValue)}
-                    />
-                </Card>
+                    <View style={{ ...styles.viewProdotto, marginTop : 20 , marginBottom : 40 }}>
+                        <Text category='h3' style={styles.testoTitolo}> Pagamento </Text>
+                        <View style={styles.viewMargin}></View>
+                        <BottomRadioGroup action={setPayment} value={payment} style = {styles.testoTitolo}></BottomRadioGroup>
+                    </View>
 
-                <Card
-                    status='info'
-                    header={CredictCard}
-                    style={{ margin: 26, borderRadius: 10 }}
-                >
-                    <BottomRadioGroup action={setPayment} value={payment}></BottomRadioGroup>
-                </Card>
+                    <Divider style={{ color: 'black', backgroundColor: '#6bc1d6', marginBottom: 10, }} />
+                    <Button onPress={() => navigation.push('PRODOTTO')} style={{ appearance:'ghost', marginLeft: '10%', marginRight: '10%' , marginBottom : 50}} >
+                        CONFERMA
+                    </Button>
+                </Layout>
+            </ScrollView>
 
-                <Button onPress={() => navigation.push('LOGIN')} style={{ backgroundColor: '#6bc1d6' }}>
-                    CONFERMA
-                </Button>
-            </Layout>
         </>
 
 
