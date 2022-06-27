@@ -1,5 +1,5 @@
-import React from "react";
-import { ScrollView, View } from "react-native";
+import React, { useState } from "react";
+import { ScrollView, View,Alert,Modal,StyleSheet,Pressable} from "react-native";
 import { IconRegistry, Button, Text, Layout, Card, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath } from "@ui-kitten/components";
 import TitleProdotto from "../../components/TitleProdotto/TitleProdotto";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
@@ -50,7 +50,7 @@ function MyPurchaseScreen({ navigation }) {
     const [payment, setPayment] = React.useState(0)
     const [state, setState] = React.useState(new IndexPath(0))
     const value = elencoTitoli[state - 1]
-
+    const [popUp, setPopUp] = useState(false)
 
 
 
@@ -64,11 +64,20 @@ function MyPurchaseScreen({ navigation }) {
         )
     }
 
+    function Allerta(){
+
+        Alert.alert("Modal Has been closed")
+        setModalVisible(!modalVisible)
+    }
+
 
 
     return (
         <>
             <TitleProdotto name='MyPurchaseScreen' action={GoBackAction}></TitleProdotto>
+             
+
+            
             <ScrollView>
                 <Layout level='3' style={styles.viewMain}>
 
@@ -112,11 +121,22 @@ function MyPurchaseScreen({ navigation }) {
                     </View>
 
                     <Divider style={{ color: 'black', backgroundColor: '#6bc1d6', marginBottom: 10, }} />
-                    <Button onPress={() => navigation.push('PRODOTTO')} style={{ appearance:'ghost', marginLeft: '10%', marginRight: '10%' , marginBottom : 50}} >
+                    <Button  onPress={() => setPopUp(true)} style={{ appearance:'ghost', marginLeft: '10%', marginRight: '10%' , marginBottom : 50}} >
                         CONFERMA
                     </Button>
+
+
                 </Layout>
             </ScrollView>
+
+            <Modal animationType="slide" transparent={true} visible={popUp} onRequestClose={Alert} >
+                <View style = {styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <Text style = {styles.modalText}>Hai confermato l'acquisto</Text>
+                        <Button onPress = {()  => setPopUp(!popUp)}>Ok</Button>
+                    </View>
+                </View>
+            </Modal>
 
         </>
 

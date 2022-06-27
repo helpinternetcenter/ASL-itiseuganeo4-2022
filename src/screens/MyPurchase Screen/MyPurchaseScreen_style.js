@@ -26,8 +26,18 @@ const styles = StyleSheet.create({
         borderRadius: 50,
     },
 
-
-
+    modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+    },
 
     testoTitolo: {
         marginTop: '3%',
@@ -36,9 +46,26 @@ const styles = StyleSheet.create({
         marginBottom : '3%',
     },
 
+    button: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2
+      },
+
     testoSottotitolo: {
         marginLeft: '5%',
-    }
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+      },
+
+      modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+      }
 })
 
 export default styles;
