@@ -23,6 +23,7 @@ function PriceDescription(props) {
             <Button size='small' onPress={props.action}>
                 Agg. Carrello
             </Button>
+
         </Card>
     );
 }
