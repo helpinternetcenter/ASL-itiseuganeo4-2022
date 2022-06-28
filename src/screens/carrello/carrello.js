@@ -1,62 +1,31 @@
 import * as React from 'react';
-import { ApplicationProvider, Layout, Text, Divider } from '@ui-kitten/components';
-import { StyleSheet, View, Button, ScrollView } from 'react-native';
-import Titolo from '../../components/compHome/titoloHome';
-import SceltaProdotto from '../../components/compHome/prodottoHome';
-import { ProdottoScreen } from '../navigaitor';
-import prodotti from '../../api/specificheProdotti.json'
-import utente from '../../api/credenziali.json'
+import { Text, Divider, Button } from '@ui-kitten/components';
+import { StyleSheet, View, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { ProdottoScreen, PurchaseScreen } from '../../screens/navigaitor';
+import informazioni from '../../api/visualizzaProdottiHome.json';
+import prodottoScreen from '../../screens/Prodotto/prodottoScreen';
+import TitoloCarrello from '../../components/compCarrello/titoloCarrello'
+import Riepilogo from '../../components/compCarrello/riepilogoCarrello';
+import CartaCarrello from '../../components/compCarrello/cartaCarrello';
+import Navigator from '../../screens/navigaitor';
 
 
+function Carrello({ route, navigation }) {
+    function GoBackAction() {
+        navigation.goBack();
+    }
+    console.log("ciao mondo")
+    return (
+        <View>
+            <TitoloCarrello name={"Carrello"} action={GoBackAction}></TitoloCarrello>
+            <CartaCarrello cambioScheda = {() => navigation.navigate(PurchaseScreen.id)}></CartaCarrello>
+            <Riepilogo></Riepilogo>
 
-function Home({navigation, route}) {
-  const { idIdentificativo } = route.params;
-  console.log(prodotti);
-  return (
-    <View style={styles.container}>
-      <Titolo valore={utente.data[idIdentificativo].nomeCredenziali}/>
-      <ScrollView style={{ paddingBottom: 200 }}>
-          {prodotti.data.map(el => (<SceltaProdotto nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => {
-          navigation.navigate(ProdottoScreen.id, {
-            itemId: el.idMobile,
-          });
-        }} numeroRender={el.idMobile}/>))}
-        </ScrollView>
-    </View>
-  );
-
+        </View>
+    );
 }
 
-const styles = StyleSheet.create({
 
-  container: {
-    flex: 1,
-    alignItems: 'center',
-  },
-
-  viewTitolo: {
-    height: '20%',
-    width: '100%',
-
-    borderWidth: 0,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    justifyContent: 'center',
-  },
-
-  viewProdotti: {
-   backgroundColor:'red',
-
-  },
-
-  testoTitolo: {
-    marginTop: '5%',
-    marginLeft: '5%',
-  },
-
-  testoSottotitolo: {
-    marginLeft: '5%',
-  }
-})
-
-export default Home;
+export default Carrello;
