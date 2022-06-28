@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ScrollView, View,Alert,Modal,} from "react-native";
-import {  Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath , Icon } from "@ui-kitten/components";
+import { ScrollView, View, Alert, Modal, } from "react-native";
+import { Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath, Icon } from "@ui-kitten/components";
 import TitleProdotto from "../../components/TitleProdotto/TitleProdotto";
 import styles from './MyPurchaseScreen_style'
 import { PurchaseScreen } from "../navigaitor";
@@ -8,16 +8,20 @@ import { PurchaseScreen } from "../navigaitor";
 
 
 
-function CheckIcon (props){
+function CheckIcon(props) {
     return (
-        <Icon {...props} style = {{width : 100 , height : 100}} name = 'checkmark' fill = 'green'></Icon>
+        <Icon {...props} style={{ width: 100, height: 100 }} name='checkmark' fill='green'></Icon>
     )
 }
+
+
+
+
 
 function BottomRadioGroup(props) {
     return (
         <RadioGroup
-            style = {props.style}
+            style={props.style}
             selectedIndex={props.value}
             onChange={(index) => (props.action(index))}>
             <Radio>PostePay</Radio>
@@ -61,38 +65,39 @@ function MyPurchaseScreen({ navigation }) {
         )
     }
 
-    function GoToPurchaseScreen(){
+    function GoToPurchaseScreen() {
         navigation.navigate(PurchaseScreen.id)
     }
 
-  
+
 
     function ControlInputStream() {
-        if(address == '' || province == '' || state == '' || country == '' || payment == null){
+        if (address == '' || province == '' || state == '' || country == '' || payment == null) {
             setPopUp(false)
+
         }
         else {
             setPopUp(true)
         }
     }
 
-    function GoBack(){
+    function GoBack() {
         setPopUp(!popUp)
         navigation.goBack()
         navigation.goBack()
     }
 
-    function BackIcon (props) {
-        return(
-          <Icon {...props} name = 'arrow-back'></Icon>
+    function BackIcon(props) {
+        return (
+            <Icon {...props} name='arrow-back'></Icon>
         );
-      }
+    }
 
 
 
     return (
         <>
-            <TitleProdotto name='MyPurchaseScreen' action={GoBackAction} action2 = {GoToPurchaseScreen}></TitleProdotto>
+            <TitleProdotto name='MyPurchaseScreen' action={GoBackAction} action2={GoToPurchaseScreen}></TitleProdotto>
             <ScrollView>
                 <Layout level='3' style={styles.viewMain}>
 
@@ -129,14 +134,14 @@ function MyPurchaseScreen({ navigation }) {
                         />
                     </View>
 
-                    <View style={{ ...styles.viewProdotto, marginTop : 20 , marginBottom : 40 }}>
+                    <View style={{ ...styles.viewProdotto, marginTop: 20, marginBottom: 40 }}>
                         <Text category='h3' style={styles.testoTitolo}> Pagamento </Text>
                         <View style={styles.viewMargin}></View>
-                        <BottomRadioGroup action={setPayment} value={payment} style = {styles.testoTitolo}></BottomRadioGroup>
+                        <BottomRadioGroup action={setPayment} value={payment} style={styles.testoTitolo}></BottomRadioGroup>
                     </View>
 
                     <Divider style={{ color: 'black', backgroundColor: '#6bc1d6', marginBottom: 10, }} />
-                    <Button  onPress={ControlInputStream} style={{ appearance:'ghost', marginLeft: '10%', marginRight: '10%' , marginBottom : 50}} >
+                    <Button onPress={ControlInputStream} style={{ appearance: 'ghost', marginLeft: '10%', marginRight: '10%', marginBottom: 50 }} >
                         CONFERMA
                     </Button>
 
@@ -145,15 +150,16 @@ function MyPurchaseScreen({ navigation }) {
             </ScrollView>
 
             <Modal animationType="slide" transparent={true} visible={popUp} onRequestClose={Alert} >
-                <View style = {styles.centeredView}>
+                <View style={styles.centeredView}>
                     <View style={styles.modalView}>
 
-                        <Text style = {styles.modalText}>Hai confermato l'acquisto</Text>
+                        <Text style={styles.modalText}>Hai confermato l'acquisto</Text>
                         <CheckIcon></CheckIcon>
-                        <Button style = {styles.button} onPress = {GoBack} accessoryLeft = {BackIcon}>Torna alla Home</Button>
+                        <Button style={styles.button} onPress={GoBack} accessoryLeft={BackIcon}>Torna alla Home</Button>
                     </View>
                 </View>
             </Modal>
+
 
         </>
 

@@ -15,7 +15,6 @@ function Home({navigation, route}) {
   return (
     <View style={styles.container}>
       <Titolo valore={utente.data[idIdentificativo].nomeCredenziali}/>
-      <TitleProdotto name = 'MyProdotto' action = {GoForwardAction}></TitleProdotto>
       <ScrollView style={{ paddingBottom: 200 }}>
           {prodotti.data.map(el => (<SceltaProdotto nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => {
           navigation.navigate(ProdottoScreen.id, {

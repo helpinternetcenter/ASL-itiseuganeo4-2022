@@ -26,7 +26,7 @@ function Prodotto({route , navigation}) {
     return (
       <>
         <IconRegistry icons = {EvaIconsPack}></IconRegistry>
-        <TitleProdotto name = 'MyProdotto' action = {GoBackAction} action2 = {GoToPurchaseScreen} action3 = {GoForwardAction}></TitleProdotto>
+        <TitleProdotto name = 'MyProdotto' action = {GoBackAction} action2 = {GoToPurchaseScreen}></TitleProdotto>
         <ScrollView>
           <Layout level = '3'>
             <ScroolImage numeroRender={itemId}></ScroolImage>
