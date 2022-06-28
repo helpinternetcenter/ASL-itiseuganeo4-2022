@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { ScrollView, View, Alert, Modal, StyleSheet, Pressable } from 'react-native'
-import { Layout, IndexPath, Icon } from '@ui-kitten/components'
+import { ScrollView } from 'react-native'
+import { Layout, IndexPath } from '@ui-kitten/components'
 import TitleProdotto from '../../components/TitleProdotto/TitleProdotto'
 import styles from './MyPurchaseScreen_style'
 import { PurchaseScreen } from '../navigaitor'
@@ -47,8 +47,8 @@ function MyPurchaseScreen ({ navigation }) {
     <>
       <TitleProdotto
         name='MyPurchaseScreen'
-        action={GoBackAction}
-        action2={GoToPurchaseScreen}
+        action={() => GoBackAction}
+        action2={() => GoToPurchaseScreen}
       />
 
       <ScrollView>
@@ -82,7 +82,7 @@ function MyPurchaseScreen ({ navigation }) {
 
       <PopUp
         visible={popUp}
-        GoBack={GoBack}
+        GoBack={() => GoBack}
         setPopPup={setPopUp}
       />
 

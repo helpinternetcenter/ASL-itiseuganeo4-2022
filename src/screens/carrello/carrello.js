@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { ApplicationProvider, Layout, Text, Divider } from '@ui-kitten/components'
-import { StyleSheet, View, Button, ScrollView } from 'react-native'
+import { StyleSheet, View, ScrollView } from 'react-native'
 import Titolo from '../../components/compHome/titoloHome'
 import SceltaProdotto from '../../components/compHome/prodottoHome'
 import { ProdottoScreen } from '../navigaitor'
@@ -14,13 +13,14 @@ function Home ({ navigation, route }) {
     <View style={styles.container}>
       <Titolo valore={utente.data[idIdentificativo].nomeCredenziali} />
       <ScrollView style={{ paddingBottom: 200 }}>
-        {prodotti.data.map(el => (<SceltaProdotto
-          nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => {
-            navigation.navigate(ProdottoScreen.id, {
-              itemId: el.idMobile
-            })
-          }} numeroRender={el.idMobile}
-                                  />))}
+        {prodotti.data.map(el => (
+          <SceltaProdotto
+            nomeMobile={el.nomeMobile}
+            descrizione={el.descrizioneMobile}
+            cambioScheda={() => { navigation.navigate(ProdottoScreen.id, { itemId: el.idMobile }) }}
+            numeroRender={el.idMobile}
+
+          />))}
       </ScrollView>
     </View>
   )

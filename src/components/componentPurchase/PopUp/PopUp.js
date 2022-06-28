@@ -18,17 +18,14 @@ function BackIcon (props) {
 function PopUp (props) {
   return (
     <Modal
-      animationType='slide' transparent visible={props.visible} onRequestClose={() => {
-        Alert.alert('Modal has been closed.')
-        props.setPopUp(!props.visible)
-      }}
+      animationType='slide' transparent visible={props.visible}
     >
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
 
           <Text style={styles.modalText}>Hai confermato l'acquisto</Text>
           <CheckIcon />
-          <Button style={styles.button} onPress={props.GoBack} accessoryLeft={BackIcon}>Torna alla Home</Button>
+          <Button style={styles.button} onPress={() => props.GoBack} accessoryLeft={BackIcon}>Torna alla Home</Button>
         </View>
       </View>
     </Modal>

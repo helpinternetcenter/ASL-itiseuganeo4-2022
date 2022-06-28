@@ -23,12 +23,12 @@ function Prodotto ({ route, navigation }) {
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
-      <TitleProdotto name='MyProdotto' Action={GoBackAction} action2={GoToPurchaseScreen} />
+      <TitleProdotto name='MyProdotto' action={() => GoBackAction} action2={() => GoToPurchaseScreen} />
       <ScrollView>
         <Layout level='3'>
           <ScroolImage numeroRender={itemId} />
           <Description numeroRender={itemId} />
-          <PriceDescription numeroRender={itemId} prezzo='81,90€' action={GoToPurchaseScreen} />
+          <PriceDescription numeroRender={itemId} prezzo='81,90€' action={() => GoToPurchaseScreen} />
         </Layout>
       </ScrollView>
     </>

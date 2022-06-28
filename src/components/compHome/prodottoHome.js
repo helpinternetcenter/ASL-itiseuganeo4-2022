@@ -1,11 +1,6 @@
 import * as React from 'react'
-import { Text, Divider, Button } from '@ui-kitten/components'
-import { StyleSheet, View, ScrollView } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { ProdottoScreen } from '../../screens/navigaitor'
-import informazioni from '../../api/visualizzaProdottiHome.json'
-import prodottoScreen from '../../screens/Prodotto/prodottoScreen'
+import { Text, Button } from '@ui-kitten/components'
+import { StyleSheet, View } from 'react-native'
 
 function SceltaProdotto (props) {
   // const { itemId } = route?.params
@@ -16,7 +11,8 @@ function SceltaProdotto (props) {
         <Text category='h3' style={styles.testoTitolo}> {props.nomeMobile} </Text>
         <View style={styles.viewMargin} />
         <Text category='p1' style={styles.testoTitolo}>{props.descrizione} </Text>
-        <Button style={styles.button} appearance='ghost' onPress={props.cambioScheda}>
+
+        <Button style={styles.button} appearance='ghost' onPress={() => props.cambioScheda}>
           COMPRA
         </Button>
       </View>

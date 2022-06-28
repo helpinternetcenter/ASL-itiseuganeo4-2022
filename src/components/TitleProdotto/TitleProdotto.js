@@ -1,7 +1,6 @@
 import React from 'react'
-import { Text, Button, Icon, TopNavigation, TopNavigationAction } from '@ui-kitten/components'
-import { TouchableWithoutFeedback, View } from 'react-native'
-import { PurchaseScreen } from '../../screens/navigaitor'
+import { Icon, TopNavigation, TopNavigationAction } from '@ui-kitten/components'
+import { View } from 'react-native'
 import styles from './TitleProdotto.style'
 
 function TitleProdotto (props) {
@@ -26,7 +25,7 @@ function TitleProdotto (props) {
 
   function renderBackAction () {
     return (
-      <TopNavigationAction icon={BackIcon} onPress={props.action} />
+      <TopNavigationAction icon={() => BackIcon} onPress={() => props.action} />
     )
   }
 
@@ -37,7 +36,7 @@ function TitleProdotto (props) {
     }
 
     return (
-      <TopNavigationAction icon={CarIcon} onPress={GoOnPurchaseScreen} />
+      <TopNavigationAction icon={() => CarIcon} onPress={() => GoOnPurchaseScreen} />
     )
   }
 
@@ -48,8 +47,8 @@ function TitleProdotto (props) {
         alignment='center'
         style={styles.title}
         title={props.name}
-        accessoryLeft={renderBackAction}
-        accessoryRight={renderGoShopAction}
+        accessoryLeft={() => renderBackAction}
+        accessoryRight={() => renderGoShopAction}
       />
     </>
   )
