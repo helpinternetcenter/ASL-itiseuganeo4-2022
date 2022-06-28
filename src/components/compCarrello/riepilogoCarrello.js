@@ -20,6 +20,7 @@ function Riepilogo(props) {
                     (<Text style={styles.riepProdotti} category='p1'>{specificheProdotti.data[el].nomeMobile} : {specificheProdotti.data[el].prezzo}</Text> )
                 )}
                 <View style={styles.viewMargin2}></View>
+                
                 <Button style={styles.button}>Compra</Button>
                 
 

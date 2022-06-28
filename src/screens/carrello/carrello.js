@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ProdottoScreen, PurchaseScreen } from '../../screens/navigaitor';
 import informazioni from '../../api/visualizzaProdottiHome.json';
 import prodottoScreen from '../../screens/Prodotto/prodottoScreen';
-import TitoloCarrello from '../../components/compCarrello/titoloCarrello'
+import TitoloCarrello from '../../components/compCarrello/titoloCarrello';
 import Riepilogo from '../../components/compCarrello/riepilogoCarrello';
 import CartaCarrello from '../../components/compCarrello/cartaCarrello';
 import Navigator from '../../screens/navigaitor';
