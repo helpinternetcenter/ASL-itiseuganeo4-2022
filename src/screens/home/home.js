@@ -8,11 +8,14 @@ import utente from '../../api/credenziali.json'
 
 
 
+
+
 function Home({navigation, route}) {
   const { idIdentificativo } = route.params;
   return (
     <View style={styles.container}>
       <Titolo valore={utente.data[idIdentificativo].nomeCredenziali}/>
+      <TitleProdotto name = 'MyProdotto' action = {GoForwardAction}></TitleProdotto>
       <ScrollView style={{ paddingBottom: 200 }}>
           {prodotti.data.map(el => (<SceltaProdotto nomeMobile={el.nomeMobile} descrizione={el.descrizioneMobile} cambioScheda={() => {
           navigation.navigate(ProdottoScreen.id, {
