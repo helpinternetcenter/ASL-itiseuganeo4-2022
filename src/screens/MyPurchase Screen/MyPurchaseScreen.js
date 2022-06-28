@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { ScrollView, View,Alert,Modal,StyleSheet,Pressable} from "react-native";
-import { IconRegistry, Button, Text, Layout, Card, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath , Icon } from "@ui-kitten/components";
+import { ScrollView, View,Alert,Modal,} from "react-native";
+import {  Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath , Icon } from "@ui-kitten/components";
 import TitleProdotto from "../../components/TitleProdotto/TitleProdotto";
-import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import styles from './MyPurchaseScreen_style'
 import { PurchaseScreen } from "../navigaitor";
 

@@ -5,7 +5,6 @@ import Prodotto from './Prodotto/prodottoScreen'
 import Login from './login/login'
 import Home from './home/home'
 import Registrati from './registrati/Registrati'
-import Check from '../Utils/check'
 import MyPurchaseScreen from './MyPurchase Screen/MyPurchaseScreen'
 
 
