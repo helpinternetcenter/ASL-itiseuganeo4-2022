@@ -65,11 +65,7 @@ function MyPurchaseScreen({ navigation }) {
         navigation.navigate(PurchaseScreen.id)
     }
 
-    function Allerta(){
-
-        Alert.alert("Modal Has been closed")
-        setModalVisible(!modalVisible)
-    }
+  
 
     function ControlInputStream() {
         if(address == '' || province == '' || state == '' || country == '' || payment == null){

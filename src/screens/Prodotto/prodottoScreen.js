@@ -28,7 +28,7 @@ function Prodotto({route , navigation}) {
           <Layout level = '3'>
             <ScroolImage numeroRender={itemId}></ScroolImage>
             <Description numeroRender={itemId}></Description>
-            <PriceDescription numeroRender={itemId} prezzo = '81,90€' action = {GoToPurchaseScreen}></PriceDescription>
+            <PriceDescription numeroRender={itemId} prezzo = '81,90€'></PriceDescription>
           </Layout>
         </ScrollView>
       </>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Layout, Text, Input, Button,Icon,IconRegistry} from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import { HomeScreen, LoginScreen } from '../navigaitor';
+import { HomeScreen } from '../navigaitor';
 import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport';
 import { ricerca } from '../../Utils/check';
 
