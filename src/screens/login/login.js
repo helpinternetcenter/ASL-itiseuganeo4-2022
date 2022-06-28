@@ -85,12 +85,12 @@ function Login({ navigation }) {
       
 
       <View style={styles.row}>
-        <Text style={styles.text} category='p2'>Se non sei registrato, Registrati</Text>
+        <Text  style={styles.text} category='p2'>Se non sei registrato, Registrati</Text>
       </View>
 
 
 
-      <Button style={styles.button} appearance='ghost' >
+      <Button onPress={() => navigation.push('GOLOGIN')} style={styles.button} appearance='ghost' >
         REGISTRATI
       </Button>
 
