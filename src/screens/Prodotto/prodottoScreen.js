@@ -19,7 +19,6 @@ function Prodotto({route , navigation}) {
     function GoToPurchaseScreen(){
       navigation.navigate(PurchaseScreen.id)
     }
-    console.log(itemId);
 
     return (
       <>

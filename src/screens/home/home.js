@@ -1,6 +1,5 @@
-import * as React from 'react';
-import { ApplicationProvider, Layout, Text, Divider } from '@ui-kitten/components';
-import { StyleSheet, View, Button, ScrollView } from 'react-native';
+import * as React from 'react'
+import { StyleSheet, View, ScrollView } from 'react-native';
 import Titolo from '../../components/compHome/titoloHome';
 import SceltaProdotto from '../../components/compHome/prodottoHome';
 import { ProdottoScreen } from '../navigaitor';
@@ -11,7 +10,6 @@ import utente from '../../api/credenziali.json'
 
 function Home({navigation, route}) {
   const { idIdentificativo } = route.params;
-  console.log(prodotti);
   return (
     <View style={styles.container}>
       <Titolo valore={utente.data[idIdentificativo].nomeCredenziali}/>

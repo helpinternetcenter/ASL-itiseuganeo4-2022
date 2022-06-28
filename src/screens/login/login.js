@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ApplicationProvider, Layout, Text, Input, Button,Icon,IconRegistry} from '@ui-kitten/components';
+import { Layout, Text, Input, Button,Icon,IconRegistry} from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import { TextInput } from 'react-native-web';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen, LoginScreen } from '../navigaitor';
 import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport';
 import { ricerca } from '../../Utils/check';
-import Home from '../home/home';
+
 
 const AlertIcon = (props) => (
 <Icon {...props} name='alert-circle-outline'/>

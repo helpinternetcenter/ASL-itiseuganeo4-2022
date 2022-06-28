@@ -1,9 +1,6 @@
 import React from "react";
-import {  Text , Button , Icon , TopNavigation , TopNavigationAction} from "@ui-kitten/components";
-import { TouchableWithoutFeedback } from "react-native";
-import {PurchaseScreen} from "../../screens/navigaitor";
+import { Icon , TopNavigation , TopNavigationAction} from "@ui-kitten/components";
 import styles from "./TitleProdotto.style";
-
 import { View } from "react-native";
 
 

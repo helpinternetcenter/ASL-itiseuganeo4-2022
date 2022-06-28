@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { Text, Divider, Button } from '@ui-kitten/components';
 import { StyleSheet, View, ScrollView } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ProdottoScreen } from '../../screens/navigaitor';
-import informazioni from '../../api/visualizzaProdottiHome.json';
-import prodottoScreen from '../../screens/Prodotto/prodottoScreen';
 
 
 function SceltaProdotto(props) {
