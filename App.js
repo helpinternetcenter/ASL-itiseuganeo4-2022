@@ -1,13 +1,12 @@
-import React from 'react';
-import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
-import Navigator from './src/screens/navigaitor';
+import React from 'react'
+import * as eva from '@eva-design/eva'
+import { ApplicationProvider, Layout, Text } from '@ui-kitten/components'
+import Navigator from './src/screens/navigaitor'
 
-export default function App() {
+export default function App () {
   return (
-      <ApplicationProvider {...eva} theme={eva.light}>
-          <Navigator />
-      </ApplicationProvider>
-  );
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <Navigator />
+    </ApplicationProvider>
+  )
 }
-

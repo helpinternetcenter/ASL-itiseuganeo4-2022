@@ -1,26 +1,25 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
 
-    imageContiner : {
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingTop : 20,
-      
-    },
-  
-    image : {
-      width : 240,
-      height : 200,
-    },
+  imageContiner: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 20
 
-    RadioGroup : {
-      flexDirection : 'row',
-      alignItems : 'center',
-      justifyContent: 'center',
+  },
+
+  image: {
+    width: 240,
+    height: 200
+  },
+
+  RadioGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
-       
-  });
-  
-  export default styles;
 
+})
+
+export default styles
