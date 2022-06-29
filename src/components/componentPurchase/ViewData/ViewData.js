@@ -23,12 +23,12 @@ function ViewData (props) {
         label='Indirizzo'
         value={props.address}
         style={styles.testoTitolo}
-        onChangeText={props.setAddress}
+        onChangeText={() => props.setAddress}
       />
 
       <Select
         selectedIndex={props.state}
-        onSelect={props.setState}
+        onSelect={() => props.setState}
         label='Stato'
         value={props.value}
         style={styles.testoTitolo}
@@ -43,7 +43,7 @@ function ViewData (props) {
         placeholder='Paese'
         label='Paese'
         value={props.country}
-        onChangeText={props.setCountry}
+        onChangeText={() => props.setCountry}
 
       />
 
@@ -52,7 +52,7 @@ function ViewData (props) {
         style={{ ...styles.testoTitolo, paddingBottom: 20 }}
         label='Provincia'
         value={props.provincia}
-        onChangeText={props.setProvincia}
+        onChangeText={() => props.setProvincia}
       />
     </View>
   )
