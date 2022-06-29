@@ -5,9 +5,9 @@ export const styles = {
     borderWidth: 0,
     marginLeft: '5%',
     borderRadius: 20,
-    marginRight: '5%'
-  },
+    marginRight: '5%',
 
+  },
   viewMargin: {
     height: 3,
     width: '40%',
@@ -18,6 +18,13 @@ export const styles = {
   },
 
   testoTitolo: {
+    marginTop: '3%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginBottom: '3%'
+  },
+  input: {
+    borderWidth: 2,
     marginTop: '3%',
     marginLeft: '5%',
     marginRight: '5%',

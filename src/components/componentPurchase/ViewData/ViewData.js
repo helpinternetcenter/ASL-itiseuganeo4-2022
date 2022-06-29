@@ -4,12 +4,28 @@ import { View } from 'react-native'
 import { styles } from './ViewData_style'
 
 function ViewData (props) {
+  const [dangerStateProvincia, setDangerStateProvincia] = React.useState('danger')
+  const [dangerStatePaese, setDangerStatePaese] = React.useState('danger')
+  const [dangerStateIndirizzo, setDangerStateIndirizzo] = React.useState('danger')
+  const [dangerStateStato, setDangerStateStato] = React.useState('danger')
   function RenderOption (el, key) {
     return (
-      <SelectItem key={key} title={el} />
+      <SelectItem key={{ row: key.row, section: key.section }} title={el} />
+    )
+  }
+  function Falied () {
+    console.log('fallito')
+    return (
+      <Text style={{ color: 'red', marginLeft: '5%', paddingBottom: '10%' }}>* Campi obbligatori</Text>
     )
   }
 
+  function Success () {
+    console.log('successo')
+    return (
+      <Text style={{ color: 'green', marginLeft: '5%', paddingBottom: '10%' }}>* Campi compilati</Text>
+    )
+  }
   return (
     <View style={styles.viewProdotto}>
 
@@ -19,18 +35,26 @@ function ViewData (props) {
 
       <Input
         placeholder='Indirizzo'
+        status={dangerStateIndirizzo}
         label='Indirizzo'
         value={props.address}
-        style={styles.testoTitolo}
-        onChangeText={(index) => props.setAddress(index)}
+        style={styles.input}
+        onChangeText={(index) => {
+          index === '' ? setDangerStateIndirizzo('danger') : setDangerStateIndirizzo('success')
+          props.setAddress(index)
+        }}
       />
 
       <Select
         selectedIndex={props.state}
-        onSelect={(index) => props.setState(index)}
         label='Stato'
-        value={props.value}
+        value={props.state}
         style={styles.testoTitolo}
+        onSelect={(index) => {
+          //index === null ? setDangerStateStato('danger') : setDangerStateStato('success')
+          //props.setState(index)
+          props.setState(index)
+        }}
       >
 
         {props.elencoTitoli.map((el, key) => RenderOption(el, key))}
@@ -38,21 +62,32 @@ function ViewData (props) {
       </Select>
 
       <Input
-        style={styles.testoTitolo}
+        style={styles.input}
         placeholder='Paese'
+        status={dangerStatePaese}
         label='Paese'
         value={props.country}
-        onChangeText={(index) => props.setCountry(index)}
-
+        onChangeText={(index) => {
+          index === '' ? setDangerStatePaese('danger') : setDangerStatePaese('success')
+          props.setCountry(index)
+        }}
       />
 
       <Input
         placeholder='Provincia'
-        style={{ ...styles.testoTitolo, paddingBottom: 20 }}
+        status={dangerStateProvincia}
+        style={{ ...styles.input, paddingBottom: '4%' }}
         label='Provincia'
         value={props.provincia}
-        onChangeText={(index) => props.setProvincia(index)}
+        onChangeText={(index) => {
+          index === '' ? setDangerStateProvincia('danger') : setDangerStateProvincia('success')
+          props.setProvincia(index)
+        }}
       />
+
+      {props.address === '' || props.provincia === '' || props.country === '' || props.state === null
+        ? <Falied />
+        : <Success />}
     </View>
   )
 }
