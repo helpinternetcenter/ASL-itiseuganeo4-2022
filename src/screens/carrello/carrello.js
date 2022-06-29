@@ -1,4 +1,3 @@
-
 import * as React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { PagamentoCarrelloScreen } from '../navigaitor'
@@ -16,17 +15,16 @@ function Carrello ({ route, navigation }) {
       <TitoloCarrello name='Carrello' style={StyleMod.modTitolo} action={() => GoBackAction()} />
       <CartaCarrello cambioScheda={() => navigation.navigate(PagamentoCarrelloScreen.id)} />
       <Riepilogo onPressGoBack={() => GoBackAction()} />
-
     </View>
   )
 }
-
 const StyleMod = StyleSheet.create({
   modTitolo: {
     backgroundColor: '#6bc1d6',
     height: '9%',
     width: '100%'
-  }
 
-})
+  }
+}
+)
 export default Carrello

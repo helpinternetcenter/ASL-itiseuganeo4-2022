@@ -27,7 +27,6 @@ function Home ({ navigation, route }) {
           )
         }
         )}
-
       </ScrollView>
     </View>
   )

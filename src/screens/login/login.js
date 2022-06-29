@@ -18,14 +18,11 @@ function Login ({ navigation }) {
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry)
   }
-
   function Control () {
     if (ricerca(username, password).ingresso) {
-      console.log('Sono dentro!!')
       navigation.push(HomeScreen.id, { idIdentificativo: ricerca(username, password).id })
     }
   }
-
   const renderIcon = (props) => (
 
     <TouchableWithoutFeedback onPress={toggleSecureEntry}>
@@ -69,9 +66,7 @@ function Login ({ navigation }) {
         onChangeText={nextValue => setPassword(nextValue)}
         style={styles.inputPassword}
       />
-
       <Button onPress={() => Control()}>
-
         Log In
       </Button>
 

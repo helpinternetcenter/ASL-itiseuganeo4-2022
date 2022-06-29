@@ -1,29 +1,14 @@
 import React, { useState } from 'react'
-import { ScrollView, View, Alert, Modal } from 'react-native'
-import { Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath, Icon } from '@ui-kitten/components'
+import { ScrollView } from 'react-native'
+import { Layout, IndexPath } from '@ui-kitten/components'
 import TitleProdotto from '../../components/TitleProdotto/TitleProdotto'
 import styles from './MyPurchaseScreen_style'
 import { PurchaseScreen } from '../navigaitor'
-
-function CheckIcon (props) {
-  return (
-    <Icon {...props} style={{ width: 100, height: 100 }} name='checkmark' fill='green' />
-  )
-}
-
-function BottomRadioGroup (props) {
-  return (
-    <RadioGroup
-      style={props.style}
-      selectedIndex={props.value}
-      onChange={(index) => (props.action(index))}
-    >
-      <Radio>PayPal</Radio>
-      <Radio>Visa</Radio>
-      <Radio>Mastercard</Radio>
-    </RadioGroup>
-  )
-}
+import ViewData from '../../components/componentPurchase/ViewData/ViewData'
+import ViewPayment from '../../components/componentPurchase/ViewPayment/ViewPayment'
+import ViewBotton from '../../components/componentPurchase/ViewBotton/ViewBotton'
+import { ControlInputStream } from '../../Utils/check'
+import PopUp from '../../components/componentPurchase/PopUp/PopUp'
 
 function MyPurchaseScreen ({ navigation }) {
   const elencoTitoli = [
@@ -42,30 +27,14 @@ function MyPurchaseScreen ({ navigation }) {
   const [country, setCountry] = React.useState('')
   const [payment, setPayment] = React.useState(0)
   const [state, setState] = React.useState(new IndexPath(0))
-  const value = elencoTitoli[state - 1]
   const [popUp, setPopUp] = useState(false)
 
   function GoBackAction () {
     navigation.goBack()
   }
 
-  function RenderOption (title, key) {
-    return (
-      <SelectItem title={title} key={key} />
-
-    )
-  }
-
   function GoToPurchaseScreen () {
     navigation.navigate(PurchaseScreen.id)
-  }
-
-  function ControlInputStream () {
-    if (address === '' || province === '' || state === '' || country === '' || payment == null) {
-      setPopUp(false)
-    } else {
-      setPopUp(true)
-    }
   }
 
   function GoBack () {
@@ -74,84 +43,51 @@ function MyPurchaseScreen ({ navigation }) {
     navigation.goBack()
   }
 
-  function BackIcon (props) {
-    return (
-      <Icon {...props} name='arrow-back' />
-    )
-  }
-
   return (
     <>
-      <TitleProdotto name='MyPurchaseScreen' action={() => GoBackAction()} action2={() => GoToPurchaseScreen()} />
+      <TitleProdotto
+        name='MyPurchaseScreen'
+        action={() => GoBackAction}
+        action2={() => GoToPurchaseScreen}
+      />
 
       <ScrollView>
         <Layout level='3' style={styles.viewMain}>
+          <ViewData
+            elencoTitoli={elencoTitoli}
+            address={address}
+            setAddress={(nextValue => setAddress(nextValue))}
+            state={state}
+            setState={(index) => setState(index)}
+            value={elencoTitoli[state - 1]}
+            country={country}
+            setCountry={(nextValue) => setCountry(nextValue)}
+            provincia={province}
+            setProvincia={(nextValue) => setProvince(nextValue)}
+          />
 
-          <View style={styles.viewProdotto}>
-            <Text category='h3' style={styles.testoTitolo}> Dati Personali </Text>
-            <View style={styles.viewMargin} />
-            <Input
-              placeholder='Indirizzo'
-              label='Indirizzo'
-              value={address}
-              style={styles.testoTitolo}
-              onChangeText={nextValue => setAddress(nextValue)}
-            />
+          <ViewPayment
+            title='Pagamento'
+            value={payment}
+            setPayment={(index) => setPayment(index)}
+          />
 
-            <Select selectedIndex={state} onSelect={(index) => setState(index)} label='Stato' value={value} style={styles.testoTitolo}>
-              {elencoTitoli.map((el, key) => RenderOption(el, key))}
-
-            </Select>
-
-            <Input
-              style={styles.testoTitolo}
-              placeholder='Paese'
-              label='Paese'
-              value={country}
-              onChangeText={nextValue => setCountry(nextValue)}
-
-            />
-
-            <Input
-              placeholder='Provincia'
-              style={{ ...styles.testoTitolo, paddingBottom: 20 }}
-              label='Provincia'
-              value={province}
-              onChangeText={nextValue => setProvince(nextValue)}
-            />
-          </View>
-
-          <View style={{ ...styles.viewProdotto, marginTop: 20, marginBottom: 40 }}>
-            <Text category='h3' style={styles.testoTitolo}> Pagamento </Text>
-            <View style={styles.viewMargin} />
-            <BottomRadioGroup action={setPayment} value={payment} style={styles.testoTitolo} />
-          </View>
-
-          <Divider style={{ color: 'black', backgroundColor: '#6bc1d6', marginBottom: 10 }} />
-          <Button onPress={() => ControlInputStream()} style={{ appearance: 'ghost', marginLeft: '10%', marginRight: '10%', marginBottom: 50 }}>
-
-            CONFERMA
-          </Button>
+          <ViewBotton
+            titleBotton='CONFERMA'
+            onClick={() => ControlInputStream(setPopUp, address, state, province, country, payment)}
+          />
 
         </Layout>
       </ScrollView>
 
-      <Modal animationType='slide' transparent visible={popUp} onRequestClose={Alert}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-
-            <Text style={styles.modalText}>Hai confermato l'acquisto</Text>
-            <CheckIcon />
-
-            <Button style={styles.button} onPress={() => GoBack()} accessoryLeft={(props) => BackIcon(props)}>Torna alla Home</Button>
-
-          </View>
-        </View>
-      </Modal>
+      <PopUp
+        visible={popUp}
+        GoBack={() => GoBack}
+        setPopPup={setPopUp}
+      />
 
     </>
 
   )
 }
-
 export default MyPurchaseScreen
