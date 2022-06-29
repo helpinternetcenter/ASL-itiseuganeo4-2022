@@ -26,13 +26,14 @@ function TitleProdotto (props) {
   function renderBackAction () {
     return (
       <TopNavigationAction icon={(props) => BackIcon(props)} onPress={() => props.action()} />
+
     )
   }
 
   function renderGoShopAction () {
     function GoOnPurchaseScreen () {
       shakeIconRef.current.startAnimation()
-      props.action2()
+      props.actionCarrello()
     }
 
     return (
@@ -42,13 +43,14 @@ function TitleProdotto (props) {
 
   return (
     <>
-      <View style={{ backgroundColor: '#6bc1d6', height: '3%', width: '100%' }} />
+      <View style={{ backgroundColor: '#6bc1d6', height: '4%', width: '100%' }} />
       <TopNavigation
         alignment='center'
         style={styles.title}
         title={props.name}
         accessoryLeft={() => renderBackAction()}
         accessoryRight={() => renderGoShopAction()}
+
       />
     </>
   )

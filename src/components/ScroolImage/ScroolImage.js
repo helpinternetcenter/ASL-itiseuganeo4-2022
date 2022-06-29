@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 import React from 'react'
 import { Layout, ViewPager, RadioGroup, Radio, Card } from '@ui-kitten/components'
 import { Image } from 'react-native'
@@ -29,6 +29,7 @@ function ScroolImage (props) {
       >
         {/* eslint-disable-next-line react/jsx-key */}
         {dati.data[numeroRender].linkImmagini.map((el, key) => (<Radio key={key}> </Radio>))}
+
       </RadioGroup>
     )
   }

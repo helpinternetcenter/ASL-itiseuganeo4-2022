@@ -71,6 +71,7 @@ function Login ({ navigation }) {
       />
 
       <Button onPress={() => Control()}>
+
         Log In
       </Button>
 

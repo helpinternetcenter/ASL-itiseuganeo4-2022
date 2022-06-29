@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { ScrollView, View, Alert, Modal } from 'react-native'
+import { ScrollView, View, Alert, Modal, StyleSheet } from 'react-native'
 import { Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath, Icon } from '@ui-kitten/components'
-import TitleProdotto from '../../components/TitleProdotto/TitleProdotto'
-import styles from './MyPurchaseScreen_style'
-import { PurchaseScreen } from '../navigaitor'
+import TitleCarrello from './titoloCarrello'
+import styles from './pagamentoCarrelloStyle'
 
 function CheckIcon (props) {
   return (
@@ -25,7 +24,7 @@ function BottomRadioGroup (props) {
   )
 }
 
-function MyPurchaseScreen ({ navigation }) {
+function PagamentoCarrello ({ navigation }) {
   const elencoTitoli = [
     'Italy',
     'Germany',
@@ -56,10 +55,6 @@ function MyPurchaseScreen ({ navigation }) {
     )
   }
 
-  function GoToPurchaseScreen () {
-    navigation.navigate(PurchaseScreen.id)
-  }
-
   function ControlInputStream () {
     if (address === '' || province === '' || state === '' || country === '' || payment == null) {
       setPopUp(false)
@@ -71,7 +66,6 @@ function MyPurchaseScreen ({ navigation }) {
   function GoBack () {
     setPopUp(!popUp)
     navigation.goBack()
-    navigation.goBack()
   }
 
   function BackIcon (props) {
@@ -82,7 +76,7 @@ function MyPurchaseScreen ({ navigation }) {
 
   return (
     <>
-      <TitleProdotto name='MyPurchaseScreen' action={() => GoBackAction()} action2={() => GoToPurchaseScreen()} />
+      <TitleCarrello name='Dati Carta' action={() => GoBackAction()} style={StyleMod.modTitolo} />
 
       <ScrollView>
         <Layout level='3' style={styles.viewMain}>
@@ -140,10 +134,9 @@ function MyPurchaseScreen ({ navigation }) {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
 
-            <Text style={styles.modalText}>Hai confermato l'acquisto</Text>
+            <Text style={styles.modalText}>Dati confermati</Text>
             <CheckIcon />
-
-            <Button style={styles.button} onPress={() => GoBack()} accessoryLeft={(props) => BackIcon(props)}>Torna alla Home</Button>
+            <Button style={styles.button} onPress={() => GoBack()} accessoryLeft={(props) => BackIcon(props)}>Vai al Carrello</Button>
 
           </View>
         </View>
@@ -154,4 +147,12 @@ function MyPurchaseScreen ({ navigation }) {
   )
 }
 
-export default MyPurchaseScreen
+const StyleMod = StyleSheet.create({
+  modTitolo: {
+    backgroundColor: '#6bc1d6',
+    height: '4%',
+    width: '100%'
+  }
+
+})
+export default PagamentoCarrello
