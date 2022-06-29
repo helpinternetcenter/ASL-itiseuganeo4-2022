@@ -1,63 +1,60 @@
-import React from "react";
-import { Layout, ViewPager, RadioGroup, Radio, Card } from "@ui-kitten/components";
-import { Image } from "react-native";
-import styles from "./ScroolImage.style";
-import dati from "../../api/specificheProdotti.json"
+/* eslint-disable react/jsx-key */
+import React from 'react'
+import { Layout, ViewPager, RadioGroup, Radio, Card } from '@ui-kitten/components'
+import { Image } from 'react-native'
+import styles from './ScroolImage.style'
+import dati from '../../api/specificheProdotti.json'
 
-
-function ScroolImage(props) {
+function ScroolImage (props) {
   console.log(props.numeroRender)
   const numeroRender = props.numeroRender
 
+  const [selectedIndex, setSelectedIndex] = React.useState(0)
 
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
-  function ChangeImage(index) {
-    setSelectedIndex(index);
+  function ChangeImage (index) {
+    setSelectedIndex(index)
   }
 
-  function shouldLoadComponent(index) {
-    return (index === selectedIndex);
+  function shouldLoadComponent (index) {
+    return (index === selectedIndex)
   }
 
-  function BottomRadioGroup(props) {
-
+  function BottomRadioGroup (props) {
     return (
       <RadioGroup
         {...props}
         style={[props.styles, styles.RadioGroup]}
         selectedIndex={selectedIndex}
-        onChange={ChangeImage}>
-        {dati.data[numeroRender].linkImmagini.map(el => <Radio />)}
+        onChange={(index) => ChangeImage(index)}
+      >
+        {/* eslint-disable-next-line react/jsx-key */}
+        {dati.data[numeroRender].linkImmagini.map((el, key) => (<Radio key={key}> </Radio>))}
       </RadioGroup>
-    );
+    )
   }
-
   return (
     <>
-      <Card style={{ margin: 26, borderRadius: 10 }} status='primary' footer={BottomRadioGroup} disabled={true}>
+      <Card style={{ margin: 26, borderRadius: 10 }} status='primary' footer={(props) => BottomRadioGroup(props)} disabled={() => true}>
         <ViewPager
           selectedIndex={selectedIndex}
-          shouldLoadComponent={shouldLoadComponent}
-          onSelect={ChangeImage}>
+          shouldLoadComponent={() => shouldLoadComponent}
+          onSelect={(index) => ChangeImage(index)}
+        >
           {
-            dati.data[numeroRender].linkImmagini.map(el  => {
-              console.log(el)
+            dati.data[numeroRender].linkImmagini.map((el, key) => {
               return (
-              <Layout style={styles.imageContiner} level='1'>
-              <Image style={styles.image} source= {{uri: el }}/>
-            </Layout>)
-            }
- 
+                <Layout key={key} style={styles.imageContiner} level='1'>
+                  <Image style={styles.image} source={{ uri: el }} />
+                </Layout>
               )
+            })
           }
 
         </ViewPager>
       </Card>
     </>
 
-  );
+  )
 }
 
-export default ScroolImage;
-
+export default ScroolImage

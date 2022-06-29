@@ -1,28 +1,29 @@
-import React, { useState } from "react";
-import {  StyleSheet, View } from 'react-native';
-import { Layout, Text, Input, Button, Icon, IconRegistry } from '@ui-kitten/components';
-import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import { HomeScreen } from '../navigaitor';
-import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport';
-import { ricerca } from '../../Utils/check';
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import { Layout, Text, Input, Button, Icon, IconRegistry } from '@ui-kitten/components'
+import { EvaIconsPack } from '@ui-kitten/eva-icons'
+import { HomeScreen } from '../navigaitor'
+import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport'
+import { ricerca } from '../../Utils/check'
 
 const AlertIcon = (props) => (
   <Icon {...props} name='alert-circle-outline' />
 
 )
-
-
-
-
-
-function Login({ navigation }) {
-  const [username, setUsername] = React.useState('');
-  const [password, setPassword] = React.useState('');
+function Login ({ navigation }) {
+  const [username, setUsername] = React.useState('')
+  const [password, setPassword] = React.useState('')
   const [secureTextEntry, setSecureTextEntry] = React.useState(true)
 
-
   const toggleSecureEntry = () => {
-    setSecureTextEntry(!secureTextEntry);
+    setSecureTextEntry(!secureTextEntry)
+  }
+
+  function Control () {
+    if (ricerca(username, password).ingresso) {
+      console.log('Sono dentro!!')
+      navigation.push(HomeScreen.id, { idIdentificativo: ricerca(username, password).id })
+    }
   }
 
   const renderIcon = (props) => (
@@ -31,7 +32,7 @@ function Login({ navigation }) {
       <IconRegistry icons={EvaIconsPack} />
       <Icon {...props} name={secureTextEntry ? 'eye-off' : 'eye'} />
     </TouchableWithoutFeedback>
-  );
+  )
 
   const renderCaption = () => {
     return (
@@ -39,15 +40,7 @@ function Login({ navigation }) {
         {AlertIcon(styles.captionIcon)}
       </View>
     )
-
   }
-
-
-  credenziali = new Array(username, password);
-
-
-
-
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text category='h1'>Log In </Text>
@@ -67,7 +60,6 @@ function Login({ navigation }) {
 
       <Text category='p2'>PASSWORD </Text>
 
-
       <Input
         value={password}
         placeholder='Enter Password'
@@ -78,31 +70,27 @@ function Login({ navigation }) {
         style={styles.inputPassword}
       />
 
-      <Button  onPress={() => { { ricerca(username, password).ingresso ? navigation.push(HomeScreen.id, { idIdentificativo: ricerca(username, password).id }) : console.log("return2") } }} >
+      <Button onPress={() => Control()}>
         Log In
       </Button>
 
-      
-
       <View style={styles.row}>
-        <Text  style={styles.text} category='p2'>Se non sei registrato, Registrati</Text>
+        <Text style={styles.text} category='p2'>Se non sei registrato, Registrati</Text>
       </View>
 
-
-
-      <Button onPress={() => navigation.push('GOLOGIN')} style={styles.button} appearance='ghost' >
+      <Button onPress={() => navigation.push('GOLOGIN')} style={styles.button} appearance='ghost'>
         REGISTRATI
       </Button>
 
     </Layout>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: '10%',
+    marginTop: '10%'
   },
   text: {
     margin: 1,
@@ -111,7 +99,7 @@ const styles = StyleSheet.create({
   captionContainer: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
 
   },
 
@@ -124,19 +112,16 @@ const styles = StyleSheet.create({
 
   captionText: {
     fontSize: 12,
-    fontWeight: "400",
-
+    fontWeight: '400'
 
   },
 
   inputPassword: {
     marginLeft: '5%',
     marginRight: '5%',
-    color: "#8F9BB3",
-  },
+    color: '#8F9BB3'
+  }
 
+})
 
-
-});
-
-export default Login;
+export default Login

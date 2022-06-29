@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
 
   viewMain: {
     flex: 1,
     paddingTop: 20,
-    paddingBottom: 10,
+    paddingBottom: 10
   },
 
   viewProdotto: {
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     // marginTop: '10%',
     marginLeft: '5%',
-    borderRadius: 20,
+    borderRadius: 20
   },
 
   viewMargin: {
@@ -23,16 +23,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#6bc1d6',
     borderWidth: 0,
     marginLeft: '5%',
-    borderRadius: 50,
+    borderRadius: 50
   },
-
-
 
   testoTitolo: {
     marginTop: '3%',
     marginLeft: '5%',
     marginRight: '5%',
-    marginBottom: '3%',
+    marginBottom: '3%'
   },
 
   button: {
@@ -42,40 +40,33 @@ const styles = StyleSheet.create({
   },
 
   testoSottotitolo: {
-    marginLeft: '5%',
+    marginLeft: '5%'
   },
-
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
-
 
   centeredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 22
   },
 
   modalView: {
     margin: 20,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 20,
     padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
+    alignItems: 'center',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2
-    },
+    }
   },
 
   modalText: {
     marginBottom: 15,
-    textAlign: "center"
+    textAlign: 'center'
   }
 })
 
-export default styles;
+export default styles
