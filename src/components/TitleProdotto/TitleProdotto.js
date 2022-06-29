@@ -1,8 +1,7 @@
 import React from 'react'
 import { Icon, TopNavigation, TopNavigationAction } from '@ui-kitten/components'
-import { View } from 'react-native'
 import styles from './TitleProdotto.style'
-
+import { View } from 'react-native'
 function TitleProdotto (props) {
   const shakeIconRef = React.useRef()
 
@@ -25,30 +24,32 @@ function TitleProdotto (props) {
 
   function renderBackAction () {
     return (
-      <TopNavigationAction icon={() => BackIcon} onPress={() => props.action} />
+      <TopNavigationAction icon={(props) => BackIcon(props)} onPress={() => props.action()} />
+
     )
   }
 
   function renderGoShopAction () {
     function GoOnPurchaseScreen () {
       shakeIconRef.current.startAnimation()
-      props.action2()
+      props.actionCarrello()
     }
 
     return (
-      <TopNavigationAction icon={() => CarIcon} onPress={() => GoOnPurchaseScreen} />
+      <TopNavigationAction icon={(props) => CarIcon(props)} onPress={() => GoOnPurchaseScreen()} />
     )
   }
 
   return (
     <>
-      <View style={{ backgroundColor: '#6bc1d6', height: '3%', width: '100%' }} />
+      <View style={{ backgroundColor: '#6bc1d6', height: '4%', width: '100%' }} />
+
       <TopNavigation
         alignment='center'
         style={styles.title}
         title={props.name}
-        accessoryLeft={() => renderBackAction}
-        accessoryRight={() => renderGoShopAction}
+        accessoryLeft={() => renderBackAction()}
+        accessoryRight={() => renderGoShopAction()}
       />
     </>
   )

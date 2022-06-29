@@ -90,5 +90,4 @@ function MyPurchaseScreen ({ navigation }) {
 
   )
 }
-
 export default MyPurchaseScreen

@@ -4,13 +4,19 @@
             "idMobile": "0",
             "nomeMobile": "Sedia",
             "descrizioneMobile": "Sedia con schienale recrinabile, braccioli in pelle, e ruote ad alta efficienza",
-            "colore": "marrone",
-            "materiale": "legno",
-            "dimensioni": "57x48x89 cm",
+            "colore": "nera",
+            "materiale": "pelle",
+            "dimensioni": "64x55x126.5 cm",
             "pesoMasimo": "120 kg",
             "pesoArticolo": "120kg",
-            "prezzo": "81,90€",
-            "linkImmagini": ["http://link1", "http://link2", "http://link3", "http://link4"]
+            "prezzo": "199,99€",
+            "linkImmagini": [
+                "https://pictureserver.net/images/pic/e1/a8/italian_src_wcat_picid_2913_x_556_maxy_450_image.jpg?ver=96", 
+                "https://pictureserver.net/images/pic/32/92/undef_src_sa_picid_343371_x_760_type_color_image.jpg?ver=343",
+                "https://pictureserver.net/images/pic/2e/67/undef_src_sa_picid_755580_x_1800_type_whitesh_image.jpg?ver=24", 
+                 "https://pictureserver.net/images/pic/da/1e/undef_src_sa_picid_343397_x_1800_type_whitesh_image.jpg?ver=27"
+                ]
+
             
         },
         {
@@ -24,7 +30,7 @@
             "pesoArticolo": "90kg",
             "prezzo": "61,99€",
             "linkImmagini": [
-                "https://brtschool.co.uk/wp-content/uploads/test.png",
+                "https://pictureserver.net/images/pic/82/28/undef_src_sa_picid_98966_x_1800_type_whitesh_image.jpg?ver=605",
                  "https://www.riflessi.it/wp-content/uploads/2018/12/tavolo-living-base-in-legno.jpg",
                   "https://lubestoremilano.it/wp-content/uploads/2015/07/kusut.jpg",
                    "https://www.manoarredamenti.it/wp-content/uploads/2013/06/tavolo-kuset-fisso.jpg",
@@ -37,13 +43,20 @@
             "idMobile": "2",
             "nomeMobile": "Lampada",
             "descrizioneMobile": "Lampada con una luce a basso consumo, circa 700w di potenza",
-            "colore": "Blu/Nera",
-            "materiale": "PETG",
-            "dimensioni": "10x30x10 cm",
+            "colore": "Bianca",
+            "materiale": "vetro",
+            "dimensioni": "63x33x33 cm",
             "pesoMasimo": "-- kg",
             "pesoArticolo": "2kg",
-            "prezzo": "11,99€",
-            "linkImmagini": ["http://link1", "http://link2", "http://link3", "http://link4", "http://link5" , "http://link6"]
+            "prezzo": "99,99€",
+            "linkImmagini": [
+                "https://pictureserver.net/images/pic/95/1a/undef_src_sa_picid_823046_x_1800_type_whitesh_image.jpg?ver=7",
+                 "https://pictureserver.net/images/pic/ae/58/undef_src_sa_picid_823047_x_1800_type_whitesh_image.jpg?ver=6",
+                  "https://pictureserver.net/images/pic/72/5d/undef_src_sa_picid_823046_x_1800_type_color_image.jpg?ver=7",
+                  "https://pictureserver.net/images/pic/25/5d/undef_src_sa_picid_823053_x_760_type_whitesh_image.jpg?ver=7" ,
+                   "https://pictureserver.net/images/pic/24/c5/undef_src_sa_picid_823050_x_1800_type_whitesh_image.jpg?ver=7", 
+                    "https://pictureserver.net/images/pic/d9/f7/undef_src_sa_picid_823057_x_1800_type_whitesh_image.jpg?ver=10"
+                ]
 
             
         },
@@ -51,13 +64,18 @@
             "idMobile": "3",
             "nomeMobile": "Orologio",
             "descrizioneMobile": "Segna fino a 24 ore di tempo in maniera precisissima",
-            "colore": "Rosso",
+            "colore": "Legno",
             "materiale": "Ferro",
-            "dimensioni": "40x40x10 cm",
+            "dimensioni": "60x5x60 cm",
             "pesoMasimo": "-- kg",
             "pesoArticolo": "1kg",
-            "prezzo": "5,99€",
-            "linkImmagini": ["http://link1"]
+            "prezzo": "79,99€",
+            "linkImmagini": [
+                "https://pictureserver.net/images/pic/e2/a6/undef_src_sa_picid_731985_x_1800_type_whitesh_image.jpg?ver=11",
+                "https://pictureserver.net/images/pic/8a/68/undef_src_sa_picid_738250_x_1800_type_color_image.jpg?ver=15",
+                "https://pictureserver.net/images/pic/62/68/undef_src_sa_picid_731986_x_1800_type_whitesh_image.jpg?ver=8",
+                "https://pictureserver.net/images/pic/0e/87/undef_src_sa_picid_798202_x_1800_type_whitesh_image.jpg?ver=7"
+            ]
             
         },
         {
@@ -65,12 +83,20 @@
             "nomeMobile": "Cesto",
             "descrizioneMobile": "Cesto realizzato in legno, intrecciato a mano e con la possibilità di avere il coperchio di un altro colore",
             "colore": "Marroncino",
-            "materiale": "Legno",
-            "dimensioni": "100 x 100 x 20 cm",
+            "materiale": "100% iuta",
+            "dimensioni": "33 x 34 x 33 cm",
             "pesoMasimo": "30 kg",
-            "pesoArticolo": "3kg",
-            "prezzo": "12,99€",
-            "linkImmagini": ["http://link1"]
+            "pesoArticolo": "2kg",
+            "prezzo": "69,99€",
+            "linkImmagini": [
+                "https://pictureserver.net/images/pic/e0/6b/undef_src_sa_picid_728943_x_1800_type_whitesh_image.jpg?ver=27",
+                "https://pictureserver.net/images/pic/11/95/undef_src_sa_picid_728984_x_1800_type_whitesh_image.jpg?ver=26",
+                "https://pictureserver.net/images/pic/69/fb/undef_src_sa_picid_795116_x_1800_type_whitesh_image.jpg?ver=19",
+                "https://pictureserver.net/images/pic/c3/d4/undef_src_sa_picid_809379_x_1800_type_whitesh_image.jpg?ver=15",
+                "https://pictureserver.net/images/pic/b3/31/undef_src_sa_picid_817547_x_1800_type_whitesh_image.jpeg?ver=9",
+                "https://pictureserver.net/images/pic/b9/52/undef_src_sa_picid_820561_x_760_type_whitesh_image.jpg?ver=7",
+                "https://pictureserver.net/images/pic/84/a3/undef_src_sa_picid_757606_x_1800_type_whitesh_image.jpg?ver=21"
+            ]
             
         },
         {
@@ -79,11 +105,17 @@
             "descrizioneMobile": "Cornice per quadri moderni e antichi realizzato con materiali di prima qualità",
             "colore": "Verde",
             "materiale": "Plastica",
-            "dimensioni": "50x50x5 cm",
+            "dimensioni": "60x4x60 cm",
             "pesoMasimo": "-- kg",
-            "pesoArticolo": ">1kg",
-            "prezzo": "2,99€",
-            "linkImmagini": ["http://link1"]
+            "pesoArticolo": "2kg",
+            "prezzo": "79,99€",
+            "linkImmagini": [
+                "https://pictureserver.net/images/pic/1b/0b/undef_src_sa_picid_784600_x_1800_type_whitesh_image.jpg?ver=28",
+                "https://pictureserver.net/images/pic/cf/cb/undef_src_sa_picid_784600_x_1800_type_color_image.jpg?ver=28",
+                "https://pictureserver.net/images/pic/aa/54/undef_src_sa_picid_785387_x_760_type_color_image.jpg?ver=11",
+                "https://pictureserver.net/images/pic/d2/21/undef_src_sa_picid_784605_x_1800_type_whitesh_image.jpg?ver=23",
+                "https://pictureserver.net/images/pic/e2/95/undef_src_sa_picid_784606_x_1800_type_whitesh_image.jpg?ver=25"
+            ]
             
         }
 

@@ -1,61 +1,30 @@
 import * as React from 'react'
-import { StyleSheet, View, ScrollView } from 'react-native'
-import Titolo from '../../components/compHome/titoloHome'
-import SceltaProdotto from '../../components/compHome/prodottoHome'
-import { ProdottoScreen } from '../navigaitor'
-import prodotti from '../../api/specificheProdotti.json'
-import utente from '../../api/credenziali.json'
+import { View, StyleSheet } from 'react-native'
+import { PagamentoCarrelloScreen } from '../navigaitor'
+import TitoloCarrello from '../../components/compCarrello/titoloCarrello'
+import Riepilogo from '../../components/compCarrello/riepilogoCarrello'
+import CartaCarrello from '../../components/compCarrello/cartaCarrello'
 
-function Home ({ navigation, route }) {
-  const { idIdentificativo } = route.params
-  console.log(prodotti)
+function Carrello ({ route, navigation }) {
+  function GoBackAction () {
+    navigation.goBack()
+  }
+
   return (
-    <View style={styles.container}>
-      <Titolo valore={utente.data[idIdentificativo].nomeCredenziali} />
-      <ScrollView style={{ paddingBottom: 200 }}>
-        {prodotti.data.map(el => (
-          <SceltaProdotto
-            nomeMobile={el.nomeMobile}
-            descrizione={el.descrizioneMobile}
-            cambioScheda={() => { navigation.navigate(ProdottoScreen.id, { itemId: el.idMobile }) }}
-            numeroRender={el.idMobile}
-
-          />))}
-      </ScrollView>
+    <View>
+      <TitoloCarrello name='Carrello' style={StyleMod.modTitolo} action={() => GoBackAction()} />
+      <CartaCarrello cambioScheda={() => navigation.navigate(PagamentoCarrelloScreen.id)} />
+      <Riepilogo onPressGoBack={() => GoBackAction()} />
     </View>
   )
 }
+const StyleMod = StyleSheet.create({
+  modTitolo: {
+    backgroundColor: '#6bc1d6',
+    height: '9%',
+    width: '100%'
 
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    alignItems: 'center'
-  },
-
-  viewTitolo: {
-    height: '20%',
-    width: '100%',
-
-    borderWidth: 0,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    justifyContent: 'center'
-  },
-
-  viewProdotti: {
-    backgroundColor: 'red'
-
-  },
-
-  testoTitolo: {
-    marginTop: '5%',
-    marginLeft: '5%'
-  },
-
-  testoSottotitolo: {
-    marginLeft: '5%'
   }
-})
-
-export default Home
+}
+)
+export default Carrello

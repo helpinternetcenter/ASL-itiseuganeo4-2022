@@ -24,41 +24,29 @@ function ScroolImage (props) {
         {...props}
         style={[props.styles, styles.RadioGroup]}
         selectedIndex={selectedIndex}
-        onChange={() => ChangeImage}
+        onChange={(index) => ChangeImage(index)}
       >
-        {dati.data[numeroRender].linkImmagini.map((el) => {
-          return (
-            <Radio />
-          )
-        })}
+        {/* eslint-disable-next-line react/jsx-key */}
+        {dati.data[numeroRender].linkImmagini.map((el, key) => (<Radio key={key}> </Radio>))}
       </RadioGroup>
     )
   }
-
   return (
     <>
-      <Card style={{ margin: 26, borderRadius: 10 }} status='primary' footer={() => BottomRadioGroup} disabled>
+      <Card style={{ margin: 26, borderRadius: 10 }} status='primary' footer={(props) => BottomRadioGroup(props)} disabled={() => true}>
         <ViewPager
           selectedIndex={selectedIndex}
           shouldLoadComponent={() => shouldLoadComponent}
-          onSelect={() => ChangeImage}
+          onSelect={(index) => ChangeImage(index)}
         >
           {
-            dati.data[numeroRender].linkImmagini.map(el => {
-              console.log(el)
+            dati.data[numeroRender].linkImmagini.map((el, key) => {
               return (
-                <Layout
-                  style={styles.imageContiner}
-                  level='1'
-                >
-                  <Image
-                    style={styles.image}
-                    source={{ uri: el }}
-                  />
-              </Layout>)
-            }
-
-            )
+                <Layout key={key} style={styles.imageContiner} level='1'>
+                  <Image style={styles.image} source={{ uri: el }} />
+                </Layout>
+              )
+            })
           }
 
         </ViewPager>

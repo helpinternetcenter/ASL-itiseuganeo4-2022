@@ -21,7 +21,6 @@ export function ricerca (nome, password) {
 
   return (utenteLog)
 }
-
 export function ControlInputStream (fun, address, province, state, country, payment) {
   if (address === '' || province === '' || state === '' || country === '' || payment === null) {
     fun(false)

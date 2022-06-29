@@ -12,12 +12,14 @@ function Header (props) {
 }
 
 function PriceDescription (props) {
+  console.log(props.numeroRender)
+
   return (
     <Card status='info' header={Header} style={{ margin: 26, borderRadius: 10 }}>
       <Text category='h2' style={{ fontWeight: 'normal' }}>
         {dati.data[props.numeroRender].prezzo}
       </Text>
-      <Button size='small' onPress={() => props.Action}>
+      <Button size='small' onPress={() => props.action()}>
         Agg. Carrello
       </Button>
 

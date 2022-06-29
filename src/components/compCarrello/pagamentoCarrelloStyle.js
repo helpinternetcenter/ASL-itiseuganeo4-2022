@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 10
   },
-
   viewProdotto: {
     width: '90%',
     backgroundColor: '#dedede',

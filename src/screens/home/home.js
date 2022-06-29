@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import * as React from 'react'
 import { StyleSheet, View, ScrollView } from 'react-native'
 import Titolo from '../../components/compHome/titoloHome'
@@ -8,19 +9,23 @@ import utente from '../../api/credenziali.json'
 
 function Home ({ navigation, route }) {
   const { idIdentificativo } = route.params
-  console.log(prodotti)
   return (
     <View style={styles.container}>
       <Titolo valore={utente.data[idIdentificativo].nomeCredenziali} />
       <ScrollView style={{ paddingBottom: 200 }}>
-        {prodotti.data.map(el => (
-          <SceltaProdtto
-            nomeMobile={el.nomeMobile}
-            descrizione={el.descrizioneMobile}
-            cambioScheda={() => navigation.navigate(ProdottoScreen.id, { itemId: el.idMobile })}
-            numeroRender={el.idMobile}
-          />
-        )
+        {prodotti.data.map((el, key) => {
+          return (
+            <SceltaProdotto
+              key={key}
+              nomeMobile={el.nomeMobile}
+              descrizione={el.descrizioneMobile}
+              cambioScheda={() => {
+                navigation.navigate(ProdottoScreen.id, { itemId: el.idMobile })
+              }}
+              numeroRender={el.idMobile}
+            />
+          )
+        }
         )}
       </ScrollView>
     </View>

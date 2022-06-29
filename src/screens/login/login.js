@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Layout, Text, Input, Button, Icon, IconRegistry } from '@ui-kitten/components'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
@@ -10,7 +10,6 @@ const AlertIcon = (props) => (
   <Icon {...props} name='alert-circle-outline' />
 
 )
-
 function Login ({ navigation }) {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
@@ -19,7 +18,11 @@ function Login ({ navigation }) {
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry)
   }
-
+  function Control () {
+    if (ricerca(username, password).ingresso) {
+      navigation.push(HomeScreen.id, { idIdentificativo: ricerca(username, password).id })
+    }
+  }
   const renderIcon = (props) => (
 
     <TouchableWithoutFeedback onPress={toggleSecureEntry}>
@@ -35,7 +38,6 @@ function Login ({ navigation }) {
       </View>
     )
   }
-
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text category='h1'>Log In </Text>
@@ -64,8 +66,7 @@ function Login ({ navigation }) {
         onChangeText={nextValue => setPassword(nextValue)}
         style={styles.inputPassword}
       />
-
-      <Button onPress={() => { { ricerca(username, password).ingresso ? navigation.push(HomeScreen.id, { idIdentificativo: ricerca(username, password).id }) : console.log('return2') } }}>
+      <Button onPress={() => Control()}>
         Log In
       </Button>
 
