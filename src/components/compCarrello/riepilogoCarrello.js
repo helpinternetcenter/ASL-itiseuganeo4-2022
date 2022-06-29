@@ -45,7 +45,7 @@ function Riepilogo ({
 
               <Text style={styles.modalText}>Hai confermato l'acquisto</Text>
               <CheckIcon />
-              <Button style={styles.button} onPress={() => GoBack()} accessoryLeft={(props) => BackIcon(props)}>Torna alla Home</Button>
+              <Button style={styles.popButton} onPress={() => GoBack()} accessoryLeft={(props) => BackIcon(props)}>FINITO</Button>
 
             </View>
           </View>
@@ -115,6 +115,35 @@ const styles = StyleSheet.create({
     // marginTop: '50%',
     marginLeft: '1%',
     borderRadius: 20
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22
+  },
+
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    }
+  },
+  popButton: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center'
   }
 })
 
