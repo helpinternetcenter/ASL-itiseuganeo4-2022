@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { ScrollView } from 'react-native'
 import { Layout, IndexPath } from '@ui-kitten/components'
-import TitleProdotto from '../../components/TitleProdotto/TitleProdotto'
+import TitleCarrello from '../../components/compCarrello/titoloCarrello'
 import styles from './MyPurchaseScreen_style'
-import { PurchaseScreen } from '../navigaitor'
 import ViewData from '../../components/componentPurchase/ViewData/ViewData'
 import ViewPayment from '../../components/componentPurchase/ViewPayment/ViewPayment'
 import ViewBotton from '../../components/componentPurchase/ViewBotton/ViewBotton'
@@ -33,10 +32,6 @@ function MyPurchaseScreen ({ navigation }) {
     navigation.goBack()
   }
 
-  function GoToPurchaseScreen () {
-    navigation.navigate(PurchaseScreen.id)
-  }
-
   function GoBack () {
     setPopUp(!popUp)
     navigation.goBack()
@@ -45,10 +40,10 @@ function MyPurchaseScreen ({ navigation }) {
 
   return (
     <>
-      <TitleProdotto
+      <TitleCarrello
         name='MyPurchaseScreen'
-        action={() => GoBackAction}
-        action2={() => GoToPurchaseScreen}
+        action={() => GoBackAction()}
+        style={styles.TitleCarrello}
       />
 
       <ScrollView>
@@ -56,7 +51,7 @@ function MyPurchaseScreen ({ navigation }) {
           <ViewData
             elencoTitoli={elencoTitoli}
             address={address}
-            setAddress={(nextValue => setAddress(nextValue))}
+            setAddress={(nextValue) => setAddress(nextValue)}
             state={state}
             setState={(index) => setState(index)}
             value={elencoTitoli[state - 1]}
@@ -82,7 +77,7 @@ function MyPurchaseScreen ({ navigation }) {
 
       <PopUp
         visible={popUp}
-        GoBack={() => GoBack}
+        GoBack={() => GoBack()}
         setPopPup={setPopUp}
       />
 

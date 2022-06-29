@@ -4,7 +4,8 @@ export const styles = {
     backgroundColor: '#dedede',
     borderWidth: 0,
     marginLeft: '5%',
-    borderRadius: 20
+    borderRadius: 20,
+    marginRight: '5%'
   },
 
   viewMargin: {

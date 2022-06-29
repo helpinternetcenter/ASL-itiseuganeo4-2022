@@ -10,7 +10,6 @@ function BottomRadioGroup (props) {
       selectedIndex={props.value}
       onChange={(index) => (props.action(index))}
     >
-      <Radio>PostePay</Radio>
       <Radio>PayPal</Radio>
       <Radio>Visa</Radio>
       <Radio>Mastercard</Radio>

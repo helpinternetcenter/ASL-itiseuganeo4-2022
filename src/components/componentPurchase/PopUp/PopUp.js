@@ -25,7 +25,7 @@ function PopUp (props) {
 
           <Text style={styles.modalText}>Hai confermato l'acquisto</Text>
           <CheckIcon />
-          <Button style={styles.button} onPress={() => props.GoBack} accessoryLeft={BackIcon}>Torna alla Home</Button>
+          <Button style={styles.button} onPress={() => props.GoBack()} accessoryLeft={BackIcon}>Torna alla Home</Button>
         </View>
       </View>
     </Modal>
