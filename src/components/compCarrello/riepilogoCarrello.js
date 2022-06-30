@@ -52,6 +52,7 @@ function Riepilogo ({
               </Text>
 
               <Image source={{ uri: specificheProdotti.data[el].linkImmagini[0] }} style={styles.logo} />
+              <View style={styles.viewMargin2} />
             </View>
           )
         )}
