@@ -15,7 +15,7 @@ function Carrello ({ route, navigation }) {
     <View>
       <TitoloCarrello name='Carrello' style={StyleMod.modTitolo} action={() => GoBackAction()} />
       <ScrollView>
-        <CartaCarrello cambioScheda={() => navigation.navigate(PagamentoCarrelloScreen.id)} />
+        <CartaCarrello cambioScheda={() => navigation.navigate(PagamentoCarrelloScreen.id)} statePage={conferma} />
         <Riepilogo onPressGoBack={() => GoBackAction()} statePage={conferma} />
       </ScrollView>
 

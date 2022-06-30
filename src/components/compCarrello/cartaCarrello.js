@@ -3,6 +3,16 @@ import { Text, Button } from '@ui-kitten/components'
 import { StyleSheet, View } from 'react-native'
 import datiPersonali from '../../api/datiPersonali.json'
 
+function Dati () {
+  return (
+    <View>
+      <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].paese} , {datiPersonali.data[0].indirizzo} {datiPersonali.data[0].provincia}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].stato}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>Pagamento: {datiPersonali.data[0].modPagamento}</Text>
+    </View>
+  )
+}
+
 function CartaCarrello (props) {
   return (
     <View style={styles.viewMain}>
@@ -10,9 +20,7 @@ function CartaCarrello (props) {
         <Text category='h3' style={styles.titolo}>Inserisci le informazioni:</Text>
         <View style={styles.viewMargin} />
         <Button style={styles.button} onPress={() => props.cambioScheda()}>Inserisci</Button>
-        <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].paese} , {datiPersonali.data[0].indirizzo} {datiPersonali.data[0].provincia}</Text>
-        <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].stato}</Text>
-        <Text style={styles.datiRiassunto} category='p1'>Pagamento: {datiPersonali.data[0].modPagamento}</Text>
+        {props.statePage && <Dati />}
 
       </View>
     </View>
