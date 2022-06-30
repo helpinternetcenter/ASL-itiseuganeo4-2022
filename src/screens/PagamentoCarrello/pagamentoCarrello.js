@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { ScrollView, View, Alert, Modal, StyleSheet } from 'react-native'
 import { Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath, Icon } from '@ui-kitten/components'
-import TitleCarrello from './titoloCarrello'
+import TitleCarrello from '../../components/compCarrello/titoloCarrello'
+import { CarrelloScreen } from '../navigaitor'
 import styles from './pagamentoCarrelloStyle'
 
 function CheckIcon (props) {
@@ -40,9 +41,13 @@ function PagamentoCarrello ({ navigation }) {
   const [province, setProvince] = React.useState('')
   const [country, setCountry] = React.useState('')
   const [payment, setPayment] = React.useState(0)
-  const [state, setState] = React.useState(new IndexPath(0))
+  const [state, setState] = React.useState(null)
   const value = elencoTitoli[state - 1]
   const [popUp, setPopUp] = useState(false)
+  const [dangerStateProvincia, setDangerStateProvincia] = React.useState('danger')
+  const [dangerStatePaese, setDangerStatePaese] = React.useState('danger')
+  const [dangerStateIndirizzo, setDangerStateIndirizzo] = React.useState('danger')
+  const [dangerStateStato, setDangerStateStato] = React.useState('danger')
 
   function GoBackAction () {
     navigation.goBack()
@@ -65,7 +70,7 @@ function PagamentoCarrello ({ navigation }) {
 
   function GoBack () {
     setPopUp(!popUp)
-    navigation.goBack()
+    navigation.navigate(CarrelloScreen.id, { conferma: true })
   }
 
   function BackIcon (props) {
@@ -73,7 +78,16 @@ function PagamentoCarrello ({ navigation }) {
       <Icon {...props} name='arrow-back' />
     )
   }
-
+  function Falied () {
+    return (
+      <Text style={{ color: 'red', marginLeft: '5%', paddingBottom: '10%' }}>* Campi obbligatori</Text>
+    )
+  }
+  function Success () {
+    return (
+      <Text style={{ color: 'green', marginLeft: '5%', paddingBottom: '10%' }}>* Campi compilati</Text>
+    )
+  }
   return (
     <>
       <TitleCarrello name='Dati Carta' action={() => GoBackAction()} style={StyleMod.modTitolo} />
@@ -87,32 +101,58 @@ function PagamentoCarrello ({ navigation }) {
             <Input
               placeholder='Indirizzo'
               label='Indirizzo'
+              status={dangerStateIndirizzo}
               value={address}
-              style={styles.testoTitolo}
-              onChangeText={nextValue => setAddress(nextValue)}
+              style={styles.input}
+              onChangeText={(nextValue) => {
+                nextValue === '' ? setDangerStateIndirizzo('danger') : setDangerStateIndirizzo('success')
+                setAddress(nextValue)
+              }}
             />
 
-            <Select selectedIndex={state} onSelect={(index) => setState(index)} label='Stato' value={value} style={styles.testoTitolo}>
+            <Select
+              selectedIndex={state}
+              label='Stato'
+              status={dangerStateStato}
+              value={value}
+              style={styles.testoTitolo}
+              onSelect={(index) => {
+                index === null ? setDangerStateStato('danger') : setDangerStateStato('success')
+                setState(index)
+              }}
+            >
               {elencoTitoli.map((el, key) => RenderOption(el, key))}
 
             </Select>
 
             <Input
-              style={styles.testoTitolo}
+              style={styles.input}
               placeholder='Paese'
+              status={dangerStatePaese}
               label='Paese'
               value={country}
-              onChangeText={nextValue => setCountry(nextValue)}
+              onChangeText={nextValue => {
+                nextValue === '' ? setDangerStatePaese('danger') : setDangerStatePaese('success')
+                setCountry(nextValue)
+              }}
 
             />
 
             <Input
               placeholder='Provincia'
-              style={{ ...styles.testoTitolo, paddingBottom: 20 }}
+              status={dangerStateProvincia}
+              style={{ ...styles.input, paddingBottom: 20 }}
               label='Provincia'
               value={province}
-              onChangeText={nextValue => setProvince(nextValue)}
+              onChangeText={(nextValue) => {
+                nextValue === '' ? setDangerStateProvincia('danger') : setDangerStateProvincia('success')
+                setProvince(nextValue)
+              }}
             />
+
+            {address === '' || province === '' || country === '' || state === null
+              ? <Falied />
+              : <Success />}
           </View>
 
           <View style={{ ...styles.viewProdotto, marginTop: 20, marginBottom: 40 }}>

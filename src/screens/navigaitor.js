@@ -7,7 +7,7 @@ import Home from './home/home'
 import Registrati from './registrati/Registrati'
 import MyPurchaseScreen from './MyPurchase Screen/MyPurchaseScreen'
 import Carrello from './carrello/carrello'
-import PagamentoCarrello from '../components/compCarrello/pagamentoCarrello'
+import PagamentoCarrello from './PagamentoCarrello/pagamentoCarrello'
 import RiepilogoCarrello from '../components/compCarrello/riepilogoCarrello'
 
 const LoginNavigationStack = createNativeStackNavigator()
@@ -21,19 +21,15 @@ export const HomeScreen = {
 export const ProdottoScreen = {
   id: 'PRODOTTO'
 }
-export const RegisterScreen = {
-  id: 'SCREEN'
-}
 export const PurchaseScreen = {
   id: 'Acquisto'
 }
-export const GOLOGINScreen = {
+export const RegisterScreen = {
   id: 'GOLOGIN'
 }
 export const CarrelloScreen = {
   id: 'CARRELLO'
 }
-
 export const PagamentoCarrelloScreen = {
   id: 'PAGAMENTOCARRELLO'
 }
@@ -43,7 +39,7 @@ export const RiepilogoCarrelloScreen = {
 const LoginRoot = () => (
   <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
     <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
-    <LoginNavigationStack.Screen name={GOLOGINScreen.id} component={Registrati} />
+    <LoginNavigationStack.Screen name={RegisterScreen.id} component={Registrati} />
     <LoginNavigationStack.Screen name={HomeScreen.id} component={Home} />
     <LoginNavigationStack.Screen name={ProdottoScreen.id} component={Prodotto} />
     <LoginNavigationStack.Screen name={PurchaseScreen.id} component={MyPurchaseScreen} />

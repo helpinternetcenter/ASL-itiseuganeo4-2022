@@ -8,11 +8,7 @@ function ViewData (props) {
   const [dangerStatePaese, setDangerStatePaese] = React.useState('danger')
   const [dangerStateIndirizzo, setDangerStateIndirizzo] = React.useState('danger')
   const [dangerStateStato, setDangerStateStato] = React.useState('danger')
-  function RenderOption (el, key) {
-    return (
-      <SelectItem key={{ row: key.row, section: key.section }} title={el} />
-    )
-  }
+
   function Falied () {
     console.log('fallito')
     return (
@@ -48,16 +44,21 @@ function ViewData (props) {
       <Select
         selectedIndex={props.state}
         label='Stato'
-        value={props.state}
+        status={dangerStateStato}
+        value={props.value}
         style={styles.testoTitolo}
         onSelect={(index) => {
-          //index === null ? setDangerStateStato('danger') : setDangerStateStato('success')
-          //props.setState(index)
+          index === null ? setDangerStateStato('danger') : setDangerStateStato('success')
           props.setState(index)
         }}
       >
 
-        {props.elencoTitoli.map((el, key) => RenderOption(el, key))}
+        {props.elencoTitoli.map((el, key) => {
+          return (
+            <SelectItem key={key} title={el} />
+          )
+        }
+        )}
 
       </Select>
 

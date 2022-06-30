@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ScrollView } from 'react-native'
-import { Layout, IndexPath } from '@ui-kitten/components'
+import { Layout } from '@ui-kitten/components'
 import TitleCarrello from '../../components/compCarrello/titoloCarrello'
 import styles from './MyPurchaseScreen_style'
 import ViewData from '../../components/componentPurchase/ViewData/ViewData'
@@ -14,7 +14,6 @@ function MyPurchaseScreen ({ navigation }) {
     'Italy',
     'Germany',
     'USA',
-    'England',
     'Poland',
     'Spain',
     'Portugal',
@@ -25,7 +24,7 @@ function MyPurchaseScreen ({ navigation }) {
   const [province, setProvince] = React.useState('')
   const [country, setCountry] = React.useState('')
   const [payment, setPayment] = React.useState(0)
-  const [state, setState] = React.useState(new IndexPath(0))
+  const [state, setState] = React.useState(null)
   const [popUp, setPopUp] = useState(false)
 
   function GoBackAction () {

@@ -15,7 +15,7 @@ function Prodotto ({ route, navigation }) {
     navigation.goBack()
   }
   function GoToCarrello () {
-    navigation.navigate(CarrelloScreen.id)
+    navigation.navigate(CarrelloScreen.id, { conferma: false })
   }
   function compraSubito () {
     navigation.navigate(PurchaseScreen.id)

@@ -6,6 +6,7 @@ import Riepilogo from '../../components/compCarrello/riepilogoCarrello'
 import CartaCarrello from '../../components/compCarrello/cartaCarrello'
 
 function Carrello ({ route, navigation }) {
+  const { conferma } = route.params
   function GoBackAction () {
     navigation.goBack()
   }
@@ -14,7 +15,7 @@ function Carrello ({ route, navigation }) {
     <View>
       <TitoloCarrello name='Carrello' style={StyleMod.modTitolo} action={() => GoBackAction()} />
       <CartaCarrello cambioScheda={() => navigation.navigate(PagamentoCarrelloScreen.id)} />
-      <Riepilogo onPressGoBack={() => GoBackAction()} />
+      <Riepilogo onPressGoBack={() => GoBackAction()} statePage={conferma} />
     </View>
   )
 }

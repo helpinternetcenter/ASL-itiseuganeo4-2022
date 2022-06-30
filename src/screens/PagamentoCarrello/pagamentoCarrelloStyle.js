@@ -65,7 +65,13 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: 'center'
+  },
+  input: {
+    borderWidth: 2,
+    marginTop: '3%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginBottom: '3%'
   }
 })
-
 export default styles
