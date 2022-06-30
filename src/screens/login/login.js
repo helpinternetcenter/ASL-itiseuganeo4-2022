@@ -13,7 +13,10 @@ const AlertIcon = (props) => (
 function Login ({ navigation }) {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
-  const [secureTextEntry, setSecureTextEntry] = React.useState(true)
+  const [dangerStateUsername, setDangerStateUsername] = React.useState('danger')
+  const [dangerStatePassword, setDangerStatePassword] = React.useState('danger')
+  const [secureTextEntry, setSecureTextEntry] = React.useState(null)
+  const [result, setResult] = React.useState(true)
 
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry)
@@ -21,6 +24,13 @@ function Login ({ navigation }) {
   function Control () {
     if (ricerca(username, password).ingresso) {
       navigation.push(HomeScreen.id, { idIdentificativo: ricerca(username, password).id })
+      setResult(true)
+    } else {
+      setUsername('')
+      setPassword('')
+      setDangerStateUsername('danger')
+      setDangerStatePassword('danger')
+      setResult(false)
     }
   }
   const renderIcon = (props) => (
@@ -49,9 +59,13 @@ function Login ({ navigation }) {
 
       <Input
         placeholder='Username'
+        status={dangerStateUsername}
         value={username}
-        onChangeText={nextValue => setUsername(nextValue)}
-        style={{ marginLeft: '5%', marginRight: '5%', marginBottom: '10%', marginTop: '5%' }}
+        style={styles.input}
+        onChangeText={(nextValue) => {
+          nextValue === '' ? setDangerStateUsername('danger') : setDangerStateUsername('success')
+          setUsername(nextValue)
+        }}
 
       />
 
@@ -61,14 +75,20 @@ function Login ({ navigation }) {
         value={password}
         placeholder='Enter Password'
         caption={renderCaption}
+        status={dangerStatePassword}
         accessoryRight={renderIcon}
         secureTextEntry={secureTextEntry}
-        onChangeText={nextValue => setPassword(nextValue)}
-        style={styles.inputPassword}
+        style={[styles.inputPassword, styles.input]}
+        onChangeText={(nextValue) => {
+          nextValue === '' ? setDangerStatePassword('danger') : setDangerStatePassword('success')
+          setPassword(nextValue)
+        }}
       />
       <Button onPress={() => Control()}>
         Log In
       </Button>
+
+      {!result && <Text category='label' style={{ color: 'red' }}>Username e Password errate</Text>}
 
       <View style={styles.row}>
         <Text style={styles.text} category='p2'>Se non sei registrato, Registrati</Text>
@@ -116,6 +136,13 @@ const styles = StyleSheet.create({
     marginLeft: '5%',
     marginRight: '5%',
     color: '#8F9BB3'
+  },
+  input: {
+    borderWidth: 2,
+    marginTop: '3%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginBottom: '3%'
   }
 
 })
