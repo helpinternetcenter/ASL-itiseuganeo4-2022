@@ -12,7 +12,6 @@ function SceltaProdotto (props) {
         <View style={styles.viewMargin} />
         <Text category='p1' style={styles.testoTitolo}>{props.descrizione} </Text>
         <Button style={styles.button} appearance='ghost' onPress={() => props.cambioScheda()}>
-
           COMPRA
         </Button>
       </View>

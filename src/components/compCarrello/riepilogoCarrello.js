@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
     width: '60%',
     marginLeft: '35%',
     marginTop: '5%',
-    marginBottom: '15%'
+    marginBottom: '40%'
+
   },
   riepProdotti: {
     fontSize: 25,
@@ -109,11 +110,11 @@ const styles = StyleSheet.create({
   },
 
   riepilogo: {
-    width: '96%',
+    width: '94%',
     backgroundColor: '#dedede',
     borderWidth: 0,
     // marginTop: '50%',
-    marginLeft: '1%',
+    marginLeft: '3%',
     borderRadius: 20
   },
   centeredView: {
