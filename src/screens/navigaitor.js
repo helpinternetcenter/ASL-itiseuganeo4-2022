@@ -9,6 +9,7 @@ import MyPurchaseScreen from './MyPurchase Screen/MyPurchaseScreen'
 import Carrello from './carrello/carrello'
 import PagamentoCarrello from '../screens/PagamentoCarrello/pagamentoCarrello'
 import RiepilogoCarrello from '../components/compCarrello/riepilogoCarrello'
+import CheckCarello from '../screens/checkCarello/checkCarello'
 
 const LoginNavigationStack = createNativeStackNavigator()
 
@@ -36,6 +37,10 @@ export const PagamentoCarrelloScreen = {
 export const RiepilogoCarrelloScreen = {
   id: 'RIEPILOGOCARRELLO'
 }
+export const CheckCarelloScreen = {
+  id: 'CheckCarello'
+}
+
 const LoginRoot = () => (
   <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
     <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
@@ -46,7 +51,7 @@ const LoginRoot = () => (
     <LoginNavigationStack.Screen name={CarrelloScreen.id} component={Carrello} />
     <LoginNavigationStack.Screen name={PagamentoCarrelloScreen.id} component={PagamentoCarrello} />
     <LoginNavigationStack.Screen name={RiepilogoCarrelloScreen.id} component={RiepilogoCarrello} />
-
+    <LoginNavigationStack.Screen name={RiepilogoCarrelloScreen.id} component={CheckCarello} />
   </LoginNavigationStack.Navigator>
 )
 
