@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Text, Button, Icon } from '@ui-kitten/components'
-import { StyleSheet, View, Modal, Alert } from 'react-native'
+import { StyleSheet, View, Modal, Alert, Image } from 'react-native'
 import inCarrello from '../../api/inCarrello.json'
 import specificheProdotti from '../../api/specificheProdotti.json'
 
@@ -34,7 +34,12 @@ function Riepilogo ({
         <Text category='h3' style={styles.titoloRiepilogo}>Riepilogo</Text>
         <View style={styles.viewMargin} />
         {inCarrello.data[0].idOggetti.map((el, key) =>
-          (<Text key={key} style={styles.riepProdotti} category='p1'>{specificheProdotti.data[el].nomeMobile} : {specificheProdotti.data[el].prezzo}</Text>)
+          (
+            <View key={key}>
+              <Image source={{ uri: specificheProdotti.data[el].linkImmagini[0] }} style={styles.logo} />
+              <Text style={styles.riepProdotti} category='p1'>{specificheProdotti.data[el].nomeMobile} : {specificheProdotti.data[el].prezzo}</Text>
+            </View>
+          )
         )}
         <View style={styles.viewMargin2} />
 
@@ -145,7 +150,20 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: 'center'
+  },
+
+  container: {
+    paddingTop: 50
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50
+  },
+  logo: {
+    width: 66,
+    height: 58
   }
+
 })
 
 export default Riepilogo
