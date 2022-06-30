@@ -54,7 +54,6 @@ function Login ({ navigation }) {
 
       <View style={styles.row}>
         <Text style={styles.text} category='p2'>USERNAME</Text>
-
       </View>
 
       <Input
