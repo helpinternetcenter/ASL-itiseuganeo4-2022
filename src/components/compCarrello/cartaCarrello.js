@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Text, Button } from '@ui-kitten/components'
 import { StyleSheet, View } from 'react-native'
+import datiPersonali from '../../api/datiPersonali.json'
 
 function CartaCarrello (props) {
   return (
@@ -9,6 +10,9 @@ function CartaCarrello (props) {
         <Text category='h3' style={styles.titolo}>Inserisci le informazioni:</Text>
         <View style={styles.viewMargin} />
         <Button style={styles.button} onPress={() => props.cambioScheda()}>Inserisci</Button>
+        <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].paese} , {datiPersonali.data[0].indirizzo} {datiPersonali.data[0].provincia}</Text>
+        <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].stato}</Text>
+        <Text style={styles.datiRiassunto} category='p1'>Pagamento: {datiPersonali.data[0].modPagamento}</Text>
 
       </View>
     </View>
@@ -27,6 +31,12 @@ const styles = StyleSheet.create({
   titolo: {
     marginTop: '5%',
     marginLeft: '5%'
+  },
+
+  datiRiassunto: {
+    fontSize: 20,
+    marginLeft: '5%'
+
   },
 
   viewMargin: {

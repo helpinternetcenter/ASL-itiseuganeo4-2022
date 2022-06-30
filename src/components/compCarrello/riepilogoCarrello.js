@@ -36,8 +36,22 @@ function Riepilogo ({
         {inCarrello.data[0].idOggetti.map((el, key) =>
           (
             <View key={key}>
+              <Text
+                style={styles.riepProdotti} category='p1' label='direction'
+              >{specificheProdotti.data[el].nomeMobile}
+              </Text>
+
+              <Text
+                style={styles.riepProdottiPrezzo} category='h1' label='direction'
+              >{specificheProdotti.data[el].prezzo}
+              </Text>
+
+              <Text
+                style={styles.riepProdottiDescrizione} category='p2' label='direction'
+              >{specificheProdotti.data[el].descrizioneMobile}
+              </Text>
+
               <Image source={{ uri: specificheProdotti.data[el].linkImmagini[0] }} style={styles.logo} />
-              <Text style={styles.riepProdotti} category='p1'>{specificheProdotti.data[el].nomeMobile} : {specificheProdotti.data[el].prezzo}</Text>
             </View>
           )
         )}
@@ -75,17 +89,44 @@ const styles = StyleSheet.create({
     width: '60%',
     marginLeft: '35%',
     marginTop: '5%',
-    marginBottom: '15%'
+    marginBottom: '50%'
   },
   riepProdotti: {
-    fontSize: 25,
-    marginLeft: '5%',
+    position: 'absolute',
+    fontSize: 20,
+    marginRight: '5%',
+    marginLeft: '0%',
     marginBottom: 1,
-    paddingBottom: 15
+    paddingBottom: 0,
+    alignSelf: 'flex-end'
+
+  },
+
+  riepProdottiPrezzo: {
+    position: 'absolute',
+    fontSize: 20,
+    marginTop: 25,
+    marginRight: '5%',
+    marginLeft: '0%',
+    marginBottom: 1,
+    paddingBottom: 0,
+    alignSelf: 'flex-end'
+
+  },
+
+  riepProdottiDescrizione: {
+    position: 'absolute',
+    fontSize: 15,
+    marginTop: 50,
+    marginRight: '5%',
+    marginLeft: '43%',
+    marginBottom: 1,
+    paddingBottom: 0,
+    alignSelf: 'flex-end'
 
   },
   viewMargin: {
-    height: '1%',
+    height: '0.2%',
     width: '60%',
     backgroundColor: '#6bc1d6',
     borderWidth: 0,
@@ -95,7 +136,7 @@ const styles = StyleSheet.create({
     borderRadius: 50
   },
   viewMargin2: {
-    height: '1%',
+    height: '0.2%',
     width: '90%',
     backgroundColor: '#a6a6a6',
     borderWidth: 0,
@@ -160,8 +201,11 @@ const styles = StyleSheet.create({
     height: 50
   },
   logo: {
-    width: 66,
-    height: 58
+    marginLeft: '5%',
+    width: 150,
+    height: 120,
+    marginTop: 10,
+    marginBottom: 50
   }
 
 })
