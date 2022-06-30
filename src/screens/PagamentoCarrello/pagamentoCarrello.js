@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ScrollView, View, Alert, Modal, StyleSheet } from 'react-native'
-import { Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, IndexPath, Icon } from '@ui-kitten/components'
+import { Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, Icon } from '@ui-kitten/components'
 import TitleCarrello from '../../components/compCarrello/titoloCarrello'
 import { CarrelloScreen } from '../navigaitor'
 import styles from './pagamentoCarrelloStyle'
