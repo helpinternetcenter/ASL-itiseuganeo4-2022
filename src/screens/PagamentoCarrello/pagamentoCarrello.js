@@ -107,6 +107,7 @@ function PagamentoCarrello ({ navigation }) {
               onChangeText={(nextValue) => {
                 nextValue === '' ? setDangerStateIndirizzo('danger') : setDangerStateIndirizzo('success')
                 setAddress(nextValue)
+                console.log('ciao')
               }}
             />
 
