@@ -7,7 +7,7 @@ import Home from './home/home'
 import Registrati from './registrati/Registrati'
 import MyPurchaseScreen from './MyPurchase Screen/MyPurchaseScreen'
 import Carrello from './carrello/carrello'
-import PagamentoCarrello from './PagamentoCarrello/pagamentoCarrello'
+import PagamentoCarrello from '../screens/PagamentoCarrello/pagamentoCarrello'
 import RiepilogoCarrello from '../components/compCarrello/riepilogoCarrello'
 
 const LoginNavigationStack = createNativeStackNavigator()
