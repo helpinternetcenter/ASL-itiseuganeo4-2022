@@ -19,6 +19,11 @@ function MyPurchaseScreen ({ navigation }) {
     'Portugal',
     'France'
   ]
+  const elencoPagamento = [
+    'PayPal',
+    'Visa',
+    'Mastercard'
+  ]
 
   const [address, setAddress] = React.useState('')
   const [province, setProvince] = React.useState('')
@@ -62,6 +67,7 @@ function MyPurchaseScreen ({ navigation }) {
 
           <ViewPayment
             title='Pagamento'
+            elencoPagamento={elencoPagamento}
             value={payment}
             setPayment={(index) => setPayment(index)}
           />
@@ -75,6 +81,8 @@ function MyPurchaseScreen ({ navigation }) {
       </ScrollView>
 
       <PopUp
+        text='Hai confermato il tuo ordine'
+        nameBotton='Torna alla Home'
         visible={popUp}
         GoBack={() => GoBack()}
         setPopPup={setPopUp}

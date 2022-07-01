@@ -7,7 +7,7 @@ import { Layout } from '@ui-kitten/components'
 import ViewData from '../../components/componentPurchase/ViewData/ViewData'
 import ViewPayment from '../../components/componentPurchase/ViewPayment/ViewPayment'
 import ViewBotton from '../../components/componentPurchase/ViewBotton/ViewBotton'
-import PopUp from '../../components/componentPurchase/PopUp/PopUp'
+import PopUp from '../../components/checkCarello/PopUp'
 import { ControlInputStream } from '../../Utils/check'
 import { styles } from '../checkCarello/checkCarello_style'
 
@@ -17,7 +17,7 @@ function ComponentsCarello (props) {
     <View>
       <TitoloCarrello name='Carrello' style={styles.titleCarello} action={() => props.GoBackAction()} />
       <ScrollView>
-        <CartaCarrello setStatus={(bol) => props.setStatus(bol)} status={props.status} values={values} />
+        <CartaCarrello setStatus={(bol) => props.setStatus(bol)} status={props.status} values={values} settingMethodos={props.settingMethods} />
         <Riepilogo onPressGoBack={() => props.GoBackAction()} status={props.status} />
       </ScrollView>
     </View>
@@ -52,6 +52,7 @@ function PagamentoCarello (props) {
 
           <ViewPayment
             title='Pagamento'
+            elencoPagamento={values.elencoPagamento}
             value={values.payment}
             setPayment={(index) => settingMethodos.setPayment(index)}
           />
@@ -105,6 +106,11 @@ function CheckCarello ({ navigation }) {
     'Portugal',
     'France'
   ]
+  const elencoPagamento = [
+    'PayPal',
+    'Visa',
+    'Mastercard'
+  ]
 
   const values = {
     address: address,
@@ -114,7 +120,10 @@ function CheckCarello ({ navigation }) {
     state: state,
     popUp: popUp,
     stateValue: elencoTitoli[state - 1],
-    elencoTitoli: elencoTitoli
+    statePagamento: elencoPagamento[payment],
+    elencoTitoli: elencoTitoli,
+    elencoPagamento: elencoPagamento
+
   }
 
   function GoBackAction () {
@@ -124,7 +133,7 @@ function CheckCarello ({ navigation }) {
   return (
     <>
       {status
-        ? <ComponentsCarello GoBackAction={() => GoBackAction()} setStatus={(bol) => setStatus(bol)} status={status} values={values} />
+        ? <ComponentsCarello GoBackAction={() => GoBackAction()} setStatus={(bol) => setStatus(bol)} status={status} values={values} settingMethods={settingMethods} />
         : <PagamentoCarello GoBackAction={() => GoBackAction()} setStatus={(bol) => setStatus(bol)} status={status} settingMethods={settingMethods} values={values} />}
     </>
   )

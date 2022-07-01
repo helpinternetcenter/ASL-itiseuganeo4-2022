@@ -1,3 +1,4 @@
+
 import * as React from 'react'
 import { Text, Button } from '@ui-kitten/components'
 import { StyleSheet, View } from 'react-native'
@@ -9,19 +10,22 @@ function Dati (value) {
     <View>
       <Text style={styles.datiRiassunto} category='p1'>{values.province} , {values.address} {values.country}</Text>
       <Text style={styles.datiRiassunto} category='p1'>{values.stateValue}</Text>
-      <Text style={styles.datiRiassunto} category='p1'>Pagamento: {values.payment}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>Pagamento: {values.statePagamento}</Text>
     </View>
   )
 }
 
 function CartaCarrello (props) {
   const values = props.values
+  const settingEmpty = () => {
+    props.setStatus(false)
+  }
   return (
     <View style={styles.viewMain}>
       <View style={styles.riepilogo}>
         <Text category='h3' style={styles.titolo}>Inserisci le informazioni:</Text>
         <View style={styles.viewMargin} />
-        <Button style={styles.button} onPress={() => props.setStatus(false)}>Inserisci</Button>
+        <Button style={styles.button} onPress={() => settingEmpty()}>Modifica</Button>
         {props.status && <Dati values={{ ...values }} />}
 
       </View>
