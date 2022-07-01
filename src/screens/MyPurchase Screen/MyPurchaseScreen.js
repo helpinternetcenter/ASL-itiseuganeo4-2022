@@ -37,7 +37,7 @@ function MyPurchaseScreen ({ navigation }) {
     province: province,
     country: country,
     payment: payment,
-    state: state,
+    state: state
   }
 
   function GoBackAction () {
