@@ -32,6 +32,14 @@ function MyPurchaseScreen ({ navigation }) {
   const [state, setState] = React.useState(null)
   const [popUp, setPopUp] = useState(false)
 
+  const values = {
+    address: address,
+    province: province,
+    country: country,
+    payment: payment,
+    state: state,
+  }
+
   function GoBackAction () {
     navigation.goBack()
   }
@@ -75,6 +83,7 @@ function MyPurchaseScreen ({ navigation }) {
           <ViewBotton
             titleBotton='CONFERMA'
             onClick={() => ControlInputStream(setPopUp, address, state, province, country, payment)}
+            values={{ ...values }}
           />
 
         </Layout>
