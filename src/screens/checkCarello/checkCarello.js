@@ -67,7 +67,6 @@ function PagamentoCarello (props) {
               values.country,
               values.payment)}
             values={{ ...values }}
-
           />
 
         </Layout>

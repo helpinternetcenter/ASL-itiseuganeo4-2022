@@ -5,7 +5,7 @@ import { styles } from './ViewBotton_style'
 
 function ViewBotton (props) {
   function ControlInput (address, province, country, payment, state) {
-    let value = true
+    var value = true
 
     if (address === '' || province === '' || state === '' || country === '' || payment === null) {
       value = true
@@ -30,10 +30,11 @@ function ViewBotton (props) {
       />
 
       <Button
-        disabled={() => (ControlInput(props.values.address, props.values.province, props.values.country, props.values.payment, props.values.state))}
+        disabled={ControlInput(props.values.address, props.values.province, props.values.country, props.values.payment, props.values.state)}
         onPress={props.onClick}
         style={styles.button}
       >
+        {console.log(() => ControlInput(props.values.address, props.values.province, props.values.country, props.values.payment, props.values.state))}
         {props.titleBotton}
       </Button>
     </>

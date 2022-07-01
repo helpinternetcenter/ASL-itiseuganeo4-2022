@@ -4,6 +4,16 @@ import { View } from 'react-native'
 import { styles } from './ViewData_style'
 
 function ViewData (props) {
+  function setDangerState (text) {
+    let variable = ''
+    if (text === '') {
+      variable = 'basic'
+    } else {
+      variable = 'success'
+    }
+    console.log(variable)
+    return (variable)
+  }
   function Falied () {
     return (
       <Text style={{ color: 'red', marginLeft: '5%', paddingBottom: '10%' }}>* Campi obbligatori</Text>
@@ -25,6 +35,7 @@ function ViewData (props) {
       <Input
         placeholder='Indirizzo'
         label='Indirizzo'
+        status={setDangerState(props.address)}
         value={props.address}
         style={styles.input}
         onChangeText={(index) => {
@@ -54,6 +65,7 @@ function ViewData (props) {
       <Input
         style={styles.input}
         placeholder='Paese'
+        status={setDangerState(props.country)}
         label='Paese'
         value={props.country}
         onChangeText={(index) => {
@@ -65,6 +77,7 @@ function ViewData (props) {
         placeholder='Provincia'
         style={{ ...styles.input, paddingBottom: '4%' }}
         label='Provincia'
+        status={setDangerState(props.provincia)}
         value={props.provincia}
         onChangeText={(index) => {
           props.setProvincia(index)
