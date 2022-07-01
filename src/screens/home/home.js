@@ -19,6 +19,9 @@ function Home ({ navigation, route }) {
               key={key}
               nomeMobile={el.nomeMobile}
               descrizione={el.descrizioneMobile}
+              linkImmagine={el.linkImmagini[0]}
+              colore={el.colore}
+              materiale={el.materiale}
               cambioScheda={() => {
                 navigation.navigate(ProdottoScreen.id, { itemId: el.idMobile })
               }}
