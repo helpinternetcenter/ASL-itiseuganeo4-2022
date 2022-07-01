@@ -82,7 +82,13 @@ function MyPurchaseScreen ({ navigation }) {
 
           <ViewBotton
             titleBotton='CONFERMA'
-            onClick={() => ControlInputStream(setPopUp, address, state, province, country, payment)}
+            onClick={() => ControlInputStream(
+              setPopUp,
+              address,
+              state,
+              province,
+              country,
+              payment)}
             values={{ ...values }}
           />
 
