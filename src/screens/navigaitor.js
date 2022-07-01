@@ -51,7 +51,7 @@ const LoginRoot = () => (
     <LoginNavigationStack.Screen name={CarrelloScreen.id} component={Carrello} />
     <LoginNavigationStack.Screen name={PagamentoCarrelloScreen.id} component={PagamentoCarrello} />
     <LoginNavigationStack.Screen name={RiepilogoCarrelloScreen.id} component={RiepilogoCarrello} />
-    <LoginNavigationStack.Screen name={RiepilogoCarrelloScreen.id} component={CheckCarello} />
+    <LoginNavigationStack.Screen name={CheckCarelloScreen.id} component={CheckCarello} />
   </LoginNavigationStack.Navigator>
 )
 

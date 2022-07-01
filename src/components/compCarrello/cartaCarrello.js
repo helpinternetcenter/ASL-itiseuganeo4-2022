@@ -1,26 +1,28 @@
 import * as React from 'react'
 import { Text, Button } from '@ui-kitten/components'
 import { StyleSheet, View } from 'react-native'
-import datiPersonali from '../../api/datiPersonali.json'
 
-function Dati () {
+function Dati (value) {
+  const values = value.values
+  console.log(values.stateValue)
   return (
     <View>
-      <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].paese} , {datiPersonali.data[0].indirizzo} {datiPersonali.data[0].provincia}</Text>
-      <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].stato}</Text>
-      <Text style={styles.datiRiassunto} category='p1'>Pagamento: {datiPersonali.data[0].modPagamento}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>{values.province} , {values.address} {values.country}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>{values.stateValue}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>Pagamento: {values.payment}</Text>
     </View>
   )
 }
 
 function CartaCarrello (props) {
+  const values = props.values
   return (
     <View style={styles.viewMain}>
       <View style={styles.riepilogo}>
         <Text category='h3' style={styles.titolo}>Inserisci le informazioni:</Text>
         <View style={styles.viewMargin} />
-        <Button style={styles.button} onPress={() => props.cambioScheda()}>Inserisci</Button>
-        {props.statePage && <Dati />}
+        <Button style={styles.button} onPress={() => props.setStatus(false)}>Inserisci</Button>
+        {props.status && <Dati values={{ ...values }} />}
 
       </View>
     </View>
