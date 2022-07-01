@@ -12,7 +12,7 @@ function ViewBotton (props) {
     } else {
       value = false
     }
-    console.log(value)
+
     return (value)
   }
 
@@ -30,7 +30,7 @@ function ViewBotton (props) {
       />
 
       <Button
-        disabled={() => (ControlInput(props.values.address, props.values.province, props.values.country, props.values.payment, props.values.state))}
+        disabled={ControlInput(props.values.address, props.values.province, props.values.country, props.values.payment, props.values.state)}
         onPress={props.onClick}
         style={styles.button}
       >

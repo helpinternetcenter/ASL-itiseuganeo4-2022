@@ -15,6 +15,7 @@ function ViewData (props) {
       <Text style={{ color: 'green', marginLeft: '5%', paddingBottom: '10%' }}>* Campi compilati</Text>
     )
   }
+
   return (
     <View style={styles.viewProdotto}>
 
@@ -31,6 +32,10 @@ function ViewData (props) {
           props.setAddress(index)
         }}
       />
+
+      {props.address === ''
+        ? <Falied />
+        : <Success />}
 
       <Select
         selectedIndex={props.state}
@@ -51,6 +56,10 @@ function ViewData (props) {
 
       </Select>
 
+      {props.state === null
+        ? <Falied />
+        : <Success />}
+
       <Input
         style={styles.input}
         placeholder='Paese'
@@ -60,6 +69,10 @@ function ViewData (props) {
           props.setCountry(index)
         }}
       />
+
+      {props.country === ''
+        ? <Falied />
+        : <Success />}
 
       <Input
         placeholder='Provincia'
@@ -71,9 +84,10 @@ function ViewData (props) {
         }}
       />
 
-      {props.address === '' || props.provincia === '' || props.country === '' || props.state === null
+      {props.provincia === ''
         ? <Falied />
         : <Success />}
+
     </View>
   )
 }

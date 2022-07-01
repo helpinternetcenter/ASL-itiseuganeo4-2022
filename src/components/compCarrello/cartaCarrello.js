@@ -8,8 +8,7 @@ function Dati (value) {
   console.log(values.stateValue)
   return (
     <View>
-      <Text style={styles.datiRiassunto} category='p1'>{values.province} , {values.address} {values.country}</Text>
-      <Text style={styles.datiRiassunto} category='p1'>{values.stateValue}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>{values.country} {values.address} ({values.province}) {values.stateValue}</Text>
       <Text style={styles.datiRiassunto} category='p1'>Pagamento: {values.statePagamento}</Text>
     </View>
   )
@@ -25,8 +24,8 @@ function CartaCarrello (props) {
       <View style={styles.riepilogo}>
         <Text category='h3' style={styles.titolo}>Inserisci le informazioni:</Text>
         <View style={styles.viewMargin} />
-        <Button style={styles.button} onPress={() => settingEmpty()}>Modifica</Button>
         {props.status && <Dati values={{ ...values }} />}
+        <Button style={styles.button} onPress={() => settingEmpty()}>Modifica</Button>
 
       </View>
     </View>
@@ -72,8 +71,8 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    width: '60%',
-    marginLeft: '35%',
+    width: '94%',
+    marginLeft: '2%',
     marginTop: '5%',
     marginBottom: '7%'
   }
