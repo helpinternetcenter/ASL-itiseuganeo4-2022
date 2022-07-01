@@ -59,7 +59,15 @@ function PagamentoCarello (props) {
 
           <ViewBotton
             titleBotton='CONFERMA'
-            onClick={() => ControlInputStream(settingMethodos.setPopUp, values.address, values.state, values.province, values.country, values.payment)}
+            onClick={() => ControlInputStream(
+              settingMethodos.setPopUp,
+              values.address,
+              values.state,
+              values.province,
+              values.country,
+              values.payment)}
+            values={{ ...values }}
+
           />
 
         </Layout>
