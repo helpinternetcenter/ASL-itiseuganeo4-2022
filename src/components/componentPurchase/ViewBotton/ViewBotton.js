@@ -4,6 +4,18 @@ import { Button } from '@ui-kitten/components'
 import { styles } from './ViewBotton_style'
 
 function ViewBotton (props) {
+  function ControlInput (address, province, country, payment, state) {
+    let value = true
+
+    if (address === '' || province === '' || state === '' || country === '' || payment === null) {
+      value = true
+    } else {
+      value = false
+    }
+    console.log(value)
+    return (value)
+  }
+
   return (
     <>
       <View style={{
@@ -18,6 +30,7 @@ function ViewBotton (props) {
       />
 
       <Button
+        disabled={() => (ControlInput(props.values.address, props.values.province, props.values.country, props.values.payment, props.values.state))}
         onPress={props.onClick}
         style={styles.button}
       >
