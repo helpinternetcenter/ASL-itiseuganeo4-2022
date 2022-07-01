@@ -27,7 +27,7 @@ function PopUp (props) {
 
           <Text style={styles.modalText}>{props.text}</Text>
           <CheckIcon />
-          <Button style={styles.button} onPress={() => props.GoBack()} accessoryLeft={BackIcon}>{props.nameBotton}</Button>
+          <Button style={styles.button} onPress={() => props.setStatus(true)} accessoryLeft={BackIcon}>{props.nameBotton}</Button>
         </View>
       </View>
     </Modal>

@@ -6,7 +6,7 @@ import Description from '../../components/Description/description'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
 import { ScrollView } from 'react-native'
 import PriceDescription from '../../components/PriceDescription/PriceDescription'
-import { CarrelloScreen, PurchaseScreen } from '../navigaitor'
+import { PurchaseScreen, CheckCarelloScreen } from '../navigaitor'
 import dati from '../../api/specificheProdotti.json'
 function Prodotto ({ route, navigation }) {
   const { itemId } = route.params
@@ -15,7 +15,7 @@ function Prodotto ({ route, navigation }) {
     navigation.goBack()
   }
   function GoToCarrello () {
-    navigation.navigate(CarrelloScreen.id, { conferma: false })
+    navigation.navigate(CheckCarelloScreen.id, { conferma: false })
   }
   function compraSubito () {
     navigation.navigate(PurchaseScreen.id)

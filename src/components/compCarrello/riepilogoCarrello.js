@@ -10,10 +10,7 @@ function CheckIcon (props) {
   )
 }
 
-function Riepilogo ({
-  onPressGoBack = () => {},
-  statePage
-}) {
+function Riepilogo (props) {
   const [popUp, setPopUp] = useState(false)
 
   function ControlInputStream () {
@@ -21,7 +18,7 @@ function Riepilogo ({
   }
   function GoBack () {
     setPopUp(!popUp)
-    onPressGoBack()
+    props.onPressGoBack()
   }
   function BackIcon (props) {
     return (
@@ -57,13 +54,13 @@ function Riepilogo ({
         )}
         <View style={styles.viewMargin2} />
 
-        <Button style={styles.button} onPress={() => ControlInputStream()} disabled={!statePage}>Compra</Button>
+        <Button style={styles.button} onPress={() => ControlInputStream()} disabled={!props.status}>Compra</Button>
 
         <Modal animationType='slide' transparent visible={popUp} onRequestClose={Alert}>
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
 
-              <Text style={styles.modalText}>Hai confermato l'acquisto  {console.log(statePage)}</Text>
+              <Text style={styles.modalText}>Hai confermato l'acquisto </Text>
               <CheckIcon />
               <Button style={styles.popButton} onPress={() => GoBack()} accessoryLeft={(props) => BackIcon(props)}>FINITO</Button>
 

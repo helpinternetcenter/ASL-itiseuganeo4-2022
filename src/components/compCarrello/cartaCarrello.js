@@ -1,26 +1,31 @@
+
 import * as React from 'react'
 import { Text, Button } from '@ui-kitten/components'
 import { StyleSheet, View } from 'react-native'
-import datiPersonali from '../../api/datiPersonali.json'
 
-function Dati () {
+function Dati (value) {
+  const values = value.values
+  console.log(values.stateValue)
   return (
     <View>
-      <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].paese} , {datiPersonali.data[0].indirizzo} {datiPersonali.data[0].provincia}</Text>
-      <Text style={styles.datiRiassunto} category='p1'>{datiPersonali.data[0].stato}</Text>
-      <Text style={styles.datiRiassunto} category='p1'>Pagamento: {datiPersonali.data[0].modPagamento}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>{values.country} {values.address} ({values.province}) {values.stateValue}</Text>
+      <Text style={styles.datiRiassunto} category='p1'>Pagamento: {values.statePagamento}</Text>
     </View>
   )
 }
 
 function CartaCarrello (props) {
+  const values = props.values
+  const settingEmpty = () => {
+    props.setStatus(false)
+  }
   return (
     <View style={styles.viewMain}>
       <View style={styles.riepilogo}>
         <Text category='h3' style={styles.titolo}>Inserisci le informazioni:</Text>
         <View style={styles.viewMargin} />
-        <Button style={styles.button} onPress={() => props.cambioScheda()}>Inserisci</Button>
-        {props.statePage && <Dati />}
+        {props.status && <Dati values={{ ...values }} />}
+        <Button style={styles.button} onPress={() => settingEmpty()}>Modifica</Button>
 
       </View>
     </View>
@@ -66,8 +71,8 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    width: '60%',
-    marginLeft: '35%',
+    width: '94%',
+    marginLeft: '2%',
     marginTop: '5%',
     marginBottom: '7%'
   }

@@ -5,7 +5,7 @@ export const styles = {
     borderWidth: 0,
     marginLeft: '5%',
     borderRadius: 20,
-    marginRight: '5%',
+    marginRight: '5%'
 
   },
   viewMargin: {
