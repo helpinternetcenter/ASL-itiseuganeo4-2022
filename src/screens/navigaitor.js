@@ -10,8 +10,13 @@ import Carrello from './carrello/carrello'
 import PagamentoCarrello from '../screens/PagamentoCarrello/pagamentoCarrello'
 import RiepilogoCarrello from '../components/compCarrello/riepilogoCarrello'
 import CheckCarello from '../screens/checkCarello/checkCarello'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const LoginNavigationStack = createNativeStackNavigator()
+const Tab = createBottomTabNavigator()
+const CarrelloStack = createNativeStackNavigator()
+const ProdottoStack = createNativeStackNavigator()
 
 export const LoginScreen = {
   id: 'LOGIN'
@@ -41,6 +46,33 @@ export const CheckCarelloScreen = {
   id: 'CheckCarello'
 }
 
+const TabRoot = () => (
+  <Tab.Navigator
+    initialRouteName={Home.id}
+    screenOptions={({ route }) => ({
+      tabBarIcon: ({ color, size }) => {
+        let iconName
+
+        if (route.name === 'HOME') {
+          iconName = 'home-outline'
+        } else if (route.name === 'CARRELLO') {
+          iconName = 'cart-outline'
+        } else if (route.name === 'Acquisto') {
+          iconName = 'person-outline'
+        }
+
+        // You can return any component that you like here!
+        return <Ionicons name={iconName} size={size} color={color} />
+      },
+      headerShown: false
+    })}
+  >
+    <Tab.Screen name={HomeScreen.id} component={ProdottoStackScreen} />
+    <Tab.Screen name={PurchaseScreen.id} component={MyPurchaseScreen} />
+    <Tab.Screen name={CarrelloScreen.id} component={CarrelloStackScreen} />
+  </Tab.Navigator>
+)
+
 const LoginRoot = () => (
   <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
     <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
@@ -55,11 +87,29 @@ const LoginRoot = () => (
   </LoginNavigationStack.Navigator>
 )
 
+function CarrelloStackScreen () {
+  return (
+    <CarrelloStack.Navigator>
+      <CarrelloStack.Screen name={CarrelloScreen.id} component={Carrello} />
+    </CarrelloStack.Navigator>
+  )
+}
+
+function ProdottoStackScreen () {
+  return (
+    <ProdottoStack.Navigator screenOptions={{ headerShown: false }}>
+      <ProdottoStack.Screen name={HomeScreen.id} component={Home} />
+      <ProdottoStack.Screen name={ProdottoScreen.id} component={Prodotto} />
+    </ProdottoStack.Navigator>
+  )
+}
 const Navigator = () => {
   return (
     <NavigationContainer>
-      <LoginRoot />
+      <TabRoot />
+
     </NavigationContainer>
   )
 }
+
 export default Navigator

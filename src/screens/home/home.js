@@ -8,29 +8,38 @@ import prodotti from '../../api/specificheProdotti.json'
 import utente from '../../api/credenziali.json'
 
 function Home ({ navigation, route }) {
-  const { idIdentificativo } = route.params
+  /* const { idIdentificativo } = route.params */
   return (
     <View style={styles.container}>
-      <Titolo valore={utente.data[idIdentificativo].nomeCredenziali} />
-      <ScrollView style={{ paddingBottom: 200 }}>
-        {prodotti.data.map((el, key) => {
-          return (
-            <SceltaProdotto
-              key={key}
-              nomeMobile={el.nomeMobile}
-              descrizione={el.descrizioneMobile}
-              linkImmagine={el.linkImmagini[0]}
-              colore={el.colore}
-              materiale={el.materiale}
-              cambioScheda={() => {
-                navigation.navigate(ProdottoScreen.id, { itemId: el.idMobile })
-              }}
-              numeroRender={el.idMobile}
-            />
-          )
-        }
-        )}
-      </ScrollView>
+      <Titolo valore={utente.data[1].nomeCredenziali} style={{ flex: 4 }} />
+      <View style={{ flex: 15 }}>
+        <ScrollView>
+          {prodotti.data.map((el, key) => {
+            return (
+              <SceltaProdotto
+                key={key}
+                nomeMobile={el.nomeMobile}
+                descrizione={el.descrizioneMobile}
+                linkImmagine={el.linkImmagini[0]}
+                colore={el.colore}
+                prezzo={el.prezzo}
+                materiale={el.materiale}
+                cambioScheda={() => {
+                  navigation.navigate(ProdottoScreen.id, { itemId: el.idMobile })
+                }}
+                numeroRender={el.idMobile}
+              />
+            )
+          })}
+        </ScrollView>
+      </View>
+      {/*
+      <Tab
+        style={{ flex: 1.5 }} margine={{ marginLeft: '7%' }} cambioScheda={() => {
+          navigation.navigate(CarrelloScreen.id)
+        }}
+      />
+      */}
     </View>
   )
 }
