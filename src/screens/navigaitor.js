@@ -12,11 +12,13 @@ import RiepilogoCarrello from '../components/compCarrello/riepilogoCarrello'
 import CheckCarello from '../screens/checkCarello/checkCarello'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import AccountScreen from './account/accuntScreen'
 
 const LoginNavigationStack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
 const CarrelloStack = createNativeStackNavigator()
 const ProdottoStack = createNativeStackNavigator()
+const AccountStack = createNativeStackNavigator()
 
 export const LoginScreen = {
   id: 'LOGIN'
@@ -46,6 +48,9 @@ export const CheckCarelloScreen = {
   id: 'CheckCarello'
 }
 
+export const accountScreen = {
+  id: 'Account'
+}
 const TabRoot = () => (
   <Tab.Navigator
     initialRouteName={Home.id}
@@ -57,7 +62,7 @@ const TabRoot = () => (
           iconName = 'home-outline'
         } else if (route.name === 'CARRELLO') {
           iconName = 'cart-outline'
-        } else if (route.name === 'Acquisto') {
+        } else if (route.name === 'Account') {
           iconName = 'person-outline'
         }
 
@@ -68,7 +73,7 @@ const TabRoot = () => (
     })}
   >
     <Tab.Screen name={HomeScreen.id} component={ProdottoStackScreen} />
-    <Tab.Screen name={PurchaseScreen.id} component={MyPurchaseScreen} />
+    <Tab.Screen name={accountScreen.id} component={AccountStackScreen} />
     <Tab.Screen name={CarrelloScreen.id} component={CarrelloStackScreen} />
   </Tab.Navigator>
 )
@@ -101,6 +106,14 @@ function ProdottoStackScreen () {
       <ProdottoStack.Screen name={HomeScreen.id} component={Home} />
       <ProdottoStack.Screen name={ProdottoScreen.id} component={Prodotto} />
     </ProdottoStack.Navigator>
+  )
+}
+
+function AccountStackScreen () {
+  return (
+    <AccountStack.Navigator screenOptions={{ headerShown: false }}>
+      <AccountStack.Screen name={accountScreen.id} component={AccountScreen} />
+    </AccountStack.Navigator>
   )
 }
 const Navigator = () => {

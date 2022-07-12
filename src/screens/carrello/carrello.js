@@ -13,7 +13,7 @@ function Carrello ({ route, navigation }) {
 
   return (
     <View style={{ flex: 1 }}>
-      {/*<TitoloCarrello name='Carrello' style={StyleMod.modTitolo} action={() => GoBackAction()} />*/}
+      {/* <TitoloCarrello name='Carrello' style={StyleMod.modTitolo} action={() => GoBackAction()} /> */}
       <View style={{ flex: 18 }}>
         <ScrollView>
           <CartaCarrello cambioScheda={() => navigation.navigate(PagamentoCarrelloScreen.id)} />

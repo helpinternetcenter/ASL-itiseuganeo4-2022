@@ -20,7 +20,6 @@ function SceltaProdotto (props, navigation, el) {
           <Text category='h3' style={styles.testoTitolo}> {props.nomeMobile} </Text>
           <Text category='p1' style={styles.testoSottotitolo}>{props.descrizione} </Text>
           <Text category='p1' style={styles.prezzo}>{props.prezzo} </Text>
-          <Text>Ciao</Text>
           <Button
             style={styles.button}
             appearance='ghost'
