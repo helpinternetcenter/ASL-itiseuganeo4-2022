@@ -26,7 +26,7 @@ function Prodotto ({ route, navigation }) {
       <IconRegistry icons={EvaIconsPack} />
       <TitleProdotto name={dati.data[itemId].nomeMobile} action={() => GoBackAction()} actionCarrello={() => compraSubito()} />
       <ScrollView>
-        <Layout level='3'>
+        <Layout level='1'>
           <ScroolImage numeroRender={itemId} />
           <Description numeroRender={itemId} />
           <PriceDescription numeroRender={itemId} prezzo='81,90€' action={() => GoToCarrello()} />

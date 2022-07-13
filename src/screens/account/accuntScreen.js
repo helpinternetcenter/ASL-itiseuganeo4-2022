@@ -18,7 +18,8 @@ function AccountScreen () {
   }
 
   return (
-    <>
+
+    <ScrollView style={{ flex: 1 }}>
       <TitleProfile
         name='Davide Muratore'
         styles={{
@@ -26,18 +27,15 @@ function AccountScreen () {
           testTitolo: styles.testoTitolo
         }}
       />
-
-      <ScrollView>
-        <Layout level='1' style={styles.viewMain}>
-          <ViewData
-            value={value}
-          />
-          <ViewOrdini
-            value={ordini}
-          />
-        </Layout>
-      </ScrollView>
-    </>
+      <Layout level='1' style={styles.viewMain}>
+        <ViewData
+          value={value}
+        />
+        <ViewOrdini
+          value={ordini}
+        />
+      </Layout>
+    </ScrollView>
   )
 }
 

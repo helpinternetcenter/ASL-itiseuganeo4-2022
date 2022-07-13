@@ -7,17 +7,20 @@ import SpecificheOrdini from '../../account/specificheOrdine/specificheOrdine'
 
 function ViewOrdini (props) {
   const data = []
-  props.value[0].acquisti.map((acquisto) => {
-    specificheProdotti.data.map((item) => {
-      if (acquisto.idMobile === item.idMobile) {
-        data.push(item)
-      }
+  props.value.forEach((element) => {
+    element.acquisti.forEach((acquisto) => {
+      specificheProdotti.data.forEach((item) => {
+        if (acquisto.idMobile === item.idMobile) {
+          data.push({ ...item, data: element.data, ore: element.ore })
+        }
+      })
     })
   })
   return (
     <View style={styles.container}>
       <Text style={styles.testoTitolo}> Ordini </Text>
       {data.map((element, Key) => {
+        console.log(element)
         return (
           <SpecificheOrdini
             Key={Key}
@@ -25,6 +28,8 @@ function ViewOrdini (props) {
             title={element.nomeMobile}
             subtitle={element.descrizioneMobile}
             price={element.prezzo}
+            ore={element.ore}
+            data={element.data}
           />
         )
       })}

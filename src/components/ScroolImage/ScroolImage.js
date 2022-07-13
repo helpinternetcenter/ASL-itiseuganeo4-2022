@@ -33,7 +33,7 @@ function ScroolImage (props) {
   }
   return (
     <>
-      <Card style={{ margin: 26, borderRadius: 10 }} status='primary' footer={(props) => BottomRadioGroup(props)} disabled={() => true}>
+      <Card style={styles.card} footer={(props) => BottomRadioGroup(props)} disabled={() => true}>
         <ViewPager
           selectedIndex={selectedIndex}
           shouldLoadComponent={() => shouldLoadComponent}

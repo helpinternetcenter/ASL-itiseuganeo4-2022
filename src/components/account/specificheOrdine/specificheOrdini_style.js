@@ -2,23 +2,13 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   viewProdotto: {
-    flex: 3,
-    marginBottom: 20,
-    backgroundColor: '#ffffff',
+    height: 200,
+    backgroundColor: '#edf7f7',
     borderWidth: 0,
     // marginTop: '10%',
-    marginLeft: '1%',
-    borderRadius: 20,
-    paddingBottom: 15,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 12
-    },
-    shadowOpacity: 0.58,
-    shadowRadius: 16.00,
-
-    elevation: 10
+    margin: '5%',
+    borderRadius: 5,
+    paddingBottom: 15
   },
   logo: {
     marginLeft: '5%',
@@ -43,6 +33,17 @@ const styles = StyleSheet.create({
     color: '#6bc1d6',
     fontSize: 25,
     fontWeight: 'bold'
+  },
+  time: {
+    flex: 1
+  },
+
+  labelTime: {
+    flex: 2,
+    fontSize: 13,
+    color: '#6bc1d6',
+    fontWeight: 'bold',
+    paddingLeft: '3%'
   }
 
 })

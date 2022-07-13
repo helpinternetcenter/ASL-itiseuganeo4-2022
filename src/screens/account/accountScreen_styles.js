@@ -3,22 +3,21 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
   viewMain: {
     flex: 1,
-    paddingTop: 20,
-    paddingBottom: 100
+    paddingTop: '2%',
+    paddingBottom: '5%'
   },
   viewTitolo: {
-    height: '15%',
-    width: '100%',
+    flex: 15,
     backgroundColor: '#ffffff',
     justifyContent: 'center',
     borderWidth: 0
   },
   testoTitolo: {
     color: '#6bc1d6',
-    marginTop: '5%',
+    marginTop: '10%',
     marginLeft: '7%',
     fontWeight: 'bold',
-    fontSize: 25
+    fontSize: 30
   }
 })
 

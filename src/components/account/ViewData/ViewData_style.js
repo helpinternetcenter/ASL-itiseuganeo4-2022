@@ -2,11 +2,10 @@ import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   container: {
-    height: '50%',
+    flex: 2,
     backgroundColor: '#ffffff',
-    marginLeft: '7%',
+    margin: '7%',
     borderRadius: 20,
-    marginRight: '7%',
     borderWidth: 0,
     shadowColor: '#000',
     shadowOffset: {
@@ -26,14 +25,13 @@ export const styles = StyleSheet.create({
     fontSize: 20
   },
   input: {
+    flex: 4,
+    color: '#a6a2a2',
     borderWidth: 0,
     borderRadius: 10,
-    height: '15%',
-    marginBottom: '5%',
-    marginLeft: '5%',
-    marginRight: '5%',
-    backgroundColor: '#f0f1f2',
-    padding: '2%',
+    margin: '5%',
+    backgroundColor: '#edf7f7',
+    padding: '5%',
     textAlignVertical: 'center'
   }
 

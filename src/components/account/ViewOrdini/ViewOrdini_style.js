@@ -2,7 +2,10 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
+    backgroundColor: '#ffffff',
+    borderRadius: 20,
+    margin: '7%',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -13,7 +16,6 @@ const styles = StyleSheet.create({
     elevation: 17
   },
   testoTitolo: {
-
     marginTop: '3%',
     marginLeft: '5%',
     marginRight: '5%',
