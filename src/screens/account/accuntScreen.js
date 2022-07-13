@@ -1,25 +1,21 @@
 import * as React from 'react'
 import TitleProfile from '../../components/account/TitleProfile/TitleProfile'
 import ViewData from '../../components/account/ViewData/ViewData'
+import credenziali from '../../api/credenziali.json'
+import ViewOrdini from '../../components/account/ViewOrdini/ViewOrdini'
+import ordini from '../../api/ordini.json'
 
 import { ScrollView } from 'react-native'
 import { Layout } from '@ui-kitten/components'
 import styles from './accountScreen_styles'
 
 function AccountScreen () {
-  const elencoTitoli = [
-    'Italy',
-    'Germany',
-    'USA',
-    'Poland',
-    'Spain',
-    'Portugal',
-    'France'
-  ]
-  const [address, setAddress] = React.useState('')
-  const [province, setProvince] = React.useState('')
-  const [country, setCountry] = React.useState('')
-  const [state, setState] = React.useState(null)
+  const value = {
+    nome: credenziali.data[0].nomeCredenziali,
+    cognome: credenziali.data[0].cognomeCredenziali,
+    username: credenziali.data[0].usernameCredenziali,
+    password: credenziali.data[0].passwordCredenziali
+  }
 
   return (
     <>
@@ -34,16 +30,10 @@ function AccountScreen () {
       <ScrollView>
         <Layout level='1' style={styles.viewMain}>
           <ViewData
-            elencoTitoli={elencoTitoli}
-            address={address}
-            setAddress={(nextValue) => setAddress(nextValue)}
-            state={state}
-            setState={(index) => setState(index)}
-            value={elencoTitoli[state - 1]}
-            country={country}
-            setCountry={(nextValue) => setCountry(nextValue)}
-            provincia={province}
-            setProvincia={(nextValue) => setProvince(nextValue)}
+            value={value}
+          />
+          <ViewOrdini
+            value={ordini}
           />
         </Layout>
       </ScrollView>

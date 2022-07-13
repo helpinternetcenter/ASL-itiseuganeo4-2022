@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   viewMain: {
     flex: 1,
     paddingTop: 20,
-    paddingBottom: 10
+    paddingBottom: 100
   },
   viewTitolo: {
     height: '15%',
