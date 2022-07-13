@@ -4,7 +4,7 @@ import { View } from 'react-native'
 import dati from '../../api/specificheProdotti.json'
 import styles from './description_style'
 
-function Header(props) {
+function Header (props) {
   return (
     <View style={{ paddingLeft: 15 }}>
       <Text category='h5'>Descrizione</Text>
@@ -12,7 +12,7 @@ function Header(props) {
   )
 }
 
-function Description(props) {
+function Description (props) {
   console.log(props.numeroRender)
   return (
     <>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Prodotto from './Prodotto/prodottoScreen'
+import Prodotto from './ProdottoScreen/prodottoScreen'
 import Login from './login/login'
 import Home from './home/home'
 import Registrati from './registrati/Registrati'
