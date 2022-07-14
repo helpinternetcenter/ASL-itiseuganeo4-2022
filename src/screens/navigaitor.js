@@ -53,7 +53,7 @@ export const accountScreen = {
 }
 const TabRoot = () => (
   <Tab.Navigator
-    initialRouteName={Home.id}
+    initialRouteName={HomeScreen.id}
     screenOptions={({ route }) => ({
       tabBarIcon: ({ color, size }) => {
         let iconName
@@ -119,8 +119,7 @@ function AccountStackScreen () {
 const Navigator = () => {
   return (
     <NavigationContainer>
-      <TabRoot />
-
+      <LoginRoot />
     </NavigationContainer>
   )
 }
