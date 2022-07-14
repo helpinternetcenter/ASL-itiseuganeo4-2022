@@ -16,9 +16,10 @@ function Registrati ({ navigation }) {
     password
   }
 
-  const registrazione = async (value) => {
+  const registrazione = async (value, setMessage) => {
+    let response = {}
     try {
-      await fetch('http://10.0.3.158:3000/Registrazione ', {
+      response = await fetch('http://192.168.1.39:3000/Registrazione ', {
         method: 'POST',
         body: JSON.stringify(value),
         headers: {
@@ -26,11 +27,16 @@ function Registrati ({ navigation }) {
           'Content-Type': 'application/json'
         }
       })
-      navigation.push('LOGIN')
+      response = await response.json()
+      if (response.result === true) {
+        setMessage(response.text)
+        setTimeout(() => navigation.push('LOGIN'), 500)
+      } else {
+        setMessage(response.text)
+      }
     } catch (error) {
       console.error(error)
     }
-    navigation.push('LOGIN')
   }
 
   return (
@@ -91,7 +97,7 @@ function Registrati ({ navigation }) {
         style={styles.inputPassword}
       />
 
-      <Button onPress={() => registrazione(value)}>
+      <Button onPress={() => registrazione(value, setMessage)}>
         REGISTRATI
       </Button>
 

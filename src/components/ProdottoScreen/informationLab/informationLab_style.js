@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#6bc1d6',
     borderColor: '#6bc1d6'
-  }, 
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center'

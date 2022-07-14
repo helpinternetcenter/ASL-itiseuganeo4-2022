@@ -9,7 +9,7 @@ function Header (props) {
       <Text category='h5'> Prezzo </Text>
     </View>
   )
-  }
+}
 
 function PriceDescription (props) {
   console.log(props.numeroRender)

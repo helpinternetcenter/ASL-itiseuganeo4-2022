@@ -11,8 +11,9 @@ const AlertIcon = (props) => (
 )
 
 async function login (username, password) {
+  let response = {}
   try {
-    const response = await fetch('http://10.0.3.158:3000/Login', {
+    response = await fetch('http://192.168.1.39:3000/Login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -23,7 +24,9 @@ async function login (username, password) {
         password
       })
     })
-    return await response.json()
+
+    response = await response.json()
+    return response
   } catch (error) {
     console.error(error)
   }
