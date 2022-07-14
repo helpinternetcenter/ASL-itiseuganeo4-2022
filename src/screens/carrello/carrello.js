@@ -1,10 +1,8 @@
 import * as React from 'react'
 import { View, StyleSheet, ScrollView } from 'react-native'
-import { PagamentoCarrelloScreen, HomeScreen } from '../navigaitor'
-import TitoloCarrello from '../../components/compCarrello/titoloCarrello'
+import { PagamentoCarrelloScreen } from '../navigaitor'
 import Riepilogo from '../../components/compCarrello/riepilogoCarrello'
 import CartaCarrello from '../../components/compCarrello/cartaCarrello'
-import Tab from '../../components/compCarrello/tabNavigazione'
 
 function Carrello ({ route, navigation }) {
   function GoBackAction () {

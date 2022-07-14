@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { View, Image, ScrollView } from 'react-native'
+import { View } from 'react-native'
 import { Icon, IconRegistry } from '@ui-kitten/components'
 import styles from './prodottoScreenStyle'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
 import InformationLab from '../../components/ProdottoScreen/informationLab/InformationLab'
 import dati from '../../api/specificheProdotti.json'
+import ScroolImage from '../../components/ScroolImage/ScroolImage'
 
 function PlusIcon (props) {
   return (
@@ -39,12 +40,7 @@ function ProdottoScreen ({ route, navigation }) {
     <>
       <IconRegistry icons={EvaIconsPack} />
       <View style={styles.container}>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={{ uri: dati.data[itemId].linkImmagini[1] }}
-          />
-        </View>
+        <ScroolImage numeroRender={itemId} />
         <InformationLab
           title={dati.data[itemId].nomeMobile}
           price={dati.data[itemId].prezzo}

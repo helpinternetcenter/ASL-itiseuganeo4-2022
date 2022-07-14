@@ -94,8 +94,9 @@ const LoginRoot = () => (
 
 function CarrelloStackScreen () {
   return (
-    <CarrelloStack.Navigator>
+    <CarrelloStack.Navigator screenOptions={{ headerShown: false }}>
       <CarrelloStack.Screen name={CarrelloScreen.id} component={Carrello} />
+      <CarrelloStack.Screen name={PagamentoCarrelloScreen.id} component={PagamentoCarrello} />
     </CarrelloStack.Navigator>
   )
 }
