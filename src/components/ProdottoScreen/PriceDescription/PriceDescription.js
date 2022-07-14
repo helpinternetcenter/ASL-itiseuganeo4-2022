@@ -4,6 +4,9 @@ import { Text, Button } from '@ui-kitten/components'
 import styles from './PriceDescription_style'
 
 function PriceDescription (props) {
+  const [buttonPlus, setStatebuttonPlus] = React.useState(true)
+  const [buttonMinus, setStateButtonMinus] = React.useState(true)
+
   return (
     <View style={styles.container}>
       <Text category='h2' style={styles.price}>
@@ -11,15 +14,37 @@ function PriceDescription (props) {
       </Text>
       <View style={styles.buttonContainer}>
         <Button
-          style={styles.buttonPlus}
-          accessoryLeft={props.iconButtonPlus}
-          onPress={() => { props.setActionPlusButton() }}
+          style={
+            buttonMinus
+              ? { ...styles.buttonMinus, backgroundColor: 'white' }
+              : { ...styles.buttonMinus, backgroundColor: 'black' }
+          }
+          accessoryLeft={
+            buttonMinus
+              ? <props.iconButtonMinus color='black' />
+              : <props.iconButtonMinus color='white' />
+          }
+          onPress={() => {
+            props.setActionPlusButton()
+            setStateButtonMinus(false)
+            setTimeout(() => { setStateButtonMinus(true) }, 100)
+          }}
         />
         <Text style={styles.text}>{props.value}</Text>
         <Button
-          style={styles.buttonMinus}
-          accessoryLeft={props.iconButtonMinus}
-          onPress={() => { props.setActionMinusButton() }}
+          style={buttonPlus
+            ? { ...styles.buttonPlus, backgroundColor: 'white' }
+            : { ...styles.buttonPlus, backgroundColor: 'black' }}
+          accessoryLeft={
+            buttonPlus
+              ? <props.iconButtonPlus color='black' />
+              : <props.iconButtonPlus color='white' />
+          }
+          onPress={() => {
+            props.setActionMinusButton()
+            setStatebuttonPlus(false)
+            setTimeout(() => { setStatebuttonPlus(true) }, 100)
+          }}
         />
       </View>
     </View>
