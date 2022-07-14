@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { Text, Button } from '@ui-kitten/components'
 import { StyleSheet, View } from 'react-native'
+import datiPersonali from '../../api/datiPersonali.json'
 
 function Dati (value) {
   const values = value.values
@@ -15,17 +16,12 @@ function Dati (value) {
 }
 
 function CartaCarrello (props) {
-  const values = props.values
-  const settingEmpty = () => {
-    props.setStatus(false)
-  }
   return (
     <View style={styles.viewMain}>
       <View style={styles.riepilogo}>
         <Text category='h3' style={styles.titolo}>Inserisci le informazioni:</Text>
         <View style={styles.viewMargin} />
-        {props.status && <Dati values={{ ...values }} />}
-        <Button style={styles.button} onPress={() => settingEmpty()}>Modifica</Button>
+        <Button style={styles.button} onPress={() => props.cambioScheda()}>Modifica</Button>
 
       </View>
     </View>

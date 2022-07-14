@@ -12,6 +12,7 @@
         "ore": "12:10:30",  
         "data": "12/7/2022"
     },
+    
     {
         "acquisti": [
             { "idMobile": "2", "quantita": 10 },
