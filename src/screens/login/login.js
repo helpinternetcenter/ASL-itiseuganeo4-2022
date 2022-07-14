@@ -4,12 +4,30 @@ import { Layout, Text, Input, Button, Icon, IconRegistry } from '@ui-kitten/comp
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
 import { HomeScreen } from '../navigaitor'
 import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport'
-import { ricerca } from '../../Utils/check'
 
 const AlertIcon = (props) => (
   <Icon {...props} name='alert-circle-outline' />
 
 )
+
+async function login (username, password) {
+  try {
+    const response = await fetch('http://10.0.3.158:3000/Login', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username,
+        password
+      })
+    })
+    return await response.json()
+  } catch (error) {
+    console.error(error)
+  }
+}
 function Login ({ navigation }) {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
@@ -21,9 +39,10 @@ function Login ({ navigation }) {
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry)
   }
-  function Control () {
-    if (ricerca(username, password).ingresso) {
-      navigation.push(HomeScreen.id, { idIdentificativo: ricerca(username, password).id })
+  async function Control () {
+    const response = await login(username, password)
+    if (response.entered) {
+      navigation.push(HomeScreen.id, { idIdentificativo: response.idUtente })
       setResult(true)
     } else {
       setUsername('')
@@ -65,7 +84,6 @@ function Login ({ navigation }) {
           nextValue === '' ? setDangerStateUsername('danger') : setDangerStateUsername('success')
           setUsername(nextValue)
         }}
-
       />
 
       <Text category='p2'>PASSWORD </Text>

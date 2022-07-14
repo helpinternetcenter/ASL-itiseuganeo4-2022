@@ -7,6 +7,31 @@ function Registrati ({ navigation }) {
   const [cognome, setCognome] = React.useState('')
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
+  const [message, setMessage] = React.useState('')
+
+  const value = {
+    nome,
+    cognome,
+    username,
+    password
+  }
+
+  const registrazione = async (value) => {
+    try {
+      await fetch('http://10.0.3.158:3000/Registrazione ', {
+        method: 'POST',
+        body: JSON.stringify(value),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+      navigation.push('LOGIN')
+    } catch (error) {
+      console.error(error)
+    }
+    navigation.push('LOGIN')
+  }
 
   return (
 
@@ -66,9 +91,11 @@ function Registrati ({ navigation }) {
         style={styles.inputPassword}
       />
 
-      <Button onPress={() => navigation.push('LOGIN')} style={{ backgroundColor: '#6bc1d6' }}>
+      <Button onPress={() => registrazione(value)}>
         REGISTRATI
       </Button>
+
+      <Text> {message} </Text>
 
     </Layout>
 
