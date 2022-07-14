@@ -21,17 +21,16 @@ const styles = StyleSheet.create({
   },
 
   buttonPlus: {
-    marginRight: '7%',
-    backgroundColor: 'white',
-    borderColor: 'black',
-    borderRadius: 100
+    marginLeft: '7%',
+    borderRadius: 100,
+    borderColor: 'black'
   },
 
   buttonMinus: {
-    marginLeft: '7%',
+    marginRight: '7%',
     borderRadius: 100,
-    backgroundColor: 'black',
     borderColor: 'black'
+
   },
 
   text: {

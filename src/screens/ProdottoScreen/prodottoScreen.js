@@ -8,13 +8,13 @@ import dati from '../../api/specificheProdotti.json'
 
 function PlusIcon (props) {
   return (
-    <Icon {...props} fill='black' name='plus-circle-outline' />
+    <Icon {...props} fill={props.color} name='plus-circle-outline' />
   )
 }
 
 function MinusIcon (props) {
   return (
-    <Icon {...props} name='minus-circle-outline' />
+    <Icon {...props} fill={props.color} name='minus-circle-outline' />
   )
 }
 
