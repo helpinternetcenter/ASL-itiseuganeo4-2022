@@ -2,30 +2,15 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
 
-  imageContiner: {
+  imageContainer: {
+    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 20
-
+    justifyContent: 'center'
   },
 
   image: {
-    width: 240,
-    height: 200
-  },
-
-  card: {
-    margin: '5%',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 8
-    },
-    shadowOpacity: 0.46,
-    shadowRadius: 11.14,
-    elevation: 17,
-    borderRadius: 10
-
+    width: '100%',
+    height: '120%'
   },
 
   RadioGroup: {

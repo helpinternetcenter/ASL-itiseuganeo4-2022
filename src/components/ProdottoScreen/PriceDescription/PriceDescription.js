@@ -25,7 +25,7 @@ function PriceDescription (props) {
               : <props.iconButtonMinus color='white' />
           }
           onPress={() => {
-            props.setActionPlusButton()
+            props.setActionMinusButton()
             setStateButtonMinus(false)
             setTimeout(() => { setStateButtonMinus(true) }, 100)
           }}
@@ -41,7 +41,7 @@ function PriceDescription (props) {
               : <props.iconButtonPlus color='white' />
           }
           onPress={() => {
-            props.setActionMinusButton()
+            props.setActionPlusButton()
             setStatebuttonPlus(false)
             setTimeout(() => { setStatebuttonPlus(true) }, 100)
           }}
