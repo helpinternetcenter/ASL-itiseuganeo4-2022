@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   button: {
-    flex: 1,
     margin: '5%',
     borderRadius: 10,
     backgroundColor: '#6bc1d6',
