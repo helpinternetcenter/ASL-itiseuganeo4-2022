@@ -4,17 +4,26 @@ import { StyleSheet, View, ScrollView } from 'react-native'
 import Titolo from '../../components/compHome/titoloHome'
 import SceltaProdotto from '../../components/compHome/prodottoHome'
 import { ProdottoScreen } from '../navigaitor'
-import prodotti from '../../api/specificheProdotti.json'
+
 import utente from '../../api/credenziali.json'
+import { home } from '../../api/'
 
 function Home ({ navigation, route }) {
   /* const { idIdentificativo } = route.params */
+  const [prod, setProdotti] = React.useState([])
+
+  React.useEffect(() => {
+    home().then((prodotti) => {
+      setProdotti(prodotti)
+    })
+  }, [])
+
   return (
     <View style={styles.container}>
       <Titolo valore={utente.data[1].nomeCredenziali} style={{ flex: 4 }} />
       <View style={{ flex: 15 }}>
         <ScrollView>
-          {prodotti.data.map((el, key) => {
+          {prod.map((el, key) => {
             return (
               <SceltaProdotto
                 key={key}

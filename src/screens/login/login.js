@@ -1,36 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Layout, Text, Input, Button, Icon, IconRegistry } from '@ui-kitten/components'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
 import { HomeScreen } from '../navigaitor'
 import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport'
+import { login } from '../../api'
+import { Context } from '../../context/AuthContext'
 
 const AlertIcon = (props) => (
   <Icon {...props} name='alert-circle-outline' />
 
 )
-
-async function login (username, password) {
-  let response = {}
-  try {
-    response = await fetch('http://192.168.1.39:3000/Login', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username,
-        password
-      })
-    })
-
-    response = await response.json()
-    return response
-  } catch (error) {
-    console.error(error)
-  }
-}
 function Login ({ navigation }) {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
@@ -38,6 +18,7 @@ function Login ({ navigation }) {
   const [dangerStatePassword, setDangerStatePassword] = React.useState('danger')
   const [secureTextEntry, setSecureTextEntry] = React.useState(null)
   const [result, setResult] = React.useState(true)
+  const { signin } = useContext(Context)
 
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry)
@@ -104,7 +85,10 @@ function Login ({ navigation }) {
           setPassword(nextValue)
         }}
       />
-      <Button onPress={() => Control()}>
+      <Button onPress={() => {
+        console.log('premo', username)
+        signin({username, password})
+      }}>
         Log In
       </Button>
 

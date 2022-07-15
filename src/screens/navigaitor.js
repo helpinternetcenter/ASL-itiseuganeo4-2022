@@ -1,18 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Prodotto from './ProdottoScreen/prodottoScreen'
 import Login from './login/login'
 import Home from './home/home'
 import Registrati from './registrati/Registrati'
-import MyPurchaseScreen from './MyPurchase Screen/MyPurchaseScreen'
 import Carrello from './carrello/carrello'
 import PagamentoCarrello from '../screens/PagamentoCarrello/pagamentoCarrello'
-import RiepilogoCarrello from '../components/compCarrello/riepilogoCarrello'
-import CheckCarello from '../screens/checkCarello/checkCarello'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import AccountScreen from './account/accuntScreen'
+import { Context } from '../context/AuthContext'
 
 const LoginNavigationStack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -82,13 +80,6 @@ const LoginRoot = () => (
   <LoginNavigationStack.Navigator screenOptions={{ headerShown: false }}>
     <LoginNavigationStack.Screen name={LoginScreen.id} component={Login} />
     <LoginNavigationStack.Screen name={RegisterScreen.id} component={Registrati} />
-    <LoginNavigationStack.Screen name={HomeScreen.id} component={Home} />
-    <LoginNavigationStack.Screen name={ProdottoScreen.id} component={Prodotto} />
-    <LoginNavigationStack.Screen name={PurchaseScreen.id} component={MyPurchaseScreen} />
-    <LoginNavigationStack.Screen name={CarrelloScreen.id} component={Carrello} />
-    <LoginNavigationStack.Screen name={PagamentoCarrelloScreen.id} component={PagamentoCarrello} />
-    <LoginNavigationStack.Screen name={RiepilogoCarrelloScreen.id} component={RiepilogoCarrello} />
-    <LoginNavigationStack.Screen name={CheckCarelloScreen.id} component={CheckCarello} />
   </LoginNavigationStack.Navigator>
 )
 
@@ -118,9 +109,10 @@ function AccountStackScreen () {
   )
 }
 const Navigator = () => {
+  const { state } = useContext(Context)
   return (
     <NavigationContainer>
-      <LoginRoot />
+      {state.id === null ? <LoginRoot /> : <TabRoot />}
     </NavigationContainer>
   )
 }

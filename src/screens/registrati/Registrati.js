@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Layout, Text, Input, Button } from '@ui-kitten/components'
 import { StyleSheet, View } from 'react-native'
+import { registrazione } from '../../api'
 
 function Registrati ({ navigation }) {
   const [nome, setNome] = React.useState('')
@@ -14,29 +15,6 @@ function Registrati ({ navigation }) {
     cognome,
     username,
     password
-  }
-
-  const registrazione = async (value, setMessage) => {
-    let response = {}
-    try {
-      response = await fetch('http://192.168.1.39:3000/Registrazione ', {
-        method: 'POST',
-        body: JSON.stringify(value),
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        }
-      })
-      response = await response.json()
-      if (response.result === true) {
-        setMessage(response.text)
-        setTimeout(() => navigation.push('LOGIN'), 500)
-      } else {
-        setMessage(response.text)
-      }
-    } catch (error) {
-      console.error(error)
-    }
   }
 
   return (
@@ -97,7 +75,10 @@ function Registrati ({ navigation }) {
         style={styles.inputPassword}
       />
 
-      <Button onPress={() => registrazione(value, setMessage)}>
+      <Button onPress={() => {
+        registrazione(value, setMessage, () => navigation.push('LOGIN'))
+      }}
+      >
         REGISTRATI
       </Button>
 
