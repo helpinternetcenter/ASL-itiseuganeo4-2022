@@ -6,7 +6,7 @@ import { Input } from 'react-native-elements/dist/input/Input'
 function Titolo (props) {
   return (
     <View style={[styles.viewTitolo, props.style]}>
-      <Text category='h1' style={styles.testoTitolo}>Ciao Davide{/* {props.valore} */}!</Text>
+      <Text category='h1' style={styles.testoTitolo}>Ciao {props.valore}!</Text>
       <Text category='h6' style={styles.testoSottotitolo}>Tutti i prodotti a portata di un click</Text>
       <View style={[styles.viewCerca]}>
         <Input>Cerca</Input>

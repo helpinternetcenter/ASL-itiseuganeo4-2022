@@ -4,23 +4,30 @@ import { StyleSheet, View, ScrollView } from 'react-native'
 import Titolo from '../../components/compHome/titoloHome'
 import SceltaProdotto from '../../components/compHome/prodottoHome'
 import { ProdottoScreen } from '../navigaitor'
-
 import utente from '../../api/credenziali.json'
-import { home } from '../../api/'
+import { home, idUtente } from '../../api/'
+import { Context } from '../../context/AuthContext'
 
 function Home ({ navigation, route }) {
+  const { state } = React.useContext(Context)
+
   /* const { idIdentificativo } = route.params */
   const [prod, setProdotti] = React.useState([])
+  const [idUt, setIdUt] = React.useState([])
 
   React.useEffect(() => {
+    console.log('HELO')
     home().then((prodotti) => {
       setProdotti(prodotti)
+    })
+    idUtente(state.id).then(({ nome, cognome }) => {
+      setIdUt(nome)
     })
   }, [])
 
   return (
     <View style={styles.container}>
-      <Titolo valore={utente.data[1].nomeCredenziali} style={{ flex: 4 }} />
+      <Titolo valore={idUt} style={{ flex: 4 }} />
       <View style={{ flex: 15 }}>
         <ScrollView>
           {prod.map((el, key) => {

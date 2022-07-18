@@ -9,6 +9,7 @@ import { ScrollView } from 'react-native'
 import { Layout, Button } from '@ui-kitten/components'
 import styles from './accountScreen_styles'
 import { Context } from '../../context/AuthContext'
+import { idUtente } from '../../api/'
 
 function AccountScreen () {
   const value = {
@@ -19,12 +20,19 @@ function AccountScreen () {
   }
 
   const { signout } = useContext(Context)
+  const { state } = React.useContext(Context)
+  const [idUt, setIdUt] = React.useState([])
+
+  React.useEffect(() => {
+    idUtente(state.id).then(({ nome, cognome, username }) => {
+      setIdUt(nome, cognome, username)
+    })
+  }, [])
 
   return (
 
     <ScrollView style={{ flex: 1 }}>
       <TitleProfile
-        name='Mattia Casotto'
         styles={{
           viewTitolo: styles.viewTitolo,
           testTitolo: styles.testoTitolo
