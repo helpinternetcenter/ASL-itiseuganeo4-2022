@@ -87,8 +87,9 @@ function Login ({ navigation }) {
       />
       <Button onPress={() => {
         console.log('premo', username)
-        signin({username, password})
-      }}>
+        signin({ username, password })
+      }}
+      >
         Log In
       </Button>
 

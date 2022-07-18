@@ -2,6 +2,7 @@ const ENDPOINT = 'http://10.0.3.158:3000/'
 const LOGIN = ENDPOINT + 'Login'
 const REGISTRAZIONE = 'http://10.0.3.158:3000/Registrazione'
 const HOME = 'http://10.0.3.158:3000/Home'
+const IDUTENTE = 'http://10.0.3.158:3000/idUtente'
 
 export const registrazione = async (value, setMessage, gotoLogin) => {
   let response = {}
@@ -55,5 +56,15 @@ export const home = async () => {
     return (response)
   } catch (error) {
     console.error(error)
+  }
+}
+
+export const idUtente = async () => {
+  try {
+    const temp = await fetch(IDUTENTE)
+    const response = await temp.json()
+    return response
+  } catch (error) {
+    console.log(error)
   }
 }

@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
     marginLeft: '7%',
     fontWeight: 'bold',
     fontSize: 30
+  },
+
+  button: {
+    marginLeft: '20%',
+    marginRight: '20%',
+    marginBottom: 10
   }
 })
 
