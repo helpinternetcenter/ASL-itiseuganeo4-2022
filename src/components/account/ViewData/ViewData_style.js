@@ -24,6 +24,15 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20
   },
+
+  testoSottotitolo: {
+    marginTop: '2%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    fontWeight: 'bold',
+    fontSize: 15
+  },
+
   input: {
     flex: 4,
     color: '#a6a2a2',

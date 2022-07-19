@@ -4,7 +4,6 @@ import { StyleSheet, View, ScrollView } from 'react-native'
 import Titolo from '../../components/compHome/titoloHome'
 import SceltaProdotto from '../../components/compHome/prodottoHome'
 import { ProdottoScreen } from '../navigaitor'
-import utente from '../../api/credenziali.json'
 import { home, idUtente } from '../../api/'
 import { Context } from '../../context/AuthContext'
 
@@ -20,8 +19,8 @@ function Home ({ navigation, route }) {
     home().then((prodotti) => {
       setProdotti(prodotti)
     })
-    idUtente(state.id).then(({ nome, cognome }) => {
-      setIdUt(nome)
+    idUtente(state.id).then(({ nome, cognome, username }) => {
+      setIdUt(nome, cognome, username)
     })
   }, [])
 

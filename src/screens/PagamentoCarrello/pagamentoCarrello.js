@@ -4,6 +4,8 @@ import { Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Div
 import TitleCarrello from '../../components/compCarrello/titoloCarrello'
 import { CarrelloScreen } from '../navigaitor'
 import styles from './pagamentoCarrelloStyle'
+import { informazioniUtente } from '../../api'
+import Carrello from '../carrello/carrello'
 
 function CheckIcon (props) {
   return (
@@ -48,6 +50,15 @@ function PagamentoCarrello ({ navigation }) {
   const [dangerStatePaese, setDangerStatePaese] = React.useState('danger')
   const [dangerStateIndirizzo, setDangerStateIndirizzo] = React.useState('danger')
   const [dangerStateStato, setDangerStateStato] = React.useState('danger')
+  const [message, setMessage] = React.useState('')
+
+  const valori = {
+    address,
+    province,
+    country,
+    payment,
+    state
+  }
 
   function GoBackAction () {
     navigation.goBack()
@@ -176,11 +187,12 @@ function PagamentoCarrello ({ navigation }) {
 
             <Text style={styles.modalText}>Dati confermati</Text>
             <CheckIcon />
-            <Button style={styles.button} onPress={() => GoBack()} accessoryLeft={(props) => BackIcon(props)}>Vai al Carrello</Button>
+            <Button style={styles.button} onPress={() => informazioniUtente(valori, setMessage, () => navigation.push('CARRELLO'))} accessoryLeft={(props) => BackIcon(props)}>Vai al Carrello</Button>
 
           </View>
         </View>
       </Modal>
+      <Text> {message} </Text>
 
     </>
 

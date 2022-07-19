@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Layout, Text, Input, Button } from '@ui-kitten/components'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, ScrollView } from 'react-native'
 import { registrazione } from '../../api'
 
 function Registrati ({ navigation }) {
@@ -9,6 +9,10 @@ function Registrati ({ navigation }) {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [message, setMessage] = React.useState('')
+  const [address, setAddress] = React.useState('')
+  const [state, setState] = React.useState('')
+  const [country, setCountry] = React.useState('')
+  const [province, setProvince] = React.useState('')
 
   const value = {
     nome,
@@ -120,6 +124,30 @@ const styles = StyleSheet.create({
   },
 
   inputPassword: {
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginBottom: '5%'
+  },
+
+  inputAddress: {
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginBottom: '5%'
+  },
+
+  inputState: {
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginBottom: '5%'
+  },
+
+  inputCountry: {
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginBottom: '5%'
+  },
+
+  inputProvince: {
     marginLeft: '5%',
     marginRight: '5%',
     marginBottom: '5%'

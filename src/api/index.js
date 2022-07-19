@@ -3,6 +3,8 @@ const LOGIN = ENDPOINT + 'Login'
 const REGISTRAZIONE = 'http://10.0.3.158:3000/Registrazione'
 const HOME = 'http://10.0.3.158:3000/Home'
 const IDUTENTE = ENDPOINT + 'idUtente/?id='
+const INFORMAZIONI = ENDPOINT + 'DataAcquisto/?idUtente='
+// const AGGCARRELLO = ENDPOINT + '/Carrello/Inserimento'
 
 export const registrazione = async (value, setMessage, gotoLogin) => {
   let response = {}
@@ -69,3 +71,50 @@ export const idUtente = async (id) => {
     console.error(error)
   }
 }
+export const informazioniUtente = async (valori, setMessage, gotoLogin) => {
+  let response = {}
+  try {
+    response = await fetch(INFORMAZIONI, {
+      method: 'POST',
+      body: JSON.stringify(valori),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    response = await response.json()
+    if (response.result === true) {
+      setMessage(response.text)
+      gotoLogin()
+    } else {
+      setMessage(response.text)
+    }
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+// export const AggCarrello = async (setMessage, gotoCarrello) => {
+//   let response = {}
+//   try {
+//     response = await fetch(AGGCARRELLO, {
+//       method: 'POST',
+//       body: JSON.stringify({
+//       }),
+
+//       headers: {
+//         Accept: 'application/json',
+//         'Content-Type': 'application/json'
+//       }
+//     })
+//     response = await response.json()
+//     if (response.result === true) {
+//       setMessage(response.text)
+//       gotoCarrello()
+//     } else {
+//       setMessage(response.text)
+//     }
+//   } catch (error) {
+//     console.error(error)
+//   }
+// }

@@ -15,10 +15,14 @@ function ViewData (props) {
     <View style={styles.container}>
       <Text style={styles.testoTitolo}> Dati Personali </Text>
 
+      <Text style={styles.testoSottotitolo}> Nome </Text>
       <Label style={styles.input} text={value.nome} />
+
+      <Text style={styles.testoSottotitolo}> Cognome </Text>
       <Label style={styles.input} text={value.cognome} />
+
+      <Text style={styles.testoSottotitolo}> Username </Text>
       <Label style={styles.input} text={value.username} />
-      <Label style={{ ...styles.input, marginBottom: '20%' }} text={value.password} />
 
     </View>
   )

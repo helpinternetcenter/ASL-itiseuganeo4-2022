@@ -17,7 +17,7 @@ function CrossIcon (props) {
     />
   )
 }
-function InformationLab (props) {
+function InformationLab (props, navigation) {
   const [state, setState] = React.useState(0)
 
   const ControlState = (newState) => {
