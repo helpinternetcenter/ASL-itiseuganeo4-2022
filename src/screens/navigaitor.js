@@ -47,7 +47,7 @@ export const CheckCarelloScreen = {
 }
 
 export const accountScreen = {
-  id: 'Account'
+  id: 'ACCOUNT'
 }
 const TabRoot = () => (
   <Tab.Navigator
@@ -60,7 +60,7 @@ const TabRoot = () => (
           iconName = 'home-outline'
         } else if (route.name === 'CARRELLO') {
           iconName = 'cart-outline'
-        } else if (route.name === 'Account') {
+        } else if (route.name === 'ACCOUNT') {
           iconName = 'person-outline'
         }
 

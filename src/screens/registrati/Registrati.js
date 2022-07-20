@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Layout, Text, Input, Button } from '@ui-kitten/components'
-import { StyleSheet, View, ScrollView } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { registrazione } from '../../api'
 
 function Registrati ({ navigation }) {
@@ -9,10 +9,6 @@ function Registrati ({ navigation }) {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [message, setMessage] = React.useState('')
-  const [address, setAddress] = React.useState('')
-  const [state, setState] = React.useState('')
-  const [country, setCountry] = React.useState('')
-  const [province, setProvince] = React.useState('')
 
   const value = {
     nome,

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { ScrollView, View, Alert, Modal, StyleSheet } from 'react-native'
 import { Button, Text, Layout, Input, Select, SelectItem, RadioGroup, Radio, Divider, Icon } from '@ui-kitten/components'
 import TitleCarrello from '../../components/compCarrello/titoloCarrello'
-import { CarrelloScreen } from '../navigaitor'
+// import { CarrelloScreen } from '../navigaitor'
 import styles from './pagamentoCarrelloStyle'
 import { informazioniUtente } from '../../api'
-import Carrello from '../carrello/carrello'
+// import Carrello from '../carrello/carrello'
 
 function CheckIcon (props) {
   return (
@@ -52,6 +52,14 @@ function PagamentoCarrello ({ navigation }) {
   const [dangerStateStato, setDangerStateStato] = React.useState('danger')
   const [message, setMessage] = React.useState('')
 
+  console.log('-------------------')
+  console.log('Address = ', address)
+  console.log('state = ', state)
+  console.log('Country = ', country)
+  console.log('Province = ', province)
+  console.log('Payment = ', payment)
+
+  console.log('-------------------')
   const valori = {
     address,
     province,
@@ -79,10 +87,10 @@ function PagamentoCarrello ({ navigation }) {
     }
   }
 
-  function GoBack () {
-    setPopUp(!popUp)
-    navigation.navigate(CarrelloScreen.id, { conferma: true })
-  }
+  // function GoBack () {
+  //   setPopUp(!popUp)
+  //   navigation.navigate(CarrelloScreen.id, { conferma: true })
+  // }
 
   function BackIcon (props) {
     return (
