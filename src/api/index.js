@@ -2,6 +2,7 @@ const ENDPOINT = 'http://10.0.3.158:3000/'
 const LOGIN = ENDPOINT + 'Login'
 const REGISTRAZIONE = 'http://10.0.3.158:3000/Registrazione'
 const HOME = 'http://10.0.3.158:3000/Home'
+const CARRELLO = ENDPOINT + 'Carello/?idUtente='
 const IDUTENTE = ENDPOINT + 'idUtente/?id='
 const INFORMAZIONI = ENDPOINT + 'DataAcquisto/?idUtente='
 // const AGGCARRELLO = ENDPOINT + '/Carrello/Inserimento'
@@ -55,6 +56,17 @@ export const home = async () => {
   try {
     const temp = await fetch(HOME)
     const response = await temp.json()
+    return response
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const carrello = async () => {
+  try {
+    const temp = await fetch(CARRELLO)
+    const response = await temp.json()
+    console.log(response)
     return response
   } catch (error) {
     console.error(error)

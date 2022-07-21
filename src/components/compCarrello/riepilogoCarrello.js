@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Text, Button, Icon } from '@ui-kitten/components'
 import { StyleSheet, View, Modal, Alert, Image } from 'react-native'
-import inCarrello from '../../api/inCarrello.json'
+// import inCarrello from '../../api/inCarrello.json'
 import specificheProdotti from '../../api/specificheProdotti.json'
+import { carrello } from '../../api/'
+// import { Context } from '../../context/AuthContext'
 
 function CheckIcon (props) {
   return (
@@ -12,6 +14,15 @@ function CheckIcon (props) {
 
 function Riepilogo (props) {
   const [popUp, setPopUp] = useState(false)
+  const [carrelloOgg, setCarrello] = useState([])
+  // const { state } = React.useContext(Context)
+
+  React.useEffect(() => {
+    console.log('HELO')
+    carrello().then((prodotti) => {
+      setCarrello(prodotti)
+    })
+  }, [])
 
   function ControlInputStream () {
     setPopUp(true)
@@ -30,7 +41,10 @@ function Riepilogo (props) {
       <View style={styles.riepilogo}>
         <Text category='h3' style={styles.titoloRiepilogo}>Riepilogo</Text>
         <View style={styles.viewMargin} />
-        {inCarrello.data[0].idOggetti.map((el, key) =>
+        {console.log('--------')}
+        {console.log('CARRELLO = ', carrelloOgg)}
+        {console.log('--------')}
+        {carrelloOgg.map((el, key) =>
           (
             <View key={key}>
               <Text
