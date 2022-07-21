@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { Layout, Text, Input, Button } from '@ui-kitten/components'
-import { StyleSheet, View } from 'react-native'
+import { View } from 'react-native'
 import { registrazione } from '../../api'
+import { styles } from './registratiStyle'
 
 function Registrati ({ navigation }) {
   const [nome, setNome] = React.useState('')
@@ -88,67 +89,5 @@ function Registrati ({ navigation }) {
 
   )
 }
-
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: '7%'
-  },
-  text: {
-    margin: 1,
-    marginTop: '1%'
-
-  },
-
-  inputNome: {
-    marginLeft: '5%',
-    marginRight: '5%'
-
-  },
-
-  inputCognome: {
-    marginLeft: '5%',
-    marginRight: '5%'
-
-  },
-
-  inputUsername: {
-    marginLeft: '5%',
-    marginRight: '5%'
-
-  },
-
-  inputPassword: {
-    marginLeft: '5%',
-    marginRight: '5%',
-    marginBottom: '5%'
-  },
-
-  inputAddress: {
-    marginLeft: '5%',
-    marginRight: '5%',
-    marginBottom: '5%'
-  },
-
-  inputState: {
-    marginLeft: '5%',
-    marginRight: '5%',
-    marginBottom: '5%'
-  },
-
-  inputCountry: {
-    marginLeft: '5%',
-    marginRight: '5%',
-    marginBottom: '5%'
-  },
-
-  inputProvince: {
-    marginLeft: '5%',
-    marginRight: '5%',
-    marginBottom: '5%'
-  }
-
-})
 
 export default Registrati
