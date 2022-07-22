@@ -8,10 +8,8 @@ import { home, idUtente } from '../../api/'
 import { Context } from '../../context/AuthContext'
 import { styles } from './homeStyle'
 
-function Home ({ navigation, route }) {
+function Home ({ navigation }) {
   const { state } = useContext(Context)
-
-  /* const { idIdentificativo } = route.params */
   const [prod, setProdotti] = useState([])
   const [idUt, setIdUt] = useState([])
 

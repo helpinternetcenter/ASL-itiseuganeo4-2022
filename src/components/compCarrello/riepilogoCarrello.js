@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Text, Button, Icon } from '@ui-kitten/components'
 import { View, Modal, Alert, Image } from 'react-native'
 import { styles } from './riepilogoCarrelloStyle'
@@ -16,7 +16,7 @@ function CheckIcon (props) {
 function Riepilogo (props) {
   const [popUp, setPopUp] = useState(false)
   const [carrelloOgg, setCarrello] = useState([])
-  const { state } = React.useContext(Context)
+  const { state } = useContext(Context)
 
   React.useEffect(() => {
     carrelloUtente(state._id).then((carrello) => {
@@ -31,6 +31,7 @@ function Riepilogo (props) {
     setPopUp(!popUp)
     props.onPressGoBack()
   }
+
   function BackIcon (props) {
     return (
       <Icon {...props} name='arrow-back' />
@@ -41,6 +42,9 @@ function Riepilogo (props) {
       <View style={styles.riepilogo}>
         <Text category='h3' style={styles.titoloRiepilogo}>Riepilogo</Text>
         <View style={styles.viewMargin} />
+        {console.log('-------------------------')}
+        {console.log('CARRELLO = ', carrelloOgg)}
+        {console.log('-------------------------')}
         {carrelloOgg.map((el, key) =>
           (
             <View key={key}>
